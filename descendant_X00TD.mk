@@ -48,5 +48,13 @@ BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/relea
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
-    
 
+# The following system and vendor props will be set by vendor init
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.device \
+    ro.product.model
+
+PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
+    ro.vendor.product.device \
+    ro.vendor.product.model \
+    ro.vendor.product.name
