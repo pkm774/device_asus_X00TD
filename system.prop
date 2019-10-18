@@ -233,3 +233,7 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
 ro.surface_flinger.set_display_power_timer_ms=10000
 ro.surface_flinger.set_touch_timer_ms=5000
 ro.surface_flinger.set_idle_timer_ms=9000
+
+# QC framework value-adds
+ro.vendor.qti.va_aosp.support=1
+
