@@ -217,6 +217,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.def.preffered.network=10 \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.telephony.default_network=10 \
+    ro.telephony.use_old_mnc_mcc_format=true \
     ro.vendor.use_data_netmgrd=true \
     persist.radio.add_power_save=1 \
     persist.radio.VT_CAM_INTERFACE=2 \
