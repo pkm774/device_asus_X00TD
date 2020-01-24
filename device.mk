@@ -160,6 +160,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     Snap
 
+# Charging
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
