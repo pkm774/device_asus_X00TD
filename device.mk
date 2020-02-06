@@ -542,7 +542,9 @@ $(call inherit-product, build/target/product/verity.mk)
 
 # VNDK-SP:
 PRODUCT_PACKAGES += \
-    vndk_package
+    com.android.vndk.current.on_vendor \
+    vndk_package \
+    libstdc++.vendor
 
 # VNDK
 # FIXME: master: compat for libprotobuf
