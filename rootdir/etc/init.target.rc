@@ -488,7 +488,6 @@ on charger
     # Set runtime stune value
     write /dev/stune/schedtune.prefer_idle 0
     write /dev/stune/schedtune.boost 0
-    load_system_props
     start qcom-post-boot
     start vendor.hvdcp_opti
     setprop vendor.usb.controller a800000.dwc3
