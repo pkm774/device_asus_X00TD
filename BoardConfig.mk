@@ -109,9 +109,6 @@ TARGET_USE_QTI_BT_STACK := true
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 
-# Charger
-BOARD_CHARGER_ENABLE_SUSPEND := true
-
 # CNE and DPM
 BOARD_USES_QCNE := true
 

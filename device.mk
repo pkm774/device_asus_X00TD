@@ -206,6 +206,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     Snap
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # Charging
 PRODUCT_PACKAGES += \
     charger_res_images \
