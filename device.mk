@@ -514,6 +514,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libwifi-hal-qcom \
+    WifiOverlay \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
