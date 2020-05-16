@@ -32,6 +32,7 @@ import androidx.preference.SwitchPreference;
 import com.asus.zenparts.SuShell;
 import com.asus.zenparts.SuTask;
 import com.asus.zenparts.kcal.KCalSettingsActivity;
+import com.asus.zenparts.ambient.AmbientGesturePreferenceActivity;
 import com.asus.zenparts.preferences.CustomSeekBarPreference;
 import com.asus.zenparts.preferences.SecureSettingListPreference;
 import com.asus.zenparts.preferences.SecureSettingSwitchPreference;
@@ -68,6 +69,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
     private Preference mKcal;
+    private Preference mAmbientPref;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
     private SwitchPreference mSelinuxMode;
@@ -114,6 +116,17 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
+	//Ambient gestures
+	mAmbientPref = findPreference("ambient_display_gestures");
+        mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getContext(), AmbientGesturePreferenceActivity.class);
+                startActivity(intent);
+                return true;
+            }
+        });
+
         // SELinux
         Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
         mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
@@ -126,6 +139,7 @@ public class DeviceSettings extends PreferenceFragment implements
         mSelinuxPersistence.setChecked(getContext()
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
+
     }
 
     @Override

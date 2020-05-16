@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.asus.zenparts.R;
 import com.asus.zenparts.kcal.Utils;
+import com.asus.zenparts.ambient.SensorsDozeService;
 
 import java.io.IOException;
 import java.util.List;
@@ -112,12 +113,15 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 Settings.Secure.getInt(context.getContentResolver(),
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
         int gain = Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_HEADPHONE_GAIN, 5);
+                DeviceSettings.PREF_HEADPHONE_GAIN, 0);
         FileUtils.setValue(HEADPHONE_GAIN_PATH, gain + " " + gain);
         FileUtils.setValue(MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_MICROPHONE_GAIN, 0));
         FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));
+
+	// Ambient
+        context.startService(new Intent(context, SensorsDozeService.class));
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
@@ -144,8 +148,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
         VibratorStrengthPreference.restore(context);
-
-
+        
         }
     }
     private void showToast(String toastString, Context context) {
