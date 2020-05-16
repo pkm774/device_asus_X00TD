@@ -20,6 +20,8 @@ import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import com.asus.zenparts.preferences.VibratorStrengthPreference;
 import android.content.SharedPreferences;
@@ -53,6 +55,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     private Context mContext;
 
     public void onReceive(Context context, Intent intent) {
+    
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
     mContext = context;
     ActivityManager activityManager =
@@ -149,6 +153,11 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         VibratorStrengthPreference.restore(context);
         
+        //FPS
+        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
+        if (enabled) {
+            context.startService(new Intent(context, FPSInfoService.class));
+
         }
     }
     private void showToast(String toastString, Context context) {

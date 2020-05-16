@@ -48,6 +48,13 @@
                 android:targetClass="com.asus.zenparts.kcal.KCalSettingsActivity"
                 android:targetPackage="com.asus.zenparts.kcal" />
         </Preference>
+        
+        <SwitchPreference
+            android:key="fps_info"
+            android:icon="@drawable/ic_fps_info"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="false" />
 
         <com.asus.zenparts.preferences.SecureSettingSwitchPreference
             android:defaultValue="false"
