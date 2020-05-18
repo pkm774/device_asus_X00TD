@@ -96,10 +96,6 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 # CNE and DPM
 BOARD_USES_QCNE := true
 
-# Crypto
-TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
-
 # Display
 TARGET_SCREEN_DENSITY := 420
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
