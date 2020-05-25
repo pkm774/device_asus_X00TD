@@ -67,7 +67,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <flag name="wma_offload_enabled" value="true" />
 
         <!-- AHAL Configs -->
-        <flag name="a2dp_offload_enabled" value="false" />
+        <flag name="a2dp_offload_enabled" value="true" />
         <flag name="anc_headset_enabled" value="true" />
         <flag name="audiosphere_enabled" value="true" />
         <flag name="battery_listener_enabled" value="false" />
