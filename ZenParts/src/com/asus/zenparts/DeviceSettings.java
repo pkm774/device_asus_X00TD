@@ -56,6 +56,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
+    
+    private static final String PREF_SPECTRUM = "spectrum";
+    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     final static String PREF_HEADPHONE_GAIN = "headphone_gain";
     private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
@@ -75,6 +78,8 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mMicrophoneGain;
     private Preference mKcal;
     private Preference mAmbientPref;
+    
+    private SecureSettingListPreference mSPECTRUM;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
     private SwitchPreference mSelinuxMode;
@@ -153,6 +158,11 @@ public class DeviceSettings extends PreferenceFragment implements
         .contains(PREF_SELINUX_MODE));
 
     }
+    
+    mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
+    mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
+    mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+    mSPECTRUM.setOnPreferenceChangeListener(this);
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
@@ -161,6 +171,12 @@ public class DeviceSettings extends PreferenceFragment implements
             case PREF_TORCH_BRIGHTNESS:
                 FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
                 FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
+                break;
+                
+            case PREF_SPECTRUM:
+                mSPECTRUM.setValue((String) value);
+                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
                 break;
 
             case PREF_HEADPHONE_GAIN:
