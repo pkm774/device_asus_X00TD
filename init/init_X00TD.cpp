@@ -72,11 +72,40 @@ void property_override_triple(char const system_prop[], char const vendor_prop[]
     property_override(bootimg_prop, value);
 }
 
+static void init_alarm_boot_properties()
+{
+    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
+    std::string boot_reason;
+    std::string reboot_reason = GetProperty("ro.boot.alarmboot", "");
+
+    if (ReadFileToString(boot_reason_file, &boot_reason)) {
+        /*
+         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+         * For existing PMIC chips, the following mapping applies
+         * for the value of boot_reason:
+         *
+         * 0 -> unknown
+         * 1 -> hard reset
+         * 2 -> sudden momentary power loss (SMPL)
+         * 3 -> real time clock (RTC)
+         * 4 -> DC charger inserted
+         * 5 -> USB charger inserted
+         * 6 -> PON1 pin toggled (for secondary PMICs)
+         * 7 -> CBLPWR_N pin toggled (for external power supply)
+         * 8 -> KPDPWR_N pin toggled (power key pressed)
+         */
+        if (Trim(boot_reason) == "3" || reboot_reason == "true")
+            property_set("ro.alarm_boot", "true");
+        else
+            property_set("ro.alarm_boot", "false");
+    }
+}
+
 void vendor_check_variant()
 {
     struct sysinfo sys;
     char const *region_file = "/mnt/vendor/persist/flag/countrycode.txt";
-    char const *build_fingerprint, *product_device, *product_name;
+    char const *build_fingerprint, *product_device, *product_model, *product_name;
     std::string region;
 
     sysinfo(&sys);
@@ -118,8 +147,18 @@ void vendor_check_variant()
         }
     }
 
+    // Product model overrides
+    if (region == "RU" || region == "TW" ||
+        (region == "PH" && sys.totalram > 3072ull * 1024 * 1024))
+        product_model = "ASUS_X00TDB";
+    else if (sys.totalram < 3072ull * 1024 * 1024)
+        product_model = "ASUS_X00TDA";
+    else
+        product_model = "ASUS_X00TD";
+
     // Override props based on values set
     property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
+    property_override_dual("ro.product.model", "ro.vendor.product.model", product_model);
     property_override_dual("ro.product.name", "ro.vendor.product.name", product_name);
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", build_fingerprint);
 
@@ -128,6 +167,7 @@ void vendor_check_variant()
 }
 
 void vendor_load_properties()
-{
+{   
+    init_alarm_boot_properties();
     vendor_check_variant();
 }
