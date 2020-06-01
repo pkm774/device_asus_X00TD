@@ -20,10 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit some common Havoc stuff
-$(call inherit-product, vendor/rebellion/config/common_full_phone.mk)
+$(call inherit-product, vendor/rebellion/config/common.mk)
 
 # Poduct spec
 TARGET_BOOT_ANIMATION_RES := 1080
+WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 
 # The Rebeller
@@ -31,8 +32,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.rebellion.the_rebeller = pkm774
 
 # Rebellion build type
-CUSTOM_BUILD_TYPE := OFFICIAL
-CUSTOM_RELEASE_TYPE := Release
+REBELLION_OFFICIAL := true
+CUSTOM_RELEASE_TYPE := release
 
 # Inherit from X00T device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
