@@ -32,7 +32,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.rebellion.the_rebeller = pkm774
 
 # Rebellion build type
-REBELLION_OFFICIAL := true
+REBELLION_OFFICIAL := false
 CUSTOM_RELEASE_TYPE := release
 
 # Inherit from X00T device
