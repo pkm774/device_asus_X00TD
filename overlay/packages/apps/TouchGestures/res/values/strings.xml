@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Screen off Gestures : Input -->
+    <string name="touchscreen_gesture_one_finger_up_swipe_title">Swipe up with one finger</string>
+    <string name="touchscreen_gesture_one_finger_down_swipe_title">Swipe down with one finger</string>
+    <string name="touchscreen_gesture_one_finger_left_swipe_title">Swipe left with one finger</string>
+    <string name="touchscreen_gesture_one_finger_right_swipe_title">Swipe right with one finger</string>
+    <string name="touchscreen_gesture_letter_c_title">Draw the letter C</string>
+    <string name="touchscreen_gesture_letter_e_title">Draw the letter e</string>
+    <string name="touchscreen_gesture_letter_m_title">Draw the letter M</string>
+    <string name="touchscreen_gesture_letter_o_title">Draw the letter O</string>
+    <string name="touchscreen_gesture_letter_s_title">Draw the letter S</string>
+    <string name="touchscreen_gesture_letter_v_title">Draw the letter V</string>
+    <string name="touchscreen_gesture_letter_w_title">Draw the letter W</string>
+    <string name="touchscreen_gesture_letter_z_title">Draw the letter Z</string>
+
+</resources>

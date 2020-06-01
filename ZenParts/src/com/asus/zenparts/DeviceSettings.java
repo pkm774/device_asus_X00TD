@@ -18,13 +18,18 @@ package com.asus.zenparts;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceManager;
+import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
 import com.asus.zenparts.kcal.KCalSettingsActivity;
+import com.asus.zenparts.ambient.AmbientGesturePreferenceActivity;
 import com.asus.zenparts.preferences.CustomSeekBarPreference;
 import com.asus.zenparts.preferences.SecureSettingListPreference;
 import com.asus.zenparts.preferences.SecureSettingSwitchPreference;
@@ -42,6 +47,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
+    
+    private static final String PREF_ENABLE_HAL3 = "hal3";
+    private static final String HAL3_SYSTEM_PROPERTY = "persist.camera.HAL3.enabled";
+    
+    private static final String PREF_SPECTRUM = "spectrum";
+    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     final static String PREF_HEADPHONE_GAIN = "headphone_gain";
     private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
@@ -49,18 +60,25 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
+    public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     private CustomSeekBarPreference mTorchBrightness;
     private VibratorStrengthPreference mVibratorStrength;
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
     private Preference mKcal;
+    private Preference mAmbientPref;
+    
+    private SecureSettingListPreference mSPECTRUM;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
+    private static Context mContext;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences_asus_parts, rootKey);
+        mContext = this.getContext();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
 
@@ -81,6 +99,11 @@ public class DeviceSettings extends PreferenceFragment implements
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
+            
+        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
+        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
+        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+        mSPECTRUM.setOnPreferenceChangeListener(this);
 
         if (FileUtils.fileWritable(BACKLIGHT_DIMMER_PATH)) {
             mBacklightDimmer = (SecureSettingSwitchPreference) findPreference(PREF_BACKLIGHT_DIMMER);
@@ -90,6 +113,10 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(PREF_BACKLIGHT_DIMMER));
         }
+        
+        SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
+        fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
+        fpsInfo.setOnPreferenceChangeListener(this);
 
         mKcal = findPreference(PREF_DEVICE_KCAL);
 
@@ -97,6 +124,16 @@ public class DeviceSettings extends PreferenceFragment implements
             Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
             startActivity(intent);
             return true;
+        });
+        
+        mAmbientPref = findPreference("ambient_display_gestures");
+        mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Intent intent = new Intent(getContext(), AmbientGesturePreferenceActivity.class);
+                startActivity(intent);
+                return true;
+            }
         });
     }
 
@@ -108,6 +145,12 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
                 FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
                 break;
+                
+            case PREF_SPECTRUM:
+                mSPECTRUM.setValue((String) value);
+                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
+                break;
 
             case PREF_HEADPHONE_GAIN:
                 FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
@@ -116,7 +159,16 @@ public class DeviceSettings extends PreferenceFragment implements
             case PREF_MICROPHONE_GAIN:
                 FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
                 break;
-
+                
+            case PREF_KEY_FPS_INFO:
+                boolean enabled = (Boolean) value;
+                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
+                if (enabled) {
+                    this.getContext().startService(fpsinfo);
+                } else {
+                    this.getContext().stopService(fpsinfo);
+                }
+                break;
             default:
                 break;
         }

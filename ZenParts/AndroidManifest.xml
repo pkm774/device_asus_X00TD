@@ -21,6 +21,12 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+    <protected-broadcast android:name="com.asus.zenparts.CUST_UPDATE" />
 
     <uses-sdk android:minSdkVersion="27" />
 
@@ -88,6 +94,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
         </intent-filter>
         </activity>
+        <activity android:name="com.asus.zenparts.KeyHandler" />
+	<activity
+            android:name="com.asus.zenparts.settings.ScreenOffGestureSettings"
+			android:exported="true"
+            android:label="@string/screen_off_gesture_title">
+          <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+          </intent-filter>
+	</activity>
+        <service android:name="com.asus.zenparts.SensorsDozeService"
+                 android:permission="SensorsDozeService">
+        </service>
         <service
             android:name=".ZenpartsTile"
             android:enabled="true"
@@ -108,5 +126,44 @@
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+        <service android:name="com.asus.zenparts.ambient.SensorsDozeService"
+                 android:permission="SensorsDozeService">
+        </service>
+
+        <activity
+            android:name="com.asus.zenparts.ambient.AmbientGesturePreferenceActivity"
+            android:label="@string/ambient_display_gestures_title"
+            android:icon="@drawable/ic_doze">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+        </activity>
+        
+        <service
+            android:name=".FPSInfoService"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".FPSTileService"
+            android:icon="@drawable/ic_fps_info"
+            android:label="@string/fps_info_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        
+        <service
+            android:name="com.asus.zenparts.LogTile"
+            android:icon="@drawable/ic_qs_log"
+            android:label="@string/quick_settings_log_tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>		
     </application>
 </manifest>
+

@@ -56,7 +56,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.dual.isp.sync=0 \
     persist.vendor.camera.isp.dualisp=1
-    #persist.vendor.camera.eis.enable=1 \
+    persist.vendor.camera.eis.enable=1 \
     #persist.vendor.camera.ois.disable=1 \
     #persist.vendor.camera.is_type=4 \
     #vendor.camera.hal1.packagelist=com.whatsapp,com.instagram.android
@@ -119,9 +119,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true
 
 # Memory optimizations
-#PRODUCT_PROPERTY_OVERRIDES += \
-    #ro.vendor.qti.sys.fw.bservice_enable=true \
-    #ro.vendor.qti.am.reschedule_service=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.sys.fw.bservice_enable=true \
+    ro.vendor.qti.am.reschedule_service=true
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -160,10 +160,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.data_con_rprt=1 \
     ro.carrier=unknown \
-    ro.com.android.dataroaming=false \
+    ro.com.android.dataroaming=true \
     ro.ril.ecclist=112,911 \
     ro.telephony.iwlan_operation_mode=legacy \
-    ro.telephony.use_old_mnc_mcc_format=true \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Power save functionality for modem
@@ -173,7 +172,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sdk.sensors.gestures=false \
+    ro.vendor.qti.sdk.sensors.gestures=true \
     ro.vendor.qti.sensors.dev_ori=true \
     ro.vendor.qti.sensors.pmd=true \
     ro.vendor.qti.sensors.sta_detect=true \

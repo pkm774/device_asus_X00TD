@@ -1,0 +1,14 @@
+[
+  {
+    "repository": "kernel_asus_sdm660",
+    "target_path": "kernel/asus/sdm660"
+  },
+  {
+    "repository": "vendor_asus_X00T"
+    "target_path": "vendor/asus/X00T"
+  },
+  {
+    "repository": "packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+  },
+]

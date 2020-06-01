@@ -29,6 +29,7 @@
 <audio_effects_conf version="2.0" xmlns="http://schemas.android.com/audio/audio_effects_conf/v2_0">
     <libraries>
         <library name="bundle" path="libbundlewrapper.so"/>
+        <library name="dolbyatmos" path="libatmos.so"/>
         <library name="reverb" path="libreverbwrapper.so"/>
         <library name="qcbassboost" path="libqcbassboost.so"/>
         <library name="qcvirt" path="libqcvirt.so"/>

@@ -12,8 +12,13 @@
      limitations under the License.
 -->
 <resources>
+
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">6</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">7</integer>
+    
+    <!-- Allow devices to hide black gradient behind QS Panel -->
+    <bool name="config_hideQSBlackGradient">true</bool>
+    
 </resources>
 

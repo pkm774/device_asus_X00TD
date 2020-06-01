@@ -19,35 +19,41 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Havoc stuff
+$(call inherit-product, vendor/rebellion/config/common_full_phone.mk)
+
+# Poduct spec
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
+
+# The Rebeller
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.rebellion.the_rebeller = pkm774
+
+# Rebellion build type
+CUSTOM_BUILD_TYPE := OFFICIAL
+CUSTOM_RELEASE_TYPE := Release
 
 # Inherit from X00T device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := asus
-PRODUCT_DEVICE := X00T
+PRODUCT_DEVICE := X00TD
 PRODUCT_MANUFACTURER := asus
-PRODUCT_NAME := lineage_X00T
-PRODUCT_MODEL := ZenFone Max Pro M1
+PRODUCT_NAME := rebellion_X00TD
+PRODUCT_MODEL := ASUS_X00TD
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
 TARGET_VENDOR := asus
-TARGET_VENDOR_PRODUCT_NAME := X00T
+TARGET_VENDOR_PRODUCT_NAME := X00TD
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="coral-user 10 QQ2A.200501.001.B2 6352890 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := google/coral/coral:10/QQ2A.200501.001.B2/6352890:user/release-keys
-
-# The following system and vendor props will be set by vendor init
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
-    ro.product.name \
-    ro.product.model
-
-PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
-    ro.vendor.product.device \
-    ro.vendor.product.name \
-    ro.vendor.product.model
+    
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+    
