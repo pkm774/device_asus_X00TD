@@ -541,7 +541,8 @@ PRODUCT_COPY_FILES += \
 # Prebuilts
 PRODUCT_PACKAGES += \
     CallRecorder \
-    GoogleCameraGo
+    GoogleCameraGo \
+    MusicPlayerGo
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
