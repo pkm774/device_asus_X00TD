@@ -28,6 +28,7 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
+import init.spectrum.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -390,6 +391,10 @@ on post-fs-data
 # Permissions for Touch dclick Mode
     chown system system /sys/kernel/touchpanel/dclicknode
     chmod 0664 /sys/kernel/touchpanel/dclicknode
+    
+# Permissions for Touch Gesture Mode
+    chown system system /sys/kernel/touchpanel/gesture_node
+    chmod 0664 /sys/kernel/touchpanel/gesture_node
 
     # Create /data/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
