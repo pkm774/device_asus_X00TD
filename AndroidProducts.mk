@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rebellion_X00TD.mk
+    $(LOCAL_DIR)/cesium_X00TD.mk
 
 COMMON_LUNCH_CHOICES := \
-    rebellion_X00TD-user \
-    rebellion_X00TD-userdebug \
-    rebellion_X00TD-eng
+    cesium_X00TD-user \
+    cesium_X00TD-userdebug \
+    cesium_X00TD-eng
