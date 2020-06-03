@@ -535,13 +535,9 @@ PRODUCT_PACKAGES += \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
- 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-com.github.axet.callrecorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.github.axet.callrecorder.xml
     
 # Prebuilts
 PRODUCT_PACKAGES += \
-    CallRecorder \
     GoogleCameraGo \
     MusicPlayerGo
     
