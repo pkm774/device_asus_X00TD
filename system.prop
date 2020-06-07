@@ -265,18 +265,15 @@ ro.ril.hsupa.category=6
 persist.cust.tel.eons=1 
 ro.ril.set.mtu1472=1
 
-#Dont remove this
-persist.sys.use_dithering=1  
-
 # Net Speed Tweak
-net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960
-net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152
-net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576
-net.tcp.buffersize.hspa=6144,87380,524288,6144,16384,262144
+net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.wifi=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.umts=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
 net.tcp.buffersize.gprs=4096,87380,256960,4096,16384,256960
-net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576
+net.tcp.buffersize.edge=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.hspda=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.hspa=4096,87380,256960,4096,16384,256960
+net.tcp.buffersize.evdo=4096,87380,256960,4096,16384,256960
 net.ipv4.tcp_ecn=0 
 net.ipv4.route.flush=1 
 net.ipv4.tcp_rfc1337=1 
@@ -339,3 +336,4 @@ persist.dbg.volte_avail_ovr=1
 persist.radio.rat_on=combine
 persist.radio.data_ltd_sys_ind=1
 persist.radio.data_con_rprt=1
+
