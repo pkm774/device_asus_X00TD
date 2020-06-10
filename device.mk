@@ -539,9 +539,7 @@ PRODUCT_PACKAGES += \
     
 # Prebuilts
 PRODUCT_PACKAGES += \
-    CameraCalibration \
     GoogleCameraGo \
-    SnapdragonCamera
     #MusicPlayerGo
     
 PRODUCT_COPY_FILES += \
@@ -557,30 +555,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wigig_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wigig_supplicant.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-    
-# SnapdragonCamera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-asus_snapcam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-asus_snapcam.xml \
-    $(LOCAL_PATH)/configs/asus_snapcam-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/asus_snapcam-hiddenapi-package-whitelist.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/lib64/libarcsoft_single_chart_calibration.so:$(TARGET_COPY_OUT_SYSTEM)/app/CameraCalibration/lib/arm64/libarcsoft_single_chart_calibration.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libhqmpbase.so:$(TARGET_COPY_OUT_SYSTEM)/app/CameraCalibration/lib/arm64/libhqmpbase.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_hq_dualcam_calibration.so:$(TARGET_COPY_OUT_SYSTEM)/app/CameraCalibration/lib/arm64/libjni_hq_dualcam_calibration.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libarcsoft_beautyshot.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libarcsoft_beautyshot.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libarcsoft_hdr.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libarcsoft_hdr.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libarcsoft_night_shot.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libarcsoft_night_shot.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libarcsoft_panorama_burstcapture.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libarcsoft_panorama_burstcapture.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_hq_beautyshot.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_hq_beautyshot.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_hq_hdr_shot.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_hq_hdr_shot.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_hq_night_shot.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_hq_night_shot.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_hq_panorama.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_hq_panorama.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_imageutil.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_imageutil.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_snapcammosaic.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_snapcammosaic.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libjni_snapcamtinyplanet.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libjni_snapcamtinyplanet.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libmpbase.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libmpbase.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libscene-native-lib.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libscene-native-lib.so \
-    $(LOCAL_PATH)/prebuilt/lib64/libtensorflow_inference.so:$(TARGET_COPY_OUT_SYSTEM)/priv-app/SnapdragonCamera/lib/arm64/libtensorflow_inference.so
 
 
 # Zen Parts
