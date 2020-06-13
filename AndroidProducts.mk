@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cesium_X00TD.mk
+    $(LOCAL_DIR)/legion_X00TD.mk
 
 COMMON_LUNCH_CHOICES := \
-    cesium_X00TD-user \
-    cesium_X00TD-userdebug \
-    cesium_X00TD-eng
+    legion_X00TD-user \
+    legion_X00TD-userdebug \
+    legion_X00TD-eng
