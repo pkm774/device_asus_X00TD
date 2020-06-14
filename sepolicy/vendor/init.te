@@ -14,4 +14,3 @@ allow init sysfs_battery_supply:file { open write };
 
 dontaudit init nvram_btwifi:process noatsecure;
 dontaudit init domain:process noatsecure;
-allow hal_lineage_livedisplay_qti qdisplay_service:service_manager find;

@@ -29,6 +29,11 @@ TARGET_BOOT_ANIMATION_RES := 1080
 CUSTOM_BUILD_TYPE := UNOFFICIAL
 CUSTOM_RELEASE_TYPE := release
 
+# Use Gapps
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
+
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
@@ -51,12 +56,6 @@ BUILD_FINGERPRINT := "google/coral/coral:10/QQ2A.200501.001.A3/6353761:user/rele
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
     
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
-# Use Gapps
-TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-WITH_GAPPS := true
-TARGET_GAPPS_ARCH := arm64
-IS_PHONE := true
-endif
+
 
 
