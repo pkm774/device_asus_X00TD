@@ -34,6 +34,9 @@ WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 IS_PHONE := true
 
+#OFFICIAL
+LEGION_BUILD_TYPE := OFFICIAL
+
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
