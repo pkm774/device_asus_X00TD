@@ -25,7 +25,7 @@
     <integer name="config_multiuserMaximumUsers">4</integer>
 
     <!--  Whether Multiuser UI should be shown -->
-    <bool name="config_enableMultiUserUI">true</bool>
+    <bool name="config_enableMultiUserUI">false</bool>
 
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
     <bool name="config_useVideoPauseWorkaround">true</bool>
@@ -607,7 +607,7 @@
     <bool name="config_filterDisplayModes">true</bool>
 
     <!-- Radius of the software rounded corners. -->
-    <dimen name="rounded_corner_radius">14dp</dimen>
+    <dimen name="rounded_corner_radius">6dp</dimen>
 
     <!-- Smart Charging is available. -->
     <bool name="config_smartChargingAvailable">true</bool>
