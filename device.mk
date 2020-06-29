@@ -412,10 +412,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-# RRO configuration
-TARGET_USES_RRO := true
-PRODUCT_ENFORCE_RRO_TARGETS := *
-
 # Power
 PRODUCT_PACKAGES += \
      android.hardware.power@1.0-service \
