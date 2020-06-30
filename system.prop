@@ -222,9 +222,7 @@ ro.vendor.qti.config.zram=true
 persist.asus.led.on=1
 
 # System Tweaks 
-ro.config.hw_fast_dormancy=1 
-ro.config.hw_quickpoweron=true 
-persist.sys.shutdown.mode=hibernate 
+ro.config.hw_fast_dormancy=1
 ro.config.hw_power_saving=true 
 
 # Ram managements
