@@ -105,14 +105,6 @@ vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# Audio HAL Prebuilts
-vendor/lib/hw/audio.primary.sdm660.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib/libtinycompress_vendor.so
-vendor/lib64/hw/audio.primary.sdm660.so
-vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libtinycompress_vendor.so
-
 # Bluetooth - from LA.UM.8.2.r1-06200-sdm660.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|5acf94f38e47c2ec43c95e132dfe7b5d71ec41c4
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
