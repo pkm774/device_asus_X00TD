@@ -25,10 +25,6 @@ $(call inherit-product, vendor/legion/config/common_full_phone.mk)
 # Poduct spec
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Legion build type
-CUSTOM_BUILD_TYPE := UNOFFICIAL
-CUSTOM_RELEASE_TYPE := release
-
 # Use Gapps
 WITH_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
