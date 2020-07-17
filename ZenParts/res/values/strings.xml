@@ -106,6 +106,7 @@
     <string name="ambient_gesture_haptic_feedback_summary">Vibrate when a Ambient gesture is detected</string>
 
     <!-- Ambient Display -->
+    <string name="category_gesture">Gestures</string>
     <string name="ambient_display_enable_title">Ambient display gestures</string>
     <string name="ambient_display_enable_summary">Wake screen when you receive notifications</string>
     <string name="ambient_display_gestures_title">Ambient display gestures</string>
