@@ -128,6 +128,13 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         context.startService(new Intent(context, SensorsDozeService.class));
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
+            
+            //FPS
+             boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
+             if (enabled) {
+                             context.startService(new Intent(context, FPSInfoService.class));
+                          }
+            
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_ENABLED, 0));
 
@@ -153,16 +160,11 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         VibratorStrengthPreference.restore(context);
         
-        //FPS
-        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
-
-        }
+	}
     }
     private void showToast(String toastString, Context context) {
     Toast.makeText(context, toastString, Toast.LENGTH_SHORT)
             .show();
-}
+    }
 }
 

@@ -132,6 +132,11 @@ public class DeviceSettings extends PreferenceFragment implements
             startActivity(intent);
             return true;
         });
+            
+        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
+        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
+        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
+        mSPECTRUM.setOnPreferenceChangeListener(this);
 
 	//Ambient gestures
 	mAmbientPref = findPreference("ambient_display_gestures");
@@ -158,11 +163,6 @@ public class DeviceSettings extends PreferenceFragment implements
         .contains(PREF_SELINUX_MODE));
 
     }
-    
-    mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
-    mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
-    mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-    mSPECTRUM.setOnPreferenceChangeListener(this);
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
@@ -197,7 +197,6 @@ public class DeviceSettings extends PreferenceFragment implements
                   setSelinuxEnabled(mSelinuxMode.isChecked(), (Boolean) value);
                   return true;
                 }
-
                 break;
                 
             case PREF_KEY_FPS_INFO:
