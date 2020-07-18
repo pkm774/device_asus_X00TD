@@ -163,5 +163,8 @@
     <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
     <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
+    
+    <!-- QS tile title -->
+    <string name="dirac_qs_tile_title">Dirac Sound</string>
 
 </resources>
