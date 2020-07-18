@@ -126,6 +126,9 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
 	// Ambient
         context.startService(new Intent(context, SensorsDozeService.class));
+        
+        //Dirac
+        context.startService(new Intent(context, DiracService.class));
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             

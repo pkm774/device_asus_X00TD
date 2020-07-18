@@ -15,24 +15,37 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <!--  <PreferenceCategory
+    <PreferenceCategory
         android:key="audio"
-        android:title="@string/audio_title">
-        <com.asus.zenparts.preferences.CustomSeekBarPreference
+        android:title="@string/audio_category">
+        
+        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+            android:defaultValue="false"
+            android:key="dirac_enabled"
+            android:summary="@string/dirac_summary"
+            android:title="@string/dirac_title"
+            android:icon="@drawable/ic_dirac" />
+
+        <com.asus.zenparts.preferences.SecureSettingListPreference
             android:defaultValue="0"
-            android:key="headphone_gain"
-            android:max="20"
-            app:min="-40"
-            android:icon="@drawable/ic_headphone"
-            android:title="@string/headphone_gain" />
-        <com.asus.zenparts.preferences.CustomSeekBarPreference
-            android:defaultValue="0"
-            android:key="microphone_gain"
-            android:max="20"
-            app:min="-10"
-            android:icon="@drawable/ic_mic"
-            android:title="@string/microphone_gain" />
-    </PreferenceCategory> -->
+            android:dependency="dirac_enabled"
+            android:entries="@array/dirac_headset_pref_entries"
+            android:entryValues="@array/dirac_headset_pref_values"
+            android:key="dirac_headset_pref"
+            android:summary="%s"
+            android:title="@string/dirac_headset_title"
+            android:icon="@drawable/ic_headphones" />
+            
+        <com.asus.zenparts.preferences.SecureSettingListPreference
+            android:defaultValue="0,0,0,0,0,0,0"
+            android:dependency="dirac_enabled"
+            android:entries="@array/dirac_preset_pref_entries"
+            android:entryValues="@array/dirac_preset_pref_values"
+            android:key="dirac_preset_pref"
+            android:summary="%s"
+            android:title="@string/dirac_preset_title"
+            android:icon="@drawable/ic_preset" />
+    </PreferenceCategory>
     
     <PreferenceCategory
         android:key="spectrum_profile"
@@ -81,26 +94,14 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory>
-        <android:title="@string/category_gesture">
-        <!--   <Preference
-                 android:key="gestures"
-                 android:title="@string/zenmotions"
-                 android:summary="@string/zenmotions_summary"
-                 android:icon="@drawable/ic_gestures"
-                 android:persistent="false" >
-                 <intent android:action="android.intent.action.MAIN"
-                         android:targetPackage="com.asus.zenparts"
-                         android:targetClass="com.asus.zenparts.settings.ScreenOffGestureSettings" />
-        </Preference> -->
-        
+    <PreferenceCategory
+        android:title="@string/category_gesture">
         <PreferenceScreen
             android:key="ambient_display_gestures"
             android:fragment="com.asus.zenparts.ambient.AmbientGesturePreferenceActivity"
             android:summary="@string/ambient_display_gestures_summary"
             android:icon="@drawable/ic_doze"
             android:title="@string/ambient_display_gestures_title" />
-            
     </PreferenceCategory>
 
     <PreferenceCategory
