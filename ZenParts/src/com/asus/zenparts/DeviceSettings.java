@@ -234,15 +234,6 @@ public class DeviceSettings extends PreferenceFragment implements
         }
         return true;
     }
-          @Override
-          protected void onPostExecute(Boolean result) {
-            super.onPostExecute(result);
-            if (!result) {
-              // Did not work, so restore actual value
-              setSelinuxEnabled(SELinux.isSELinuxEnforced(), mSelinuxPersistence.isChecked());
-            }
-          }
-        }
 
     private boolean isAppNotInstalled(String uri) {
         PackageManager packageManager = getContext().getPackageManager();
