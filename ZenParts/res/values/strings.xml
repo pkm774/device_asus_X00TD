@@ -140,9 +140,9 @@
     <string name="dirac_preset_pop">Pop</string>
     <string name="dirac_preset_classical">Classical</string>
     <string name="dirac_preset_hiphop">Hip Hop</string>
-    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_rb">R and B</string>
     <string name="dirac_preset_electronic">Electronic</string>
-    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_acoustic">Acoustic</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
     
