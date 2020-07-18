@@ -56,10 +56,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_SPECTRUM = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
-    final static String PREF_HEADPHONE_GAIN = "headphone_gain";
-    private static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
-    final static String PREF_MICROPHONE_GAIN = "microphone_gain";
-    private static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
@@ -67,10 +63,11 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private CustomSeekBarPreference mTorchBrightness;
     private VibratorStrengthPreference mVibratorStrength;
-    private CustomSeekBarPreference mHeadphoneGain;
-    private CustomSeekBarPreference mMicrophoneGain;
     private Preference mKcal;
     private Preference mAmbientPref;
+    private SecureSettingSwitchPreference mEnableDirac;
+    private SecureSettingListPreference mHeadsetType;
+    private SecureSettingListPreference mPreset;
     
     private SecureSettingListPreference mSPECTRUM;
 
@@ -95,16 +92,16 @@ public class DeviceSettings extends PreferenceFragment implements
                 enhancerEnabled = false;
             }
         }
-
-        SecureSettingSwitchPreference enableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
-        enableDirac.setOnPreferenceChangeListener(this);
-        enableDirac.setChecked(enhancerEnabled);
-	// Headset
-        SecureSettingListPreference headsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
-        headsetType.setOnPreferenceChangeListener(this);
-	// Preset
-        SecureSettingListPreference preset = (SecureSettingListPreference) findPreference(PREF_PRESET);
-        preset.setOnPreferenceChangeListener(this);
+	// Dirac
+        mEnableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
+        mEnableDirac.setOnPreferenceChangeListener(this);
+        mEnableDirac.setChecked(enhancerEnabled);
+	// HeadSet
+        mHeadsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
+        mHeadsetType.setOnPreferenceChangeListener(this);
+	// PreSet
+        mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
+        mPreset.setOnPreferenceChangeListener(this);
         
         mContext = this.getContext();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -117,12 +114,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mTorchBrightness.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
-
-        mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
-        mHeadphoneGain.setOnPreferenceChangeListener(this);
-
-        mMicrophoneGain = (CustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
-        mMicrophoneGain.setOnPreferenceChangeListener(this);
 
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
@@ -209,14 +200,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 mSPECTRUM.setValue((String) value);
                 mSPECTRUM.setSummary(mSPECTRUM.getEntry());
                 FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case PREF_HEADPHONE_GAIN:
-                FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
-                break;
-
-            case PREF_MICROPHONE_GAIN:
-                FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
                 break;
                 
             case PREF_KEY_FPS_INFO:

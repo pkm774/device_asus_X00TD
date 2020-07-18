@@ -1,30 +1,41 @@
+/*
+ * Copyright (C) 2018 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.asus.zenparts;
 
+final class DiracUtils {
 
-import java.lang.IllegalArgumentException;
-import android.content.Context;
+    private final DiracSound mDiracSound;
 
-public final class DiracUtils {
-
-public DiracSound mDiracSound;
-
-    public DiracUtils() {
+    DiracUtils() {
         mDiracSound = new DiracSound(0, 0);
     }
 
-
-   public void onBootCompleted() {
+    void onBootCompleted() {
         setEnabled(mDiracSound.getMusic() == 1);
         mDiracSound.setHeadsetType(mDiracSound.getHeadsetType());
         setLevel(getLevel());
     }
 
-   public  void setEnabled(boolean enable) {
+    void setEnabled(boolean enable) {
         mDiracSound.setEnabled(enable);
         mDiracSound.setMusic(enable ? 1 : 0);
     }
 
-    public boolean isDiracEnabled() {
+    boolean isDiracEnabled() {
         return mDiracSound.getMusic() == 1;
     }
 
