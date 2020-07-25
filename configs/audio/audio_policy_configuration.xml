@@ -334,9 +334,6 @@
                        sources="usb_accessory output"/>
             </routes>
         </module>
-        
-        <!-- Bluetooth Audio HAL -->
-        <xi:include href="/vendor/etc/bluetooth_qti_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL -->
         <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>

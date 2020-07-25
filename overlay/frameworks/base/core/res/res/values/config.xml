@@ -629,10 +629,6 @@
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
 
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">0</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
     <!-- Overlays for LegionOS ENDS -->
 
 

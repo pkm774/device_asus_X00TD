@@ -88,11 +88,6 @@ volume index from 0 to 100.
         <point>1,-5500</point>
         <point>33,-3010</point>
         <point>66,-1520</point>
-        <!--
-        <point>0,-2970</point>
-        <point>33,-2010</point>
-        <point>66,-1020</point>
-        -->
         <point>100,0</point>
     <!-- update from android O to P wanjunyan 20181013 end -->
     </volume>
