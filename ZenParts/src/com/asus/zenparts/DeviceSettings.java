@@ -53,8 +53,8 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
     
-    private static final String PREF_SPECTRUM = "spectrum";
-    private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
+    public static final String PREF_SPECTRUM = "spectrum";
+    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
