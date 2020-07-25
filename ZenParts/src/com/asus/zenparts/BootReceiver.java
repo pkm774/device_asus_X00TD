@@ -52,13 +52,25 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
-
+        
+	//MSM Thermal control
+	FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, 
+		Settings.Secure.getInt(context.getContentResolver(),
+                	DeviceSettings.PERF_MSM_THERMAL, 0));
+        FileUtils.setValue(DeviceSettings.CORE_CONTROL_PATH, 
+        	Settings.Secure.getInt(context.getContentResolver(),
+                	DeviceSettings.PERF_CORE_CONTROL, 0));
+        FileUtils.setValue(DeviceSettings.VDD_RESTRICTION_PATH, 
+        	Settings.Secure.getInt(context.getContentResolver(),
+                	DeviceSettings.PERF_VDD_RESTRICTION, 0));
+        //Torch       
         FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
         FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
+        //BLD
         FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, 
         	 Settings.Secure.getInt(context.getContentResolver(),
                 	 DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));

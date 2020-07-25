@@ -393,7 +393,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc \
     init.safailnet.rc \
     init.spectrum.rc \
-    init.spectrum.sh
+    init.spectrum.sh \
+    init.parallax.rc \
+    init.parallax.sh
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \

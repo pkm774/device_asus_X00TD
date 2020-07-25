@@ -24,3 +24,9 @@ allow system_app sysfs_mgain:file { open read getattr write };
 allow system_app sysfs_tbrightness:file { open getattr write };
 allow system_app spectrum_prop:property_service set;
 get_prop(system_app, spectrum_prop);
+
+allow system_app sysfs_msmthermal:file { open read getattr write };
+allow system_app sysfs_corecontrol:file { open read getattr write };
+allow system_app sysfs_vddrestrict:file { open read getattr write };
+allow system_app cpucore_prop:property_service set;
+get_prop(system_app, cpucore_prop);

@@ -21,3 +21,8 @@ type sysfs_backlight, sysfs_type, fs_type;
 type sysfs_hgain, sysfs_type, fs_type;
 type sysfs_mgain, sysfs_type, fs_type;
 type sysfs_tbrightness, sysfs_type, fs_type;
+
+# MSM thermal
+type sysfs_msmthermal, sysfs_type, fs_type;
+type sysfs_corecontrol, sysfs_type, fs_type;
+type sysfs_vddrestrict, sysfs_type, fs_type;

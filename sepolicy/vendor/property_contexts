@@ -27,5 +27,8 @@ wifi.active.interface              u:object_r:wifi_prop:s0
 # Spectrum
 persist.spectrum.profile                      u:object_r:spectrum_prop:s0
 
+# MSM thermal profile
+persist.cpucore.profile            u:object_r:cpucore_prop:s0
+
 # Dirac
 persist.audio.dirac                           u:object_r:dirac_prop:s0

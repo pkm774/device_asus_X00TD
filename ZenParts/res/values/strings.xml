@@ -146,6 +146,27 @@
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
     
+    <string name="thermal_title">Thermal</string>
+    <string name="msmthermal_title">MSM Thermal</string>
+    <string name="msmthermal_summary">Enable Thermal driver control</string>
+    <string name="corecontrol_title">Core Control</string>
+    <string name="corecontrol_summary">Limit the cores</string>
+    <string name="vddrestrict_title">VDD Restriction</string>
+    <string name="vddrestrict_summary">Limits CPU voltage</string>
+    <string name="cpucore_title">CPU Core</string>
+    <string name="cpucore_summary">Control Your CPU core</string>
+    <string name="cpucore_dialogTitle">Select no. of core want to disable</string>
+
+    <!-- Values for CPU Boost Presets -->
+    <string name="cpucore_zero">0</string>
+    <string name="cpucore_one">1</string>
+    <string name="cpucore_two">2</string>
+    <string name="cpucore_three">3</string>
+    <string name="cpucore_four">4</string>
+    <string name="cpucore_five">5</string>
+    <string name="cpucore_six">6</string>
+    <string name="cpucore_seven">7</string>
+    
     <!-- Ambient gesture haptic feedback -->
     <string name="ambient_gesture_haptic_feedback">Haptic feedback</string>
     <string name="ambient_gesture_haptic_feedback_summary">Vibrate when a Ambient gesture is detected</string>

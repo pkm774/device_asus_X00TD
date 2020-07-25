@@ -62,6 +62,43 @@
             android:title="@string/spectrum_title" />
 
     </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="thermal"
+        android:title="@string/thermal_title">
+
+        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+            android:key="msmthermal"
+            android:defaultValue="false"
+            android:title="@string/msmthermal_title"
+            android:icon="@drawable/ic_mtherm"
+            android:summary="@string/msmthermal_summary" />
+
+        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+            android:key="corecontrol"
+            android:defaultValue="true"
+            android:title="@string/corecontrol_title"
+            android:icon="@drawable/ic_ccontrol"
+            android:summary="@string/corecontrol_summary" />
+
+        <com.asus.zenparts.preferences.SecureSettingSwitchPreference
+            android:key="vddrestrict"
+            android:defaultValue="false"
+            android:title="@string/vddrestrict_title"
+            android:icon="@drawable/ic_vddres"
+            android:summary="@string/vddrestrict_summary" />
+
+        <com.asus.zenparts.preferences.SecureSettingListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/cpucore_dialogTitle"
+            android:entries="@array/cpucore_profiles"
+            android:entryValues="@array/cpucore_values"
+            android:key="cpucore"
+            android:summary="@string/cpucore_summary"
+            android:icon="@drawable/ic_cpucore" 
+            android:title="@string/cpucore_title" />
+    </PreferenceCategory>
+
 
     <PreferenceCategory
         android:key="display"

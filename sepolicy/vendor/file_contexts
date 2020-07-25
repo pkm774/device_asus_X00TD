@@ -70,3 +70,8 @@
 # Touch HAL
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.X00TD      u:object_r:hal_lineage_touch_default_exec:s0
 
+# msm thermal
+/sys/module/msm_thermal/core_control/enabled		u:object_r:sysfs_corecontrol:s0
+/sys/module/msm_thermal/parameters/enabled		u:object_r:sysfs_msmthermal:s0
+/sys/module/msm_thermal/vdd_restriction/enabled		u:object_r:sysfs_vddrestrict:s0
+
