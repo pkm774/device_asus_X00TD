@@ -76,7 +76,7 @@
 
         <com.asus.zenparts.preferences.SecureSettingSwitchPreference
             android:key="corecontrol"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:title="@string/corecontrol_title"
             android:icon="@drawable/ic_ccontrol"
             android:summary="@string/corecontrol_summary" />
