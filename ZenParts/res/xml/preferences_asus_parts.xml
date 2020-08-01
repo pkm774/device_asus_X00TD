@@ -52,7 +52,7 @@
         android:title="@string/spectrum_profile_title">
 
         <com.asus.zenparts.preferences.SecureSettingListPreference
-            android:defaultValue="2"
+            android:defaultValue="0"
             android:dialogTitle="@string/spectrum_dialogTitle"
             android:entries="@array/spectrum_profiles"
             android:entryValues="@array/spectrum_values"
