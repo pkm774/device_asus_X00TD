@@ -205,6 +205,21 @@
     <string name="proximity_wake_enable_title">Proximity wake</string>
     <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
 
+    <!-- LKM Profiles -->
+    <string name="tcpcongestion_title">TCP Congestion</string>
+    <string name="tcpcongestion_summary">Transmission Control Protocol Congestion Algorithm</string>
+    <string name="tcpcongestion_dialogTitle">Choose your TCP Congestion Algorithm</string>
+
+    <string name="misc_title">Miscellaneous</string>
+
+    <!-- Values for LKM Presets -->
+    <string name="tcpcongestion_cubic">cubic</string>
+    <string name="tcpcongestion_westwood">westwood</string>
+    <string name="tcpcongestion_veno">veno</string>
+    <string name="tcpcongestion_bic">bic</string>
+    <string name="tcpcongestion_illinois">illinois</string>
+    <string name="tcpcongestion_htcp">htcp</string>
+
     <!-- FPS Info -->
     <string name="fps_info_title">FPS Info Overlay</string>
     <string name="fps_info_summary">Show current frames per second by overlay</string>

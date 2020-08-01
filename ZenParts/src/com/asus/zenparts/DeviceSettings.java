@@ -69,6 +69,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
+    public static final String PREF_TCP = "tcpcongestion";
+    public static final String TCP_SYSTEM_PROPERTY = "persist.tcp.profile";
 
     private CustomSeekBarPreference mTorchBrightness;
     private VibratorStrengthPreference mVibratorStrength;
@@ -84,6 +86,8 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mCoreControl;
     private SecureSettingSwitchPreference mVddRestrict;
     private SecureSettingListPreference mCPUCORE;
+
+    private SecureSettingListPreference mTCP;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
     private static Context mContext;
@@ -190,6 +194,12 @@ public class DeviceSettings extends PreferenceFragment implements
         mCPUCORE.setSummary(mCPUCORE.getEntry());
         mCPUCORE.setOnPreferenceChangeListener(this);
 
+	// TCP
+	mTCP = (SecureSettingListPreference) findPreference(PREF_TCP);
+	mTCP.setValue(FileUtils.getStringProp(TCP_SYSTEM_PROPERTY, "0"));
+	mTCP.setSummary(mTCP.getEntry());
+	mTCP.setOnPreferenceChangeListener(this);
+
 	//Ambient gestures
 	mAmbientPref = findPreference("ambient_display_gestures");
         mAmbientPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -262,6 +272,12 @@ public class DeviceSettings extends PreferenceFragment implements
                 mCPUCORE.setValue((String) value);
                 mCPUCORE.setSummary(mCPUCORE.getEntry());
                 FileUtils.setStringProp(CPUCORE_SYSTEM_PROPERTY, (String) value);
+                break;
+            
+            case PREF_TCP:
+                mTCP.setValue((String) value);
+                mTCP.setSummary(mTCP.getEntry());
+                FileUtils.setStringProp(TCP_SYSTEM_PROPERTY, (String) value);
                 break;
                
             case PREF_KEY_FPS_INFO:

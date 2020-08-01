@@ -99,6 +99,21 @@
             android:title="@string/cpucore_title" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_title">
+        
+        <com.asus.zenparts.preferences.SecureSettingListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/tcpcongestion_dialogTitle"
+            android:entries="@array/tcpcongestion_profiles"
+            android:entryValues="@array/tcpcongestion_values"
+            android:key="tcpcongestion"
+            android:summary="@string/tcpcongestion_summary"
+            android:icon="@drawable/ic_tcp" 
+            android:title="@string/tcpcongestion_title" />
+            
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="display"

@@ -7,6 +7,7 @@ on property:sys.boot_completed=1
 
 # Enable cpucore support
    setprop cpucore.support 1
+   setprop tcp.support 1
 
 # zero
 on property:persist.cpucore.profile=0
@@ -88,3 +89,24 @@ on property:persist.cpucore.profile=7
     write /sys/devices/system/cpu/cpu5/online 0
     write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
+    
+# TCP 
+# westwood
+# cubic
+on property:persist.tcp.profile=0
+    write /proc/sys/net/ipv4/tcp_congestion_control cubic
+
+on property:persist.tcp.profile=1
+    write /proc/sys/net/ipv4/tcp_congestion_control westwood
+# reno
+on property:persist.tcp.profile=2
+    write /proc/sys/net/ipv4/tcp_congestion_control veno
+# bic
+on property:persist.tcp.profile=3
+    write /proc/sys/net/ipv4/tcp_congestion_control bic
+# highspeed
+on property:persist.tcp.profile=4
+    write /proc/sys/net/ipv4/tcp_congestion_control illinois
+# htcp
+on property:persist.tcp.profile=5
+    write /proc/sys/net/ipv4/tcp_congestion_control htcp

@@ -10,3 +10,6 @@ type dirac_prop, property_type;
 
 #msm
 type cpucore_prop, property_type;
+
+#tcp
+type tcp_prop, property_type;
