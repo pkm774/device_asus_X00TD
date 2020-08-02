@@ -33,3 +33,8 @@ get_prop(system_app, cpucore_prop);
 
 allow system_app tcp_prop:property_service set;
 get_prop(system_app, tcp_prop);
+
+allow system_app sysfs_battery_supply:dir search;
+allow system_app sysfs_battery_supply:file rw_file_perms;
+
+

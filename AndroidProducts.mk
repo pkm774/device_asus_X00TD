@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/legion_X00TD.mk
+    $(LOCAL_DIR)/du_X00TD.mk
 
 COMMON_LUNCH_CHOICES := \
-    legion_X00TD-user \
-    legion_X00TD-userdebug \
-    legion_X00TD-eng
+    du_X00TD-user \
+    du_X00TD-userdebug \
+    du_X00TD-eng

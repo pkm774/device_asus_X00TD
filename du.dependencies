@@ -5,6 +5,6 @@
   },
   {
     "repository": "vendor_asus_X00TD"
-    "target_path": "vendor/asus/X00T"
+    "target_path": "vendor/asus"
   }
 ]

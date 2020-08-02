@@ -12,14 +12,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Whether to show Connected MAC Randomization in Developer Options
-         as not all devices can support dynamic MAC address change.  -->
-    <bool name="config_wifi_support_connected_mac_randomization">false</bool>
-
-    <!-- Device specific doze package -->
-    <string name="config_customDozePackage">org.lineageos.settings.doze/org.lineageos.settings.doze.DozeSettingsActivity</string>
-
-    <!-- Enable Manual Sub Provisioning -->
-    <bool name="config_enableManualSubProvisioning">true</bool>
+    <!-- Battery Health -->
+    <string name="config_batChargeCycle">/sys/class/power_supply/bms/cycle_count</string>
+    <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full_design</string>
+    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
+    <bool name="config_supportBatteryHealth">true</bool>
 
 </resources>
