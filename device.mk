@@ -81,10 +81,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    device/asus/X00TD/configs/android.hardware.camera.ar.xml:vendor/etc/permissions/android.hardware.camera.ar.xml
 
-# APEX
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
