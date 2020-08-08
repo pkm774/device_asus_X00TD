@@ -1,0 +1,10 @@
+# As we know that when the system boots up, SELinux is in permissive mode
+# and not in enforcing mode. Now init will perform the below task
+# and set selinux to enforcing state. Just a small and direct method to
+# set selinux into enforcing state, if removing androidboot.selinux=permissive
+# doesn't work.
+
+
+# Set enforcing
+on boot
+    write /sys/fs/selinux/enforce 1
