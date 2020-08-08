@@ -27,9 +27,6 @@ TARGET_BOOT_ANIMATION_RES := 1080
 IS_PHONE := true
 scr_resolution := 1080
 
-# OFFICIAL
-DU_BUILD_TYPE := OFFICIAL
-
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
