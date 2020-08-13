@@ -6,7 +6,8 @@
     "branch": "ten"
   },
   {
-    "repository": "vendor_asus_X00TD"
+    "remote": "github",
+    "repository" : "CorvusRom-Devices/vendor_asus_X00TD",
     "target_path": "vendor/asus"
     "branch": "10"
   }
