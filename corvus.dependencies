@@ -1,14 +1,20 @@
 [
   {
-    "remote": "github",
-    "repository": "mprabhat774/kernel_asus_sdm660",
-    "target_path": "kernel/asus/sdm660",
-    "branch": "ten"
+    "repository": "PixelExperience/packages_apps_PixelLiveWallpaper",
+    "target_path": "packages/apps/PixelLiveWallpaper",
+    "branch": "ten",
+    "remote": "gitlab"
   },
   {
-    "remote": "github",
+    "repository": "mprabhat774/kernel_asus_sdm660",
+    "target_path": "kernel/asus/sdm660",
+    "branch": "ten",
+    "remote": "github"
+  },
+  {
     "repository" : "CorvusRom-Devices/vendor_asus_X00TD",
-    "target_path": "vendor/asus"
-    "branch": "10"
+    "target_path": "vendor/asus",
+    "branch": "10",
+    "remote": "github"
   }
 ]
