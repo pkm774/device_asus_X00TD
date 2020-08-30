@@ -1,6 +1,5 @@
 # SPECTRUM KERNEL MANAGER
 # Ramdisk file for profile based kernel management
-# Implimentation inspired by Franco's fku profiles
 
 # Initialization
 on property:sys.boot_completed=1
@@ -10,215 +9,168 @@ on property:sys.boot_completed=1
    # Enable Spectrum support
    setprop spectrum.support 1
    # Add kernel name
-   setprop persist.spectrum.kernel Etherious
+   setprop persist.spectrum.kernel Corvus
 
 # Balance (default profile)
 on property:persist.spectrum.profile=0
+	write /proc/sys/kernel/sched_enable_thread_grouping 1
+	write /proc/sys/kernel/randomize_va_space 0
+	write /proc/sys/vm/compact_unevictable_allowed 0
+	write /proc/sys/vm/stat_interval 10
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+	write /proc/sys/kernel/random/write_wakeup_threshold 128
+	write /proc/sys/kernel/random/read_wakeup_threshold 64
+	write /proc/sys/kernel/sched_latency_ns 10000100
+	write /sys/module/cpu_boost/parameters/input_boost_ms 0
+	write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+	write /proc/sys/kernel/sched_upmigrate 96
+	write /proc/sys/kernel/sched_downmigrate 90
+	write /proc/sys/kernel/sched_boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/powersave_bias 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq	902400
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 200000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 80000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 95
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 95
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "0 633600:60000 902400:75000 1401600:100000"
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 35000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "70 633600:63 92400:71 1113600:23 1401600:82 1536600:4 1612800:83"
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1747200
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 100000
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 60000
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 20000
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "98 1113600:23 1401600:9 1747200:85 1804200:94"
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "32000 1136000:60000 1401600:75000 1747200:80000"
+	write /sys/kernel/gpu/gpu_min_clock 160
+	write /sys/module/adreno_idler/parameters/adreno_idler_active Y
+	write /sys/module/rcutree/parameters/rcu_idle_gp_delay 12
+	write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 1800
 
-    # Little Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 633000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1536000
-
-    # Big Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1113600
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1958400
-
-    # CPU Input Boost
-    write /sys/module/cpu_input_boost/parameters/input_boost_duration 64
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 902400
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 1113600
-
-    # Power Efficient Eorkqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
-
-    # CPU Enabled
-    write /sys/devices/system/cpu/cpu7/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-
-    # GPU Values
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 588000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 160000000
-
-    # Adreno Boost
-    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
-
-    # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
-    write /sys/module/adreno_idler/parameters/adreno_idler_workload 8000
-    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 5
-    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 25
-
-    # I/O Scheduler
-    write /sys/block/mmcblk0/queue/read_ahead_kb 512
-    write /sys/block/mmcblk0/queue/scheduler bfq
-
-# Performance
+# Performance (based on DrunkSauce Lite)
 on property:persist.spectrum.profile=1
-
-    # Little Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor blu_active
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 633000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1747200
-
-    # Big Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor blu_active
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1113600
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2150400
-
-    # CPU Input Boost
-    write /sys/module/cpu_input_boost/parameters/input_boost_duration 128
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 902400
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 1401600
-
-    # Power Efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
-
-    # CPU Enabled
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
-
-    # GPU Values
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 647000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 266000000
-
-    # Adreno Boost
-    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
-
-    # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
-    write /sys/module/adreno_idler/parameters/adreno_idler_workload 6000
-    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 15
-    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 30
-
-    # I/O Scheduler
-    write /sys/block/mmcblk0/queue/read_ahead_kb 1024
-    write /sys/block/mmcblk0/queue/scheduler fiops
+	write /proc/sys/kernel/sched_enable_thread_grouping 1
+	write /proc/sys/kernel/randomize_va_space 0
+	write /proc/sys/vm/compact_unevictable_allowed 0
+	write /proc/sys/vm/stat_interval 10
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+	write /proc/sys/kernel/random/write_wakeup_threshold 128
+	write /proc/sys/kernel/random/read_wakeup_threshold 128
+	write /proc/sys/kernel/sched_latency_ns 9000000
+	write /proc/sys/kernel/sched_upmigrate 70
+	write /proc/sys/kernel/sched_downmigrate 40
+	write /proc/sys/kernel/sched_boost 1
+	write /sys/module/cpu_boost/parameters/input_boost_freq "0:1843200 1:1843200 2:1843200 3:0 4:2208000 5:2208000 6:0 7:2208000"
+	write /sys/module/cpu_boost/parameters/input_boost_ms 350
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/powersave_bias 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 60
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 60
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1843200
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 2208000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 40000
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 40000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 0
+	write /sys/kernel/gpu/gpu_min_clock 160
+	write /sys/module/adreno_idler/parameters/adreno_idler_active Y
+	write /sys/module/rcutree/parameters/rcu_idle_gp_delay 4
+	write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 400
 
 # Battery
 on property:persist.spectrum.profile=2
-
-    # Little Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 633000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1401600
-
-    # Big Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor conservative
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1113600
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1747200
-
-    # CPU Input Boost
-    write /sys/module/cpu_input_boost/parameters/input_boost_duration 64
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_lp 902400
-    write /sys/module/cpu_input_boost/parameters/input_boost_freq_hp 1113600
-
-    # Power Efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
-
-    # CPU Enabled
-    write /sys/devices/system/cpu/cpu7/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
-
-    # GPU
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor powersave
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 465000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 160000000
-
-    # Adreno Boost
-    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
-
-    # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active 1
-    write /sys/module/adreno_idler/parameters/adreno_idler_workload 8000
-    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 5
-    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 25
-
-    # I/O Scheduler
-    write /sys/block/mmcblk0/queue/read_ahead_kb 128
-    write /sys/block/mmcblk0/queue/scheduler anxiety
+    write /proc/sys/kernel/sched_enable_thread_grouping 1
+	write /proc/sys/kernel/randomize_va_space 0
+	write /proc/sys/vm/compact_unevictable_allowed 0
+	write /proc/sys/vm/stat_interval 10
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+	write /proc/sys/kernel/random/write_wakeup_threshold 128
+	write /proc/sys/kernel/random/read_wakeup_threshold 64
+	write /proc/sys/kernel/sched_latency_ns 11100000
+	write /sys/module/cpu_boost/parameters/input_boost_ms 0
+	write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+	write /proc/sys/kernel/sched_upmigrate 96
+	write /proc/sys/kernel/sched_downmigrate 90
+	write /proc/sys/kernel/sched_boost 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor darkness
+	write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor darkness
+	write /sys/kernel/gpu/gpu_min_clock 160
+	write /sys/module/adreno_idler/parameters/adreno_idler_active Y
+	write /sys/module/rcutree/parameters/rcu_idle_gp_delay 12
+	write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 1800
 
 # Gaming
 on property:persist.spectrum.profile=3
-
-    # Little Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1113600
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1843200
-
-    # Big Cluster
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    chmod 0644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
-
-    # CPU Values
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor performance
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1113600
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2208000
-
-    # Power efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient N
-
-    # CPU Enabled
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu4/online 1
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
-
-    # GPU
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor performance
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 588000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 160000000
-
-    # Adreno Boost
-    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
-
-    # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active 0
-
-    # I/O Scheduler
-    write /sys/block/mmcblk0/queue/read_ahead_kb 2048
-    write /sys/block/mmcblk0/queue/scheduler noop
-
-    # Brightness
-    write /sys/class/leds/lcd-backlight/max_brightness 255
+    write /proc/sys/kernel/sched_enable_thread_grouping 1
+	write /proc/sys/kernel/randomize_va_space 0
+	write /proc/sys/vm/compact_unevictable_allowed 0
+	write /proc/sys/vm/stat_interval 10
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres "0 0 0 0"
+	write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+	write /proc/sys/kernel/random/write_wakeup_threshold 128
+	write /proc/sys/kernel/random/read_wakeup_threshold 128
+	write /proc/sys/kernel/sched_latency_ns 9000000
+	write /proc/sys/kernel/sched_upmigrate 70
+	write /proc/sys/kernel/sched_downmigrate 40
+	write /proc/sys/kernel/sched_boost 1
+	write /sys/module/cpu_boost/parameters/input_boost_freq "0:1843200 1:1843200 2:1843200 3:0 4:2208000 5:2208000 6:0 7:2208000"
+	write /sys/module/cpu_boost/parameters/input_boost_ms 350
+	write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/powersave_bias 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 200
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/powersave_bias 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows 1
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 200
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 0
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 60
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 60
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1843200
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 2208000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 40000
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 40000
+	write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 0
+	write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 0
+	write /sys/kernel/gpu/gpu_min_clock 585
+	write /sys/module/adreno_idler/parameters/adreno_idler_active N
+	write /sys/module/rcutree/parameters/rcu_idle_gp_delay 4
+	write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 400
