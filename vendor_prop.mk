@@ -39,7 +39,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.period_size=192 \
     vendor.audio_hal.in_period_size=144 \
     vendor.audio_hal.period_multiplier=3 \
-    vendor.voice.path.for.pcm.voip=false
+    vendor.voice.path.for.pcm.voip=false \
+    vendor.audio.dolby.ds2.enabled=true \
+    vendor.audio.dolby.ds2.hardbypass=false
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
