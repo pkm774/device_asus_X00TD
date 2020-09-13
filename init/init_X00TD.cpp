@@ -43,10 +43,16 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
+
 using android::base::GetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
-using android::init::property_set;
+
+int property_set(const char *key, const char *value) {
+    return __system_property_set(key, value);
+}
 
 void property_override(char const prop[], char const value[])
 {
@@ -162,8 +168,6 @@ void vendor_check_variant()
     property_override_dual("ro.product.name", "ro.vendor.product.name", product_name);
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", build_fingerprint);
 
-    // Set region code via ro.config.versatility prop
-    property_set("ro.config.versatility", region);
 }
 
 void vendor_load_properties()
