@@ -85,6 +85,12 @@ on post-fs-data
     # load IPA FWs
     start ipastart_sh
 
+on early-boot
+    chown system system /mnt/vendor/persist/sensors
+    chown system system /mnt/vendor/persist/sensors/sns.reg
+    chown system system /mnt/vendor/persist/sensors/sensors_settings
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+
 on boot
     start vendor.rmt_storage
     write /dev/cpuset/top-app/cpus 0-7
