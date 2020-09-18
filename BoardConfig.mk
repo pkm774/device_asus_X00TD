@@ -157,9 +157,6 @@ USE_OPENGL_RENDERER := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
   ifeq ($(WITH_DEXPREOPT),)
