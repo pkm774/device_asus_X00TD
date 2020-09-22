@@ -255,14 +255,6 @@ media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-record=true
 
-# Signal Tweaks 
-ro.ril.hsxpa=2 
-ro.ril.gprsclass=12 
-ro.ril.hsdpa.category=8 
-ro.ril.hsupa.category=6 
-persist.cust.tel.eons=1 
-ro.ril.set.mtu1472=1
-
 # Net Speed Tweak
 net.ipv4.tcp_ecn=0 
 net.ipv4.route.flush=1 
@@ -276,13 +268,7 @@ net.ipv4.tcp_rmem=4096 39000 187000
 net.ipv4.tcp_wmem=4096 39000 187000 
 net.ipv4.tcp_mem=187000 187000 187000 
 net.ipv4.tcp_no_metrics_save=1 
-net.ipv4.tcp_moderate_rcvbuf=1 
-
-# Website Bypass 
-net.rmnet0.dns1=8.8.8.8 
-net.rmnet0.dns2=8.8.4.4 
-net.dns1=8.8.8.8 
-net.dns2=8.8.4.4 
+net.ipv4.tcp_moderate_rcvbuf=1
 
 #Wireless Tweaks:
 net.ipv4.ip_no_pmtu_disc=0
