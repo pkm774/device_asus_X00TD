@@ -198,6 +198,7 @@
         <item>@string/tcpcongestion_bic</item>
         <item>@string/tcpcongestion_illinois</item>
         <item>@string/tcpcongestion_htcp</item>
+        <item>@string/tcpcongestion_bbr</item>
     </string-array>
     
     <string-array name="tcpcongestion_values">
@@ -207,6 +208,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </string-array>
     
 </resources>
