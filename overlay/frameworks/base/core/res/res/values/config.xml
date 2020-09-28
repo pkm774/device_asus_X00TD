@@ -590,7 +590,7 @@
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
     <!-- True if the firmware supports connected MAC randomization -->
-    <bool name="config_wifi_connected_mac_randomization_supported">false</bool>
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
 
     <!-- Display mode remapping table.
          If the mode names returned by the backend do not match
