@@ -239,12 +239,18 @@ persist.service.pcsync.enable=0
 persist.service.lgospd.enable=0
 
 #Hardware Power Saving
+power_supply.wakeup=enable
+ro.config.hw_fast_dormancy=1
 ro.config.hw_power_saving=true
 power_supply.wakeup=enable
+pm.sleep_mode=1
 profiler.force_disable_ulog=true
 profiler.force_disable_err_rpt=true
 profiler.force_disable_err_rpt=1
 profiler.force_disable_ulog=1
+video.accelerate.hw=1
+debug.egl.hw=1
+debug.gr.swapinterval=0
 
 # Steaming Tweaks
 media.stagefright.enable-http=true
@@ -254,6 +260,12 @@ media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-record=true
+
+# Signal tweaks
+persist.cust.tel.eons=1
+ro.ril.enable.amr.wideband=1
+ro.config.hw_fast_dormancy=1
+ro.config.nocheckin=1
 
 # Net Speed Tweak
 net.ipv4.tcp_ecn=0 
