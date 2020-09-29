@@ -248,9 +248,6 @@ profiler.force_disable_ulog=true
 profiler.force_disable_err_rpt=true
 profiler.force_disable_err_rpt=1
 profiler.force_disable_ulog=1
-video.accelerate.hw=1
-debug.egl.hw=1
-debug.gr.swapinterval=0
 
 # Steaming Tweaks
 media.stagefright.enable-http=true
