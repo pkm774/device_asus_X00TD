@@ -474,10 +474,6 @@ PRODUCT_COPY_FILES += \
 # Touchscreen
 PRODUCT_PACKAGES += \
     libtinyxml2
-    
-# Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.X00TD
 
 # USB
 PRODUCT_PACKAGES += \
