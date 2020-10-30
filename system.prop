@@ -279,6 +279,17 @@ net.ipv4.tcp_mem=187000 187000 187000
 net.ipv4.tcp_no_metrics_save=1 
 net.ipv4.tcp_moderate_rcvbuf=1
 
+# Net Buffer Tweets
+net.tcp.buffersize.default=4096,32768,12582912,4096,32768,12582912
+net.tcp.buffersize.gprs=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.wifi=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.lte=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.edge=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.hspa=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.umts=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.hsdpa=4096,32768,65536,4096,32768,65536
+net.tcp.buffersize.evdo_b=4096,32768,65536,4096,32768,65536
+
 #Wireless Tweaks:
 net.ipv4.ip_no_pmtu_disc=0
 net.ipv4.route.flush=1
