@@ -1,0 +1,1 @@
+allow crash_dump cnd_vendor_prop:file { read open getattr };
