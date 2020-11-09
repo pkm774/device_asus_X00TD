@@ -523,9 +523,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
     
 # Prebuilts
-PRODUCT_PACKAGES += \
-    GoogleCameraGo \
-    OPScreenRecorder
+#PRODUCT_PACKAGES += \
+#    GoogleCameraGo
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
@@ -543,7 +542,7 @@ PRODUCT_COPY_FILES += \
 
 
 # Zen Parts
-PRODUCT_PACKAGES += \
-     ZenParts
+#PRODUCT_PACKAGES += \
+#     ZenParts
 
 $(call inherit-product, vendor/asus/X00T/X00T-vendor.mk)
