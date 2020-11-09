@@ -1,1 +1,6 @@
 allow untrusted_app_29 theme_prop:file { open read getattr };
+allow untrusted_app_29 proc_qtaguid_stat:file { read open getattr };
+allow untrusted_app_29 proc_zoneinfo:file { read open getattr };
+allow untrusted_app_29 proc:file { read open getattr };
+allow untrusted_app_29 proc_vmstat:file { open };
+allow untrusted_app_29 app_data_file:file { execute };
