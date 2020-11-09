@@ -523,8 +523,8 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
     
 # Prebuilts
-#PRODUCT_PACKAGES += \
-#    GoogleCameraGo
+PRODUCT_PACKAGES += \
+    GoogleCameraGo
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
