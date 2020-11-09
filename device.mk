@@ -369,11 +369,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    ueventd.qcom.rc \
-    init.spectrum.rc \
-    init.spectrum.sh \
-    init.parallax.rc \
-    init.parallax.sh
+    ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
