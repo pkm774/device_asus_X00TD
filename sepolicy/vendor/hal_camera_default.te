@@ -10,3 +10,5 @@ allow hal_camera_default sysfs:file read;
 allow hal_camera_default vendor_camera_data_file:dir rw_dir_perms;
 allow hal_camera_default vendor_camera_data_file:file rw_file_perms;
 allow hal_camera_default mnt_vendor_file:file rw_file_perms;
+allow hal_camera_default diag_device:chr_file { read write };
+allow hal_camera_default sysfs_sensors:dir { open read };
