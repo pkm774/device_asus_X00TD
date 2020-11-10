@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
+Copyright (c) 2013-2019, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -1233,26 +1233,14 @@ void IPACM_ConntrackListener::readConntrack() {
 	unsigned int addr_len = sizeof(nlAddr);
 
 	pClient = IPACM_ConntrackClient::GetInstance();
-	if(pClient == NULL)
-	{
-		IPACMERR("unable to get conntrack client instance\n");
-		return;
-	}
-
 	len = MAX_CONNTRACK_ENTRIES * sizeof(struct nf_conntrack **);
 
 	ct_entries = (struct nf_conntrack **) malloc(len);
-	if(ct_entries == NULL)
-	{
-		IPACMERR("unable to allocate ct_entries memory \n");
-		return;
-	}
 	memset(ct_entries, 0, len);
 
 	if( pClient->fd_tcp < 0)
 	{
 		IPACMDBG_H("Invalid fd %d \n",pClient->fd_tcp);
-		free(ct_entries);
 		return;
 	}
 
