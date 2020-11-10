@@ -1855,7 +1855,7 @@ int IPACM_Wan::handle_route_add_evt(ipa_ip_type iptype)
 		{
 			/* treat Q6_MHI_WAN as STA mode also */
 			IPACMDBG_H("Q6-MHI  ipv4/v6-header already constructed \n");
-			IPACM_Wan::backhaul_mode = m_is_sta_mode;		
+			IPACM_Wan::backhaul_mode = m_is_sta_mode;
 			IPACMDBG_H("Setting up QMAP ID %d.\n", ext_prop->ext[0].mux_id);
 			IPACM_Iface::ipacmcfg->SetQmapId(ext_prop->ext[0].mux_id);
 			/* sending mux-id info to PCIE-modem for UL */
@@ -2567,7 +2567,7 @@ int IPACM_Wan::config_dft_firewall_rules(ipa_ip_type iptype)
 	}
 	else
 	{
-		IPACMDBG_H("in Q6_MHI_WAN mode, skip firewall, use default configuration \n");		
+		IPACMDBG_H("in Q6_MHI_WAN mode, skip firewall, use default configuration \n");
 	}
 	/* construct ipa_ioc_add_flt_rule with N firewall rules */
 	ipa_ioc_add_flt_rule *m_pFilteringTable = NULL;
@@ -3059,7 +3059,7 @@ int IPACM_Wan::config_dft_firewall_rules(ipa_ip_type iptype)
 			}
 			else
 			{
-				IPACMDBG_H("in Q6_MHI_WAN mode, skip ICMPv6 flt rule \n");		
+				IPACMDBG_H("in Q6_MHI_WAN mode, skip ICMPv6 flt rule \n");
 			}
 			/* v6 default route */
 			memset(&flt_rule_entry, 0, sizeof(struct ipa_flt_rule_add));
@@ -5166,6 +5166,17 @@ int IPACM_Wan::handle_down_evt()
 		handle_route_del_evt(IPA_IP_v4);
 		IPACMDBG_H("Delete default v4 routing rules\n");
 
+		if(m_is_sta_mode == Q6_MHI_WAN)
+		{
+			/* Delete default v4 RT rule */
+			IPACMDBG_H("Delete default v4 routing rules\n");
+			if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[0], IPA_IP_v4) == false)
+			{
+				IPACMERR("Routing v6-lan-RT rule deletion failed!\n");
+				res = IPACM_FAILURE;
+				goto fail;
+			}
+		}
 
 #ifdef FEATURE_IPA_ANDROID
 		/* posting wan_down_tether for lan clients */
@@ -5197,6 +5208,18 @@ int IPACM_Wan::handle_down_evt()
 		handle_route_del_evt(IPA_IP_v6);
 		IPACMDBG_H("Delete default v6 routing rules\n");
 
+		if(m_is_sta_mode == Q6_MHI_WAN)
+		{
+			/* Delete default v6 RT rule */
+			IPACMDBG_H("Delete default v6 routing rules\n");
+			if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[1], IPA_IP_v6) == false)
+			{
+				IPACMERR("Routing v6-wan-RT rule deletion failed!\n");
+				res = IPACM_FAILURE;
+				goto fail;
+			}
+		}
+
 #ifdef FEATURE_IPA_ANDROID
 		/* posting wan_down_tether for lan clients */
 #ifdef FEATURE_IPACM_HAL
@@ -5218,51 +5241,37 @@ int IPACM_Wan::handle_down_evt()
 #endif
 	}
 
-	/* Delete default v4 RT rule */
-	if (ip_type != IPA_IP_v6 && wan_v4_addr_set)
+	if(m_is_sta_mode != Q6_MHI_WAN)
 	{
-		/* no need delete v4 RSC routing rules */
-		IPACMDBG_H("Delete default v4 routing rules\n");
-		if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[0], IPA_IP_v4) == false)
+		/* Delete default v4 RT rule */
+		if (ip_type != IPA_IP_v6)
 		{
-			IPACMERR("Routing rule deletion failed!\n");
-			res = IPACM_FAILURE;
-			goto fail;
-		}
-	}
-
-	/* delete default v6 RT rule */
-	if (ip_type != IPA_IP_v4)
-	{
-		IPACMDBG_H("Delete default v6 routing rules\n");
-		/* May have multiple ipv6 iface-routing rules*/
-		for (i = 0; i < 2*num_dft_rt_v6; i++)
-		{
-			if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[MAX_DEFAULT_v4_ROUTE_RULES+i], IPA_IP_v6) == false)
+			/* no need delete v4 RSC routing rules */
+			IPACMDBG_H("Delete default v4 routing rules\n");
+			if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[0], IPA_IP_v4) == false)
 			{
 				IPACMERR("Routing rule deletion failed!\n");
 				res = IPACM_FAILURE;
 				goto fail;
 			}
 		}
-		IPACMDBG_H("finished delete default v6 RT rules\n ");
-	}
 
-	/* check software routing fl rule hdl */
-	if (softwarerouting_act == true)
-	{
-		if(m_is_sta_mode == Q6_MHI_WAN)
+		/* delete default v6 RT rule */
+		if (ip_type != IPA_IP_v4)
 		{
-			handle_software_routing_disable(true);
+			IPACMDBG_H("Delete default v6 routing rules\n");
+			/* May have multiple ipv6 iface-routing rules*/
+			for (i = 0; i < 2*num_dft_rt_v6; i++)
+			{
+				if (m_routing.DeleteRoutingHdl(dft_rt_rule_hdl[MAX_DEFAULT_v4_ROUTE_RULES+i], IPA_IP_v6) == false)
+				{
+					IPACMERR("Routing rule deletion failed!\n");
+					res = IPACM_FAILURE;
+					goto fail;
+				}
+			}
+			IPACMDBG_H("finished delete default v6 RT rules\n ");
 		}
-		else
-		{
-			handle_software_routing_disable(false);
-		}
-	}
-
-	if(m_is_sta_mode != Q6_MHI_WAN)
-	{
 		/* clean wan-client header, routing rules */
 		IPACMDBG_H("left %d wan clients need to be deleted \n ", num_wan_client);
 		for (i = 0; i < num_wan_client; i++)
@@ -5311,6 +5320,18 @@ int IPACM_Wan::handle_down_evt()
 		/* free the edm clients cache */
 		IPACMDBG_H("Free wan clients cache\n");
 
+		/* check software routing fl rule hdl */
+		if (softwarerouting_act == true)
+		{
+			if(m_is_sta_mode == Q6_MHI_WAN)
+			{
+				handle_software_routing_disable(true);
+			}
+			else
+			{
+				handle_software_routing_disable(false);
+			}
+		}
 		/* free dft ipv4 filter rule handlers if any */
 		if (ip_type != IPA_IP_v6 && rx_prop != NULL)
 		{
