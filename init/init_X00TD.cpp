@@ -76,13 +76,15 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+void property_override_dual(char const system_prop[],
+        char const vendor_prop[], char const value[])
 {
     property_override(system_prop, value);
     property_override(vendor_prop, value);
 }
 
-void property_override_triple(char const system_prop[], char const vendor_prop[], char const bootimg_prop[], char const value[])
+void property_override_triple(char const system_prop[], 
+	char const vendor_prop[], char const bootimg_prop[], char const value[])
 {
     property_override(system_prop, value);
     property_override(vendor_prop, value);
@@ -165,52 +167,53 @@ void vendor_check_variant()
         region = Trim(region);
 
     // Russian model has a slightly different product name
-    if (region == "RU")
-        product_name = "RU_X00TD";
-    else
-        product_name = "WW_X00TD";
+    if (region == "RU"){
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "RU_X00TD");
+   } else {
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "WW_X00TD");
+   }
 
     // 6 GB variant
     if (sys.totalram > 4096ull * 1024 * 1024) {
         // Russian model
         if (region == "RU") {
-            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
-            product_device = "ASUS_X00T_9";
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_9");
 
         // Global model
         } else {
-            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
-            product_device = "ASUS_X00T_3";
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_3");
         }
 
     // 3/4 GB variants
     } else {
         // Russian model
         if (region == "RU") {
-            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
-            product_device = "ASUS_X00T_6";
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_6");
 
         // Global model
         } else {
-            build_fingerprint = "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys";
-            product_device = "ASUS_X00T_2";
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_2");
         }
     }
 
     // Product model overrides
-    if (region == "RU" || region == "TW" ||
-        (region == "PH" && sys.totalram > 3072ull * 1024 * 1024))
-        product_model = "ASUS_X00TDB";
-    else if (sys.totalram < 3072ull * 1024 * 1024)
-        product_model = "ASUS_X00TDA";
-    else
-        product_model = "ASUS_X00TD";
+    if (region == "RU" || region == "TW"){
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDB");
 
+    } else if (region == "PH" && (sys.totalram > 3072ull * 1024 * 1024)){
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDB");
+
+    } else if (sys.totalram < 3072ull * 1024 * 1024){
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDA");
+
+    } else {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TD");
+    }
+
+    
     // Override props based on values set
-    property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
-    property_override_dual("ro.product.model", "ro.vendor.product.model", product_model);
-    property_override_dual("ro.product.name", "ro.vendor.product.name", product_name);
-    property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", build_fingerprint);
+    property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", 
+    	"Android/sdm660_64/sdm660_64:9/PKQ1/16.2017.2005.082-20200506:user/release-keys");
 
 }
 
