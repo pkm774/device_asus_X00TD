@@ -51,6 +51,7 @@
 #include <sys/_system_properties.h>
 
 using android::base::GetProperty;
+using android::base::SetProperty;
 using android::base::ReadFileToString;
 using android::base::Trim;
 
@@ -60,10 +61,6 @@ char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
 char const *heaptargetutilization;
-
-int property_set(const char *key, const char *value) {
-    return __system_property_set(key, value);
-}
 
 void property_override(char const prop[], char const value[])
 {
@@ -114,9 +111,9 @@ static void init_alarm_boot_properties()
          * 8 -> KPDPWR_N pin toggled (power key pressed)
          */
         if (Trim(boot_reason) == "3" || reboot_reason == "true")
-            property_set("ro.alarm_boot", "true");
+            SetProperty("ro.alarm_boot", "true");
         else
-            property_set("ro.alarm_boot", "false");
+            SetProperty("ro.alarm_boot", "false");
     }
 }
 
@@ -221,12 +218,12 @@ void vendor_load_properties()
 {
     init_alarm_boot_properties();
     check_device();
-    property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_set("dalvik.vm.heapsize", heapsize);
-    property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+    SetProperty("dalvik.vm.heapstartsize", heapstartsize);
+    SetProperty("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    SetProperty("dalvik.vm.heapsize", heapsize);
+    SetProperty("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    SetProperty("dalvik.vm.heapminfree", heapminfree);
+    SetProperty("dalvik.vm.heapmaxfree", heapmaxfree);
     vendor_check_variant();
 }
 
