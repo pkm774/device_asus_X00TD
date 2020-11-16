@@ -1,11 +1,5 @@
 [
   {
-    "repository": "prabhat774/packages_apps_PixelLiveWallpaper",
-    "target_path": "packages/apps/PixelLiveWallpaper",
-    "branch": "ten",
-    "remote": "gitlab"
-  },
-  {
     "repository": "mprabhat774/kernel_asus_sdm660",
     "target_path": "kernel/asus/sdm660",
     "branch": "ten",
@@ -14,7 +8,7 @@
   {
     "repository" : "CorvusRom-Devices/vendor_asus_X00TD",
     "target_path": "vendor/asus",
-    "branch": "10",
+    "branch": "11",
     "remote": "github"
   }
 ]
