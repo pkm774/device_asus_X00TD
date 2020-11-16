@@ -210,7 +210,7 @@ void vendor_check_variant()
     
     // Override props based on values set
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", 
-    	"Android/sdm660_64/sdm660_64:9/PKQ1/16.2017.2005.082-20200506:user/release-keys");
+    	"google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys");
 
 }
 
