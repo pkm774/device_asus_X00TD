@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
 # Inherit some common Havoc stuff
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+$(call inherit-product, vendor/corvus/config/common_full_phone.mk)
 
 # Poduct spec
 TARGET_INCLUDE_WIFI_EXT := true
@@ -35,7 +35,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := asus
 PRODUCT_DEVICE := X00TD
 PRODUCT_MANUFACTURER := asus
-PRODUCT_NAME := du_X00TD
+PRODUCT_NAME := corvus_X00TD
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sdm660_64-user 9 PKQ1 8 release-keys"
