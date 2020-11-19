@@ -25,6 +25,9 @@ sys.nvram.wifimac                  u:object_r:nvram_btwifi_prop:s0
 # SELinux : avc:  denied  { set } for property=wifi.active.interface pid=2918 uid=1010 gid=1010 scontext=u:r::s0 tcontext=u:object_r:default_prop:s0 tclass=property_service
 wifi.active.interface               u:object_r:exported_wifi_prop:s0
 
+# Spectrum
+persist.spectrum.profile                      u:object_r:spectrum_prop:s0
+
 # MSM thermal profile
 persist.cpucore.profile            u:object_r:cpucore_prop:s0
 

@@ -3,6 +3,7 @@ type hal_audio_prop, property_type;
 type nvram_btwifi_prop, property_type;
 type vendor_camera_prop, property_type;
 type baseband_prop, property_type;
+type spectrum_prop, property_type;
 
 # Dirac
 type dirac_prop, property_type;
