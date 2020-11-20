@@ -20,3 +20,4 @@ get_prop(system_server, baseband_prop)
 allow system_server exported_camera_prop:file { read };
 allow system_server default_android_service:service_manager { add };
 allow system_server userspace_reboot_exported_prop:file { read };
+allow system_server app_zygote:process { getpgid };

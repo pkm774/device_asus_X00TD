@@ -1,0 +1,1 @@
+allow gmscore_app baseband_prop:file { open read };
