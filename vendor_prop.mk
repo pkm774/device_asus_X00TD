@@ -214,12 +214,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
     ro.secure=1
-
+    
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.maintainer.name=Prabhat774
-
-# Cpu
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.processor.model=Snapdragon_636
+    ro.corvus.maintainer=pkm774
 

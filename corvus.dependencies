@@ -1,6 +1,6 @@
 [
   {
-    "repository": "mprabhat774/kernel_asus_sdm660",
+    "repository": "pkm774/kernel_asus_sdm660",
     "target_path": "kernel/asus/sdm660",
     "branch": "ten",
     "remote": "github"
