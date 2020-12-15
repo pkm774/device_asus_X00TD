@@ -1,7 +1,7 @@
 # SPECTRUM KERNEL MANAGER
 # Ramdisk file for profile based kernel management
 # Implimentation inspired by Franco's fku profiles
-# Fully revised by mranonymz
+# Fully revised by @pkm774
 
 # Initialization
 on property:sys.boot_completed=1
@@ -32,13 +32,13 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "interactive"
     ## Little min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 633600
     ## Little max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 1536000
     ## Little min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 633600
     ## Little max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq
     write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq 1536000
@@ -58,13 +58,13 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "interactive"
     ## Big min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1113600
     ## Big max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1747200
     ## Big min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 1113600
     ## Big max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq
     write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq 1747200
@@ -79,15 +79,15 @@ on property:persist.spectrum.profile=0
     write /sys/devices/system/cpu/cpufreq/policy4/interactive/min_sample_time 500
     write /sys/devices/system/cpu/cpufreq/policy4/interactive/timer_rate 300
 
-    # Power Efficient Eorkqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
+    # Power Efficient Workqueues
+    write /sys/module/workqueue/parameters/power_efficient "Y"
 
     ## GPU
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 370000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 370000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 19200000
     write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 370
-    write /sys/class/kgsl/kgsl-3d0/min_clock_mhz 160
+    write /sys/class/kgsl/kgsl-3d0/min_clock_mhz 192
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
     write /sys/class/kgsl/kgsl-3d0/throttling 1
@@ -95,9 +95,14 @@ on property:persist.spectrum.profile=0
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 370000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 19200000
 
+    ## Adreno Idler
+    write /sys/module/adreno_idler/parameters/adreno_idler_active Y
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 8000
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 5
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 25
+
     ## I/O Scheduler
-    write /sys/block/mmcblk0/queue/scheduler "bfq"
-    write /sys/block/mmcblk0/queue/read_ahead 512
+    write /sys/block/mmcblk0/queue/scheduler "cfq"
 
     ## Thermal
     chmod 0644 /sys/module/msm_thermal/core_control/enabled
@@ -105,22 +110,7 @@ on property:persist.spectrum.profile=0
     write /sys/module/msm_thermal/core_control/enabled 1
     chmod 0644 /sys/module/msm_thermal/parameters/enabled 
     chown system system /sys/module/msm_thermal/parameters/enabled 
-    write /sys/module/msm_thermal/parameters/enabled Y
-    chmod 0644 /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    chown system system /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    write /sys/module/msm_thermal/VDD_RESTRICTION/enabled 0
-    
-    # RCU
-    write /sys/module/rcutree/parameters/rcu_idle_gp_delay 12
-    write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 1800
-
-    # KERNEL
-    write /proc/sys/kernel/random/write_wakeup_threshold 128
-    write /proc/sys/kernel/random/read_wakeup_threshold 64
-    write /proc/sys/kernel/sched_boost 0
-    write /proc/sys/kernel/sched_latency_ns 10000100
-    write /proc/sys/kernel/sched_downmigrate 90
-    write /proc/sys/kernel/sched_upmigrate 96
+    write /sys/module/msm_thermal/parameters/enabled "Y"
 
 # Performance
 on property:persist.spectrum.profile=1
@@ -128,55 +118,80 @@ on property:persist.spectrum.profile=1
     write /proc/sys/kernel/sched_enable_thread_grouping 1
     ## Little gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "interactive"
     ## Little min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 633600
     ## Little max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 1612800
     ## Little min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 633600
     ## Little max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq
     write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq 1612800
+    ## Little gov Setting
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/interactive/*
+    chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/interactive/*
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/target_loads "70 300000:43 633600:63 902400:73 1113600:76 1401600:82 1536000:84"
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/above_hispeed_delay "0 300000:50000 633600:60000 902400:75000 1401600:80000"
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/hispeed_freq 902400
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/align_windows 1
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/min_sample_time 500
+    write /sys/devices/system/cpu/cpufreq/policy0/interactive/timer_rate 300
 
     ## Big gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "interactive"
     ## Big min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1113600
     ## Big max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1804800
     ## Big min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 1113600
     ## Big max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1804800
+    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq 1804800
+    ## Big gov Setting
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/interactive/*
+    chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/interactive/*
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/target_loads "90 300000:43 633600:62 921600:74 1113600:76 1401600:78 1747200:80"
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/above_hispeed_delay "32000 300000:50000 633600:60000 921600:75000 1401600:80000"
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/hispeed_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/align_windows 1
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/min_sample_time 500
+    write /sys/devices/system/cpu/cpufreq/policy4/interactive/timer_rate 300
 
-    # Power Efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
+    # Power Efficient Eorkqueues
+    write /sys/module/workqueue/parameters/power_efficient "Y"
 
     ## GPU
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 370000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 370000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 370000000
-    write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 370
-    write /sys/class/kgsl/kgsl-3d0/min_clock_mhz 370
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 465000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 465000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 160000000
+    write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 465
+    write /sys/class/kgsl/kgsl-3d0/min_clock_mhz 160
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
     write /sys/class/kgsl/kgsl-3d0/throttling 0
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "msm-adreno-tz"
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 370000000
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 370000000
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 465000000
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 160000000
+
+    ## Adreno Idler
+    write /sys/module/adreno_idler/parameters/adreno_idler_active Y
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 8000
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 5
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 25
 
     ## I/O Scheduler
-    write /sys/block/mmcblk0/queue/scheduler "deadline"
-    write /sys/block/mmcblk0/queue/read_ahead 1024
+    write /sys/block/mmcblk0/queue/scheduler "cfq"
 
     ## Thermal
     chmod 0644 /sys/module/msm_thermal/core_control/enabled
@@ -184,22 +199,7 @@ on property:persist.spectrum.profile=1
     write /sys/module/msm_thermal/core_control/enabled 1
     chmod 0644 /sys/module/msm_thermal/parameters/enabled 
     chown system system /sys/module/msm_thermal/parameters/enabled 
-    write /sys/module/msm_thermal/parameters/enabled Y
-    chmod 0644 /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    chown system system /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    write /sys/module/msm_thermal/VDD_RESTRICTION/enabled 0
-    
-    # RCU
-    write /sys/module/rcutree/parameters/rcu_idle_gp_delay 4
-    write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 400
-
-    # KERNEL
-    write /proc/sys/kernel/random/write_wakeup_threshold 128
-    write /proc/sys/kernel/random/read_wakeup_threshold 128
-    write /proc/sys/kernel/sched_boost 1
-    write /proc/sys/kernel/sched_latency_ns 9000000
-    write /proc/sys/kernel/sched_downmigrate 40
-    write /proc/sys/kernel/sched_upmigrate 70
+    write /sys/module/msm_thermal/parameters/enabled "Y"
 
 # Battery
 on property:persist.spectrum.profile=2
@@ -207,61 +207,62 @@ on property:persist.spectrum.profile=2
     write /proc/sys/kernel/sched_enable_thread_grouping 1
     ## Little gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "darkness"
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "powersave"
     ## Little min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 633600
     ## Little max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 1536000
     ## Little min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_min_freq 633600
     ## Little max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq
-    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_max_freq 1536000
 
     ## Big gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "darkness"
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "powersave"
     ## Big min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1113600
     ## Big max freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1747200
     ## Big min info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 300000
+    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_min_freq 1113600
     ## Big max info
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq
-    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq 1401600
+    write /sys/devices/system/cpu/cpufreq/policy4/cpuinfo_max_freq 1747200
     
-    ## CPU parameter Settings
-    chown system system /sys/devices/system/cpu/cpufreq/darkness/*
-    chmod 0644 /sys/devices/system/cpu/cpufreq/darkness/*
-    write /sys/devices/system/cpu/cpufreq/darkness/cpucore_table "8 7 6 5 4 3 2 1"
-    write /sys/devices/system/cpu/cpufreq/darkness/sampling_rate 1000
+    ## powersave have no parameteres for policy0 and policy4
 
     # Power Efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient Y
+    write /sys/module/workqueue/parameters/power_efficient "Y"
 
     ## GPU
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 266000000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 266000000
+    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 370000000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 370000000
     write /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 160000000
-    write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 266
+    write /sys/class/kgsl/kgsl-3d0/max_clock_mhz 370
     write /sys/class/kgsl/kgsl-3d0/min_clock_mhz 160
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
     write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
     write /sys/class/kgsl/kgsl-3d0/throttling 1
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/governor "powersave"
-    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 266000000
+    write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/max_freq 370000000
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 160000000
+    
+    ## Adreno Idler
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload 8000
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait 5
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential 25
 
     ## I/O Scheduler
     write /sys/block/mmcblk0/queue/scheduler "anxiety"
-    write /sys/block/mmcblk0/queue/read_ahead 128
 
     ## Thermal
     chmod 0644 /sys/module/msm_thermal/core_control/enabled
@@ -269,10 +270,7 @@ on property:persist.spectrum.profile=2
     write /sys/module/msm_thermal/core_control/enabled 1
     chmod 0644 /sys/module/msm_thermal/parameters/enabled 
     chown system system /sys/module/msm_thermal/parameters/enabled 
-    write /sys/module/msm_thermal/parameters/enabled Y
-    chmod 0644 /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    chown system system /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    write /sys/module/msm_thermal/VDD_RESTRICTION/enabled 1
+    write /sys/module/msm_thermal/parameters/enabled "Y"
     
 # Gaming
 on property:persist.spectrum.profile=3
@@ -280,7 +278,7 @@ on property:persist.spectrum.profile=3
     write /proc/sys/kernel/sched_enable_thread_grouping 1
     ## Little gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor performance
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
     ## Little min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 633600
@@ -296,7 +294,7 @@ on property:persist.spectrum.profile=3
 
     ## Big gov
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_governor
-    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor performance
+    write /sys/devices/system/cpu/cpufreq/policy4/scaling_governor "performance"
     ## Big min freq
     chmod 0644 /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq 1113600
@@ -311,7 +309,7 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq 1804800
 
     # Power efficient Workqueues
-    write /sys/module/workqueue/parameters/power_efficient N
+    write /sys/module/workqueue/parameters/power_efficient "N"
 
     ## GPU
     write /sys/class/kgsl/kgsl-3d0/max_gpuclk 465000000
@@ -327,11 +325,10 @@ on property:persist.spectrum.profile=3
     write /sys/devices/soc/1c00000.qcom,kgsl-3d0/devfreq/1c00000.qcom,kgsl-3d0/min_freq 370000000
 
     # Adreno Idler
-    write /sys/module/adreno_idler/parameters/adreno_idler_active N
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "N"
 
     ## I/O Scheduler
     write /sys/block/mmcblk0/queue/scheduler "deadline"
-    write /sys/block/mmcblk0/queue/read_ahead 2048
 
     ## Thermal
     chmod 0644 /sys/module/msm_thermal/core_control/enabled
@@ -339,21 +336,6 @@ on property:persist.spectrum.profile=3
     write /sys/module/msm_thermal/core_control/enabled 0
     chmod 0644 /sys/module/msm_thermal/parameters/enabled 
     chown system system /sys/module/msm_thermal/parameters/enabled 
-    write /sys/module/msm_thermal/parameters/enabled Y
-    chmod 0644 /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    chown system system /sys/module/msm_thermal/VDD_RESTRICTION/enabled
-    write /sys/module/msm_thermal/VDD_RESTRICTION/enabled 0
-    
-    # RCU
-    write /sys/module/rcutree/parameters/rcu_idle_gp_delay 4
-    write /sys/module/rcutree/parameters/rcu_idle_lazy_gp_delay 400
-
-    # KERNEL
-    write /proc/sys/kernel/random/write_wakeup_threshold 128
-    write /proc/sys/kernel/random/read_wakeup_threshold 128
-    write /proc/sys/kernel/sched_boost 0
-    write /proc/sys/kernel/sched_latency_ns 9000000
-    write /proc/sys/kernel/sched_downmigrate 40
-    write /proc/sys/kernel/sched_upmigrate 70
+    write /sys/module/msm_thermal/parameters/enabled "Y"
     
 ## SPECTRUM PROPERTY END
