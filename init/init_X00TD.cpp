@@ -47,9 +47,6 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
-
 using android::base::GetProperty;
 using android::base::SetProperty;
 using android::base::ReadFileToString;
@@ -210,7 +207,7 @@ void vendor_check_variant()
     
     // Override props based on values set
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", 
-    	"google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys");
+    	"google/coral/coral:11/RQ1A.201205.008/6943376:user/release-keys");
 
 }
 
