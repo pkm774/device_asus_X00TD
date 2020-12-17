@@ -487,11 +487,11 @@
     <!-- Whether the always on display mode is available. -->
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
 
-    <!--AlwaysOnDisplay disabled by default -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+    <!--AlwaysOnDisplay Enabled by default -->
+    <bool name="config_dozeAlwaysOnEnabled">true</bool>
 
     <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!-- Smart charge sysfs node and value for suspend/resume charging-->
     <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
