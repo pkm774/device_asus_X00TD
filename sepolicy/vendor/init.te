@@ -19,6 +19,9 @@ allow init vendor_data_file:file lock;
 allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
 allow init vendor_file:file { execute_no_trans };
-allow init sysfs:file { read getattr open };
+allow init sysfs:file { read getattr open setattr };
+allow init system_file:file { execute_no_trans };
+allow init system_file:file { mounton };
 allow init hal_power_stats_hwservice:hwservice_manager { find };
-
+allow init hal_power_stats_hwservice:hwservice_manager { add };
+allow init hidl_base_hwservice:hwservice_manager { add };

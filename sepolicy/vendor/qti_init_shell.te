@@ -1,1 +1,5 @@
 allow qti_init_shell proc_swappiness:file w_file_perms;
+allow qti_init_shell system_data_file:dir { read write getattr open };
+allow qti_init_shell system_data_file:dir { remove_name };
+allow qti_init_shell system_data_file:dir { rmdir };
+allow qti_init_shell system_data_file:file { open read unlink getattr };

@@ -1,1 +1,2 @@
 r_dir_file(bootanim, sysfs_kgsl)
+allow bootanim userspace_reboot_exported_prop:file { read open getattr };
