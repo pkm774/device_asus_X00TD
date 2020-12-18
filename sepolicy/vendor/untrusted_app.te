@@ -4,3 +4,4 @@ allow untrusted_app baseband_prop:file { read } ;
 allow untrusted_app sysfs_net:dir { search } ;
 allow untrusted_app self:udp_socket { ioctl } ;
 allow untrusted_app exported_camera_prop:file { open read };
+allow untrusted_app proc_asound:dir { ioctl read getattr lock search open };
