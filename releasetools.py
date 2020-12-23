@@ -40,5 +40,12 @@ abort("Error: This package requires firmware version ' + version_firmware + \
 ' or newer. Please upgrade firmware and retry!"););'
       info.script.AppendExtra(cmd)
   return
-  
+
+def RunCustomScript(info, name, arg):
+  info.script.AppendExtra(('run_program("/tmp/install/bin/%s", "%s");' % (name, arg)))
+  return
+
+def FullOTA_InstallEnd(info):
+  RunCustomScript(info, "goodix.sh", "")
+  return
   

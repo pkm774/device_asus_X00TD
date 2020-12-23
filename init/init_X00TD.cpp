@@ -211,6 +211,17 @@ void vendor_check_variant()
 
 }
 
+void NFC_check()
+{
+    // Check NFC
+    std::ifstream infile("/proc/NFC_CHECK");
+    std::string check;
+
+    getline(infile, check);
+    if (!check.compare("SUPPORTED"))
+        property_override("ro.boot.product.hardware.sku", "X00T");
+}
+
 void vendor_load_properties()
 {
     init_alarm_boot_properties();
@@ -221,6 +232,7 @@ void vendor_load_properties()
     SetProperty("dalvik.vm.heaptargetutilization", heaptargetutilization);
     SetProperty("dalvik.vm.heapminfree", heapminfree);
     SetProperty("dalvik.vm.heapmaxfree", heapmaxfree);
+    NFC_check();
     vendor_check_variant();
 }
 
