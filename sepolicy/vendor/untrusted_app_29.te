@@ -11,3 +11,8 @@ allow untrusted_app_29 sysfs_devfreq:file { open read getattr };
 allow untrusted_app_29 proc_net_tcp_udp:file { open read getattr };
 allow untrusted_app_29 mnt_sdcard_file:lnk_file { open read getattr };
 allow untrusted_app_29 serialno_prop:file { open read getattr };
+allow untrusted_app_29 rootfs:dir { open read };
+allow untrusted_app_29 rootfs:file { getattr };
+allow untrusted_app_29 init_exec:lnk_file { read };
+allow untrusted_app_29 init_exec:file { getattr };
+allow untrusted_app_29 proc_stat:file { open read getattr };

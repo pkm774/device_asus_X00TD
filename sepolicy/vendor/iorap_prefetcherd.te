@@ -1,0 +1,4 @@
+allow iorap_prefetcherd system_app_data_file:file { read getattr open };
+allow iorap_prefetcherd installd_exec:file { read getattr open };
+allow iorap_prefetcherd radio_data_file:dir { search };
+allow iorap_prefetcherd radio_data_file:file { read getattr open };

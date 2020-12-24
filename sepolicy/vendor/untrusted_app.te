@@ -5,3 +5,5 @@ allow untrusted_app sysfs_net:dir { search } ;
 allow untrusted_app self:udp_socket { ioctl } ;
 allow untrusted_app exported_camera_prop:file { open read };
 allow untrusted_app proc_asound:dir { ioctl read getattr lock search open };
+allow untrusted_app vendor_persist_camera_prop:file { read getattr open };
+allow untrusted_app untrusted_app:netlink_route_socket { bind };
