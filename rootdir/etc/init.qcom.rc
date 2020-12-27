@@ -109,7 +109,7 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
-import /system/etc/init/init.enforcing.rc
+import /vendor/etc/init/hw/init.safailnet.rc
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
