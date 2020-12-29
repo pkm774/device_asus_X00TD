@@ -30,5 +30,8 @@
 
     <!-- FPSInfoService Fps file path -->
     <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/virtual/graphics/fb0/measured_fps</string>
+    
+    <!-- Enable doze mode -->
+    <bool name="doze_display_state_supported">true</bool>
 
 </resources>
