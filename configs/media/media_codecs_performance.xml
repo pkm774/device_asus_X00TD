@@ -99,8 +99,6 @@
             <Limit name="measured-frame-rate-720x480" range="239-239" />
             <Limit name="measured-frame-rate-1280x720" range="197-197" />
             <Limit name="measured-frame-rate-1920x1088" range="88-88" />
-            <Limit name="measured-frame-rate-1920x1080" range="88-88" />
-            <Limit name="measured-frame-rate-2160x1080" range="88-88" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.hevc" type="video/hevc" update="true">
             <Limit name="measured-frame-rate-352x288" range="198-440" />
