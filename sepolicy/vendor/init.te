@@ -15,9 +15,6 @@ allow init sysfs_battery_supply:file { open write };
 dontaudit init nvram_btwifi:process noatsecure;
 dontaudit init domain:process noatsecure;
 
-allow init vendor_data_file:file lock;
-allow init hal_audio_default:binder call;
-allow init platform_app:binder call;
 allow init vendor_file:file { execute_no_trans };
 allow init sysfs:file { read getattr open setattr };
 allow init system_file:file { execute_no_trans };
