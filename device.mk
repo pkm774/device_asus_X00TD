@@ -583,7 +583,6 @@ $(call inherit-product, build/target/product/verity.mk)
 # VNDK-SP:
 PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor \
-    vndk_package \
     libstdc++.vendor
 
 # VNDK
