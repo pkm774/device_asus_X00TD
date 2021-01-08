@@ -99,10 +99,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.dual.isp.sync=0 \
     persist.vendor.camera.isp.dualisp=1 \
-    persist.vendor.camera.eis.enable=1
-    #persist.vendor.camera.ois.disable=1 \
-    #persist.vendor.camera.is_type=4 \
-    #vendor.camera.hal1.packagelist=com.whatsapp,com.instagram.android
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.mpo.disabled=1 \
+    persist.vendor.camera.rtb.enable=1 \
+    persist.vendor.camera.ois.disable=1 \
+    persist.vendor.camera.eis.enable=1 \
+    persist.vendor.camera.is_type=5 \
+    vendor.debug.camera.prop_dis=1 \
+    persist.vendor.camera.aec.sync=1
 
 # Dalvik overrides
 PRODUCT_PROPERTY_OVERRIDES += \
