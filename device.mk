@@ -216,11 +216,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
-# Charging
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    product_charger_res_images
-
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
