@@ -16,5 +16,7 @@ git clone https://github.com/LineageOS/android_hardware_qcom_display -b lineage-
 rm -rf hardware/libhardware
 git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
 
-rm -rf frameworks/base/data/sounds/google
-git clone https://github.com/pkm774/aosp_sounds frameworks/base/data/sounds/google
+rm -rf packages/apps/Bluetooth
+git clone https://github.com/Octavi-OS/platform_packages_apps_Bluetooth packages/apps/Bluetooth
+rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+git clone https://github.com/Octavi-OS/platform_vendor_qcom_opensource_commonsys_packages_apps_Bluetooth.git vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
