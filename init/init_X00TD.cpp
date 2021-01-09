@@ -207,7 +207,7 @@ void vendor_check_variant()
     
     // Override props based on values set
     property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", 
-    	"google/coral/coral:11/RQ1A.201205.008/6943376:user/release-keys");
+    	"google/coral/coral:11/RQ1A.210105.003/7005429:user/release-keys");
 
 }
 
