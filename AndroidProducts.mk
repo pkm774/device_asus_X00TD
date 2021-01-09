@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/corvus_X00TD.mk
+    $(LOCAL_DIR)/descendant_X00TD.mk
 
 COMMON_LUNCH_CHOICES := \
-    corvus_X00TD-user \
-    corvus_X00TD-userdebug \
-    corvus_X00TD-eng
+    descendant_X00TD-user \
+    descendant_X00TD-userdebug \
+    descendant_X00TD-eng
