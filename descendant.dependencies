@@ -1,14 +1,14 @@
 [
   {
-    "repository": "pkm774/kernel_asus_sdm660",
+    "repository": "Descendant-Devices/kernel_asus_sdm660",
     "target_path": "kernel/asus/sdm660",
     "branch": "ten",
     "remote": "github"
   },
   {
-    "repository" : "pkm774/vendor_asus_X00TD",
+    "repository" : "Descendant-Devices/vendor_asus_X00TD",
     "target_path": "vendor/asus",
-    "branch": "11",
+    "branch": "eleven",
     "remote": "github"
   }
 ]
