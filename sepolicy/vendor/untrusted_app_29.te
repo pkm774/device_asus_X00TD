@@ -16,3 +16,8 @@ allow untrusted_app_29 rootfs:file { getattr };
 allow untrusted_app_29 init_exec:lnk_file { read };
 allow untrusted_app_29 init_exec:file { getattr };
 allow untrusted_app_29 proc_stat:file { open read getattr };
+allow untrusted_app_29 proc_net:file { open read getattr };
+allow untrusted_app_29 bt_firmware_file:dir { getattr };
+allow untrusted_app_29 mirror_data_file:dir { getattr };
+allow untrusted_app_29 cgroup:dir { open read };
+allow untrusted_app_29 cgroup:file { getattr };

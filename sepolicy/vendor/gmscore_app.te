@@ -2,3 +2,4 @@ allow gmscore_app baseband_prop:file { open read };
 allow gmscore_app firmware_file:filesystem { getattr };
 allow gmscore_app hal_memtrack_default:binder { call };
 allow gmscore_app bt_firmware_file:filesystem { getattr };
+allow gmscore_app hal_memtrack_hwservice:hwservice_manager { find };
