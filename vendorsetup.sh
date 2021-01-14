@@ -16,3 +16,6 @@ git clone https://github.com/LineageOS/android_hardware_qcom_display -b lineage-
 rm -rf hardware/libhardware
 git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
 
+rm -rf vendor/sounds
+git clone https://github.com/pkm774/vendor_customsounds.git vendor/sounds
+
