@@ -21,3 +21,4 @@ allow untrusted_app_29 bt_firmware_file:dir { getattr };
 allow untrusted_app_29 mirror_data_file:dir { getattr };
 allow untrusted_app_29 cgroup:dir { open read };
 allow untrusted_app_29 cgroup:file { getattr };
+allow untrusted_app_29 sysfs_net:dir { search };
