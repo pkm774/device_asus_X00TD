@@ -22,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Inherit some common Corvus stuff
 $(call inherit-product, vendor/corvus/config/common_full_phone.mk)
 
+# Build pixel sounds
+$(call inherit-product-if-exists, vendor/google/sounds/pixel-vendor.mk)
+
 # Poduct spec
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
