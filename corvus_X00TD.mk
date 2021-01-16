@@ -39,7 +39,7 @@ PRODUCT_NAME := corvus_X00TD
 PRODUCT_MODEL := ASUS_X00T
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="sdm660_64-user 9 PKQ1 8 release-keys"
+    PRIVATE_BUILD_DESC="sdm660_64-user 10 QKQ1 72 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "google/coral/coral:11/RQ1A.210105.003/7005429:user/release-keys"
