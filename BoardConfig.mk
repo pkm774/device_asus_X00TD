@@ -172,7 +172,7 @@ TARGET_QCOM_DISPLAY_VARIANT := msm8998
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(COMMON_PATH) \
+    $(DEVICE_PATH) \
     hardware/qcom-caf/$(TARGET_QCOM_AUDIO_VARIANT)/audio \
     hardware/qcom-caf/$(TARGET_QCOM_DISPLAY_VARIANT)/display \
     hardware/qcom-caf/$(TARGET_QCOM_MEDIA_VARIANT)/media
@@ -233,8 +233,8 @@ TARGET_USES_NON_LEGACY_POWERHAL := true
 
 # Properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
