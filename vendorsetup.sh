@@ -16,6 +16,5 @@ git clone https://github.com/LineageOS/android_hardware_qcom_display -b lineage-
 rm -rf hardware/libhardware
 git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
 
-rm -rf vendor/google/sounds
-git clone https://github.com/pkm774/android_vendor_google_sounds vendor/google/sounds
-
+rm -rf frameworks/base/data/sounds/google
+git clone https://github.com/pkm774/aosp_sounds frameworks/base/data/sounds/google
