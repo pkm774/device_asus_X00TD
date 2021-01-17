@@ -172,7 +172,6 @@ TARGET_QCOM_DISPLAY_VARIANT := msm8998
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH) \
     hardware/qcom-caf/$(TARGET_QCOM_AUDIO_VARIANT)/audio \
     hardware/qcom-caf/$(TARGET_QCOM_DISPLAY_VARIANT)/display \
     hardware/qcom-caf/$(TARGET_QCOM_MEDIA_VARIANT)/media
