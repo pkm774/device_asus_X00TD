@@ -4,3 +4,4 @@ allow platform_app sysfs_fps:file { getattr open read };
 
 allow platform_app time_daemon:unix_stream_socket { connectto };
 allow platform_app exported_camera_prop:file { getattr open read };
+allow platform_app default_android_service:service_manager { find };
