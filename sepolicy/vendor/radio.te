@@ -1,2 +1,3 @@
 set_prop(radio, baseband_prop)
 allow radio cnd:binder { call };
+allow radio qcom_ims_prop:file { read };
