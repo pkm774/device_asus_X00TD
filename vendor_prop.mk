@@ -216,12 +216,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.secure=0 \
     ro.debuggable=1
-
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.maintainer.name=Prabhat774
-
-# Cpu
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.processor.model=Snapdragon_636
-
