@@ -26,3 +26,4 @@ allow init hidl_base_hwservice:hwservice_manager { add };
 allow init vendor_data_file:file { lock };
 allow init hal_audio_default:binder { call };
 allow init platform_app:binder { call };
+allow init sysfs:file { write };
