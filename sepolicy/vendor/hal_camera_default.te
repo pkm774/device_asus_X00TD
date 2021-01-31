@@ -23,3 +23,4 @@ allow hal_camera_default sensors_dbg_prop:file { read open getattr };
 allow hal_camera_default diag_device:chr_file { read open getattr ioctl };
 allow hal_camera_default sysfs_sensors:lnk_file { read open getattr };
 allow hal_camera_default sysfs_sensors:file { read open getattr };
+allow hal_camera_default vendor_default_prop:property_service { set };

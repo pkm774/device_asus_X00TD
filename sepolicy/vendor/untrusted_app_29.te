@@ -27,3 +27,4 @@ allow untrusted_app_29 dalvikcache_data_file:file { execmod };
 allow untrusted_app_29 mnt_media_rw_file:dir { getattr };
 allow untrusted_app_29 selinuxfs:file { read };
 allow untrusted_app_29 baseband_prop:file { open read getattr };
+allow untrusted_app_29 vendor_persist_camera_prop:file { open read getattr };
