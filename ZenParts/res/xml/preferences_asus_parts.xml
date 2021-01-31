@@ -20,7 +20,7 @@
         android:title="@string/audio_category">
         
         <com.asus.zenparts.preferences.SecureSettingSwitchPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="dirac_enabled"
             android:summary="@string/dirac_summary"
             android:title="@string/dirac_title"
