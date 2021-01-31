@@ -96,16 +96,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
-    persist.vendor.camera.dual.isp.sync=0 \
-    persist.vendor.camera.isp.dualisp=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.mpo.disabled=1 \
-    persist.vendor.camera.rtb.enable=1 \
-    persist.vendor.camera.ois.disable=1 \
-    persist.vendor.camera.eis.enable=1 \
-    persist.vendor.camera.is_type=5 \
-    vendor.debug.camera.prop_dis=1 \
-    persist.vendor.camera.aec.sync=1
+    persist.vendor.camera.privapp.list=com.google.android.apps.cameralite,org.codeaurora.snapcam
 
 # Dalvik overrides
 PRODUCT_PROPERTY_OVERRIDES += \

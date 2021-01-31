@@ -166,9 +166,11 @@ persist.vendor.radio.atfwd.start=true
 persist.hwc.enable_vds=1
 
 #Expose aux camera for below packages
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
-persist.vendor.camera.expose.aux=1
-persist.ts.rtmakeup=1
+vendor.camera.aux.packagelist=com.google.android.apps.cameralite,org.codeaurora.snapcam
+
+#Whitelisting the below packages
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.google.android.apps.cameralite
+persist.camera.privapp.list=com.google.android.apps.cameralite,com.google.android.apps.cameralite
 
 #disable UBWC for camera
 persist.vendor.camera.preview.ubwc=0
@@ -186,6 +188,19 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 persist.backup.ntpServer="0.pool.ntp.org"
 # enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
+
+#Huaqin add for add third finger by lvzheng at 2018/5/22 start
+persist.sys.iscdfinger_998eas=1
+#Huaqin add for add third finger by lvzheng at 2018/5/22 end
+#Huaqin add for auto finger by zhangjingzhi at 20180808 start
+persist.sys.fingerauto=1
+#Huaqin add for auto finger by zhangjingzhi at 20180808 end
+persist.vendor.camera.rtb.enable=1
+#EIS Enable
+persist.vendor.camera.eis.enable=1
+persist.vendor.camera.is_type=5
+vendor.debug.camera.prop_dis=1
+persist.vendor.camera.aec.sync=1
 
 # ro.location properties below are used in conjunction
 # with NLP_MODE setting in /vendor/etc/izat.conf
