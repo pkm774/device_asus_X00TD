@@ -604,4 +604,8 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+    
+    <!-- Enable LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">false</bool>
+    
 </resources>
