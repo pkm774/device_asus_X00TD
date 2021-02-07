@@ -120,5 +120,12 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.ACCESS_NETWORK_STATE"/>
         <permission name="android.permission.CAMERA_OPEN_CLOSE_LISTENER"/>
     </privapp-permissions>
+    
+    <privapp-permissions package="dk.icepower.icesound">
+        <permission name="android.permission.INTERNET"/>
+        <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <permission name="android.permission.BLUETOOTH"/>
+    </privapp-permissions>
 
 </permissions>
