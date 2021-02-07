@@ -603,8 +603,8 @@ PRODUCT_PACKAGES += \
     
 # Prebuilts
 PRODUCT_PACKAGES += \
+    GDialer \
     GoogleCameraGo \
-    RMPlayer \
     Sounds
     
 PRODUCT_COPY_FILES += \
