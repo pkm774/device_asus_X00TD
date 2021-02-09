@@ -1,6 +1,3 @@
-# bluetooth
-/(vendor|system/vendor|system)/bin/nvram_btwifi                         u:object_r:nvram_btwifi_exec:s0
-
 # Baseband
 /(vendor|system/vendor)/bin/fix_baseband.sh                             u:object_r:fix_baseband_exec:s0
 
