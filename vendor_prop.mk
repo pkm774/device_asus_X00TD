@@ -96,20 +96,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
-    persist.vendor.camera.dual.isp.sync=0 \
-    persist.vendor.camera.isp.dualisp=1 \
-    persist.vendor.camera.eis.enable=1
-    #persist.vendor.camera.ois.disable=1 \
-    #persist.vendor.camera.is_type=4 \
-    #vendor.camera.hal1.packagelist=com.whatsapp,com.instagram.android
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.mpo.disabled=1 \
+    persist.vendor.camera.privapp.list=com.google.android.apps.cameralite,org.codeaurora.snapcam
 
 # Dalvik overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.70 \
-    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
 
 # DRM
@@ -145,10 +142,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_buffer_age=false \
     ro.opengles.version=196610 \
+    debug.sf.hw=1 \
+    debug.sf.enable_hwc_vds=1 \
     vendor.display.disable_partial_split=1 \
     vendor.display.disable_rotator_downscale=1 \
     vendor.display.perf_hint_window=50 \
     vendor.display.enable_default_color_mode=0
+
+# Graphics Drivers
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno
 
 # LED
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -159,13 +163,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.location.osnlp.package=com.google.android.gms \
     ro.location.osnlp.region.package=""
 
+# NTP Server
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.backup.ntpServer=0.pool.ntp.org
+
+# Perf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so
+
 # Enable backpressure for GL comp
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_gl_backpressure=1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.omx_default_rank.sw-audio=1 \
     debug.stagefright.omx_default_rank=0 \
     vendor.vidc.enc.disable.pq=true
 
@@ -250,9 +261,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1
 
-# USB debugging at boot
+# USB
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1
+    ro.secure=1
+
+# GBoard Spacing
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.ime.kb_pad_port_b=1
+
