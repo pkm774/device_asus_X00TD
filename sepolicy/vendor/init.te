@@ -15,4 +15,5 @@ dontaudit init domain:process noatsecure;
 allow init vendor_data_file:file lock;
 allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
+allow init same_process_hal_file:file { read getattr map execute open };
 

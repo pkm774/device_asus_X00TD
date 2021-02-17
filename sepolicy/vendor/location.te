@@ -1,0 +1,3 @@
+allow location hal_cacert_hwservice:hwservice_manager { find };
+allow location qtidataservices_app:binder { call transfer };
+allow location qtidataservices_app:fd { use };

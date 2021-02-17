@@ -1,0 +1,2 @@
+allow qtidataservices_app location:binder { call transfer };
+allow qtidataservices_app location:fd { use };
