@@ -7,3 +7,6 @@ allow untrusted_app self:udp_socket { ioctl } ;
 allow untrusted_app sysfs_devfreq:dir { search };
 allow untrusted_app sysfs_kgsl:file { open read getattr };
 allow untrusted_app sysfs_devfreq:file { open read getattr };
+allow untrusted_app proc_zoneinfo:file { read };
+allow untrusted_app proc:file { read };
+allow untrusted_app serialno_prop:file { read };
