@@ -145,9 +145,6 @@ persist.vendor.radio.atfwd.start=true
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
-#Expose aux camera for below packages
-vendor.camera.aux.packagelist=com.google.android.apps.cameralite,org.codeaurora.snapcam
-
 #Whitelisting the below packages
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.google.android.apps.cameralite
 persist.camera.privapp.list=com.google.android.apps.cameralite,com.google.android.apps.cameralite

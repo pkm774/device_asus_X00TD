@@ -101,7 +101,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.mpo.disabled=1 \
-    persist.vendor.camera.privapp.list=com.google.android.apps.cameralite,org.codeaurora.snapcam \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.is_type=5 \
     persist.vendor.camera.preview.ubwc=0 \
