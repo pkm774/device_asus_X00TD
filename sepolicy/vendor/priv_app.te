@@ -2,3 +2,4 @@ dontaudit priv_app { firmware_file bt_firmware_file }:filesystem getattr;
 allow priv_app baseband_prop:file read;
 get_prop(priv_app, baseband_prop)
 allow priv_app hal_memtrack_hwservice:hwservice_manager { find };
+allow priv_app hal_dms_hwservice:hwservice_manager { find };
