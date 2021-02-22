@@ -1,3 +1,8 @@
 allow qti_init_shell proc_swappiness:file w_file_perms;
-allow qti_init_shell system_data_file:dir { write getattr read };
+allow qti_init_shell system_data_file:dir { write read getattr map open };
 allow qti_init_shell qti_init_shell:capability { dac_read_search };
+allow qti_init_shell system_data_file:dir { remove_name };
+allow qti_init_shell system_data_file:dir { rmdir };
+allow qti_init_shell system_data_file:file { open read unlink getattr };
+allow qti_init_shell system_data_file:dir { setattr };
+allow qti_init_shell ctl_stop_prop:property_service { set };
