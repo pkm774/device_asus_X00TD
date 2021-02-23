@@ -210,9 +210,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carrier=unknown \
+    ro.com.android.dataroaming=true \
+    ro.ril.ecclist=112,911 \
+    ro.ril.def.preffered.network=10 \
+    ro.telephony.iwlan_operation_mode=legacy \
+    ro.telephony.default_network=10 \
+    ro.vendor.use_data_netmgrd=true \
+    persist.radio.add_power_save=1 \
+    persist.radio.VT_CAM_INTERFACE=2 \
+    persist.radio.data_con_rprt=1 \
+    persist.vendor.data.mode=concurrent \
+    persist.vendor.radio.atfwd.start=true \
     persist.radio.calls.on.ims=1 \
     persist.radio.aosp_usr_pref_sel=true \
     persist.radio.multisim.config=dsds \
+    persist.vendor.qti.telephony.vt_cam_interface=1 \
     persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
@@ -220,10 +233,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.data_con_rprt=1 \
-    ro.carrier=unknown \
-    ro.com.android.dataroaming=true \
-    ro.ril.ecclist=112,911 \
-    ro.telephony.iwlan_operation_mode=legacy \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Power save functionality for modem
