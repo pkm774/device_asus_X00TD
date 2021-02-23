@@ -246,31 +246,7 @@ persist.asus.led.on=1
 
 # System Tweaks 
 ro.config.hw_fast_dormancy=1
-ro.config.hw_power_saving=true 
-
-# Ram managements
-ro.HOME_APP_ADJ=1
-ro.telephony.call_ring.delay=0
-ring.delay=0 
-ro.lge.proximity.delay=25 
-mot.proximity.delay=25 
-ro.ril.enable.amr.wideband=1 
-
-# More RAM
-persist.sys.purgeable_assets=1
-persist.service.pcsync.enable=0
-persist.service.lgospd.enable=0
-
-#Hardware Power Saving
-power_supply.wakeup=enable
-ro.config.hw_fast_dormancy=1
 ro.config.hw_power_saving=true
-power_supply.wakeup=enable
-pm.sleep_mode=1
-profiler.force_disable_ulog=true
-profiler.force_disable_err_rpt=true
-profiler.force_disable_err_rpt=1
-profiler.force_disable_ulog=1
 
 # Steaming Tweaks
 media.stagefright.enable-http=true
@@ -280,20 +256,3 @@ media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-record=true
-
-# Signal tweaks
-persist.cust.tel.eons=1
-ro.ril.enable.amr.wideband=1
-ro.config.hw_fast_dormancy=1
-ro.config.nocheckin=1
-
-#Videocalling tweaks
-persist.data.iwlan.enable=true
-persist.dbg.wfc_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.radio.rat_on=combine
-persist.radio.data_ltd_sys_ind=1
-persist.radio.data_con_rprt=1
-
