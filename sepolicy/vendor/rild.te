@@ -1,0 +1,1 @@
+allow rild qtidataservices_app:binder { call };
