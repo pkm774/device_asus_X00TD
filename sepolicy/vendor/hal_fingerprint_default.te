@@ -30,3 +30,4 @@ allow hal_fingerprint_default fingerprintd_data_file:dir rw_dir_perms;
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 
 dontaudit hal_fingerprint_default sysfs_usb_supply:dir { read search write };
+allow hal_fingerprint_default mnt_vendor_file:dir { ioctl read write create getattr setattr lock open search };
