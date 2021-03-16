@@ -232,7 +232,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.vendor.radio.data_ltd_sys_ind=1 \
     persist.vendor.radio.data_con_rprt=1 \
-    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+    vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Power save functionality for modem
 PRODUCT_PROPERTY_OVERRIDES += \
