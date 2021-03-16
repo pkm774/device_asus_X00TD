@@ -665,7 +665,6 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
-    <!-- Dolby -->
     <hal format="hidl">
         <name>vendor.dolby.hardware.dms</name>
         <transport>hwbinder</transport>
@@ -676,7 +675,6 @@
         </interface>
         <fqname>@1.0::IDms/default</fqname>
     </hal>
-    <!-- Dolby -->
     <hal format="hidl">
        <name>android.hardware.power</name>
        <transport>hwbinder</transport>
