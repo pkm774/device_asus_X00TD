@@ -2,6 +2,7 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     vendor.audio_hal.period_size=240 \
+    vendor.audio_hal.period_multiplier=3 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=true \
@@ -15,7 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     vendor.voice.path.for.pcm.voip=false
     vendor.audio.offload.multiaac.enable=true \
-    vendor.audio.dolby.ds2.enabled=true \
+    vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
