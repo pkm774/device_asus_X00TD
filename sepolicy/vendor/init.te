@@ -17,5 +17,4 @@ allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
 allow init same_process_hal_file:file { read getattr map execute open };
 allow init system_file:file { mounton };
-allow init vendor_file:file { execute_no_trans };
 
