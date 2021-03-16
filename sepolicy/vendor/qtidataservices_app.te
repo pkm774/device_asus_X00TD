@@ -1,3 +1,1 @@
-allow qtidataservices_app location:binder { call transfer };
-allow qtidataservices_app location:fd { use };
-allow qtidataservices_app qtidataservices_app:socket { create };
+allow qtidataservices_app location:binder { transfer };
