@@ -332,6 +332,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
 
+# Iorap
+PRODUCT_PACKAGES += \
+    iorap-app-startup-runner
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
