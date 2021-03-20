@@ -19,3 +19,6 @@ allow init system_file:file { mounton };
 allow init hal_power_stats_hwservice:hwservice_manager { find };
 allow init hal_power_stats_hwservice:hwservice_manager { add };
 allow init hidl_base_hwservice:hwservice_manager { add };
+allow init sysfs:file { write };
+allow init same_process_hal_file:file { read getattr map execute open };
+allow init socket_device:sock_file { ioctl read write create setattr lock relabelfrom append unlink link rename open };
