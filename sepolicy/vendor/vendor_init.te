@@ -12,5 +12,5 @@ allow vendor_init {
 # this is for ramdump
 allow vendor_init block_device:lnk_file setattr;
 
-#for dirac
+# Dirac
 allow vendor_init dirac_prop:property_service set;
