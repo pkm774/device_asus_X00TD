@@ -22,23 +22,6 @@ DEVICE_PROVISIONED=1
 #
 ro.telephony.default_network=20,20
 
-debug.sf.hw=1
-debug.gralloc.enable_fb_ubwc=1
-debug.sdm.support_writeback=0
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-#Disable Skip Validate
-sdm.debug.disable_skip_validate=1
-#Disable vsync for cpu rendered apps
-debug.cpurend.vsync=false
-
-#Property to enable display default color mode
-vendor.display.enable_default_color_mode=1
-
-# Display Properties as per treble compliance
-vendor.gralloc.enable_fb_ubwc=1
-vendor.display.disable_skip_validate=1
-
 #ro.hdmi.enable=true
 #
 # system props for the cne module

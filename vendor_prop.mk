@@ -143,13 +143,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.use_buffer_age=false \
     ro.opengles.version=196610 \
-    debug.sf.hw=1 \
-    debug.sf.enable_hwc_vds=1 \
-    vendor.display.disable_partial_split=1 \
-    vendor.display.disable_rotator_downscale=1 \
-    vendor.display.perf_hint_window=50 \
     vendor.display.enable_default_color_mode=0
 
 # Graphics Drivers
