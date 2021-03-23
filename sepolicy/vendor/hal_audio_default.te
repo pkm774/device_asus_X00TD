@@ -4,6 +4,7 @@ allow hal_audio_default sysfs:dir { open read };
 allow hal_audio_default default_prop:file read;
 allow hal_audio_default sysfs_net:dir open;
 allow hal_audio_default self:process execmem;
+allow hal_audio_default bluetooth_prop:file { open read getattr };
 
 # Dirac
 allow hal_audio_default audio_prop:file { getattr open read };
