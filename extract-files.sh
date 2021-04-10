@@ -66,6 +66,17 @@ function blob_fixup() {
         patchelf --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
         patchelf --add-needed "libcutils.so" "${2}"
         ;;
+
+    lib/libwfdaudioclient.so)
+        patchelf --set-soname "libwfdaudioclient.so" "${2}"
+        ;;
+    lib/libwfdmediautils.so)
+        patchelf --set-soname "libwfdmediautils.so" "${2}"
+        ;;
+    lib/libwfdmmsink.so)
+        patchelf --add-needed "libwfdaudioclient.so" "${2}"
+        patchelf --add-needed "libwfdmediautils.so" "${2}"
+        ;;
     esac
 }
 
