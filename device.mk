@@ -255,8 +255,11 @@ PRODUCT_PACKAGES += \
     gralloc.sdm660 \
     hwcomposer.sdm660 \
     libdisplayconfig \
+    libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     liboverlay \
     libqdMetaData.system \
+    libqdMetaData.vendor \
     libvulkan \
     libtinyxml \
     libgenlock \
@@ -589,7 +592,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libaacwrapper \
     libmediaextractorservice \
-    libnl
+    libnl \
+    libstagefright_enc_common
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
