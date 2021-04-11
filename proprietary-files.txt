@@ -1463,3 +1463,21 @@ vendor/lib/soundfx/libdirac.so|f63826a905b520fa524e4c1b147be7cf65240953
 vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
 vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
+# MotoDolbyV3
+-app/MotoDolbyV3/MotoDolbyV3.apk
+-product/priv-app/daxService/daxService.apk
+etc/permissions/com.motorola.dolby.dolbyui.features.xml
+etc/sysconfig/hiddenapi-whitelist-com.motorola.dolby.dolbyui.xml
+product/etc/permissions/com.dolby.daxservice.xml
+vendor/bin/hw/vendor.dolby.hardware.dms@1.0-service
+vendor/etc/init/vendor.dolby.hardware.dms@1.0-service.rc
+vendor/etc/dolby/dax-default.xml
+vendor/lib/libdapparamstorage.so
+vendor/lib/libstagefrightdolby.so
+vendor/lib/vendor.dolby.hardware.dms@1.0.so
+vendor/lib/soundfx/libswdap.so
+vendor/lib64/libdapparamstorage.so
+vendor/lib64/libdlbdsservice.so
+vendor/lib64/soundfx/libswdap.so
+vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so
+vendor/lib64/vendor.dolby.hardware.dms@1.0.so
