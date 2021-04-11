@@ -8,3 +8,7 @@ allow platform_app default_android_service:service_manager { find };
 allow platform_app hal_fingerprint_hwservice:hwservice_manager { find };
 allow platform_app sysfs_kgsl:lnk_file read;
 allow platform_app hal_fingerprint_hwservice:hwservice_manager { find };
+
+# Dolby
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+allow platform_app hal_dms_default:binder { call transfer };
