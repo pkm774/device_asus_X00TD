@@ -16,6 +16,9 @@ allow system_app wificond:binder call;
 allow system_app sysfs_fps:file rw_file_perms;
 allow system_app sysfs_kgsl:dir { read getattr search open };
 
+allow system_app vendor_camera_data_file:dir { write lock add_name remove_name search open };
+allow system_app vendor_camera_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open };
+
 get_prop(system_app, baseband_prop)
 
 allow system_app sysfs_backlight:file { open read getattr write };
