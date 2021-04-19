@@ -16,3 +16,6 @@ allow untrusted_app proc_zoneinfo:file { read };
 allow untrusted_app proc:file { read };
 allow untrusted_app serialno_prop:file { read };
 allow untrusted_app proc_zoneinfo:file { open };
+
+# allow apps to read battery status
+r_dir_file(untrusted_app, sysfs_battery_supply)
