@@ -645,9 +645,6 @@
     <!-- Radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">6dp</dimen>
 
-    <!-- Smart Charging is available. -->
-    <bool name="config_smartChargingAvailable">true</bool>
-
     <!-- Whether or not we should show vendor mismatch message -->
     <bool name="config_show_vendor_mismatch_message">false</bool>
     
