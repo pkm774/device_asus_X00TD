@@ -38,9 +38,6 @@ struct Usb : public IUsb {
 
     sp<IUsbCallback> mCallback;
     pthread_mutex_t mLock = PTHREAD_MUTEX_INITIALIZER;
-
-    private:
-        pthread_t mPoll;
 };
 
 }  // namespace implementation
