@@ -1139,25 +1139,27 @@ vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
 bin/nvram_btwifi
 system_ext/lib64/libmmi.so:lib64/libmmi.so|f2beb127814367f841758c4f0eeca3fbe8deecb5
 
-# Perf - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/energy-awareness|d30082c491a02582ee281fe7fe9e71eba9708858
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service|3478f1a1de33d39b239f54e47b85dde6f01578c5
-vendor/bin/msm_irqbalance|0e967f5c7eaf8d863a50996459101be47adf96a2
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc|cc8658db5e19f8e5e575fb986e7d38147e675f8d
-vendor/etc/perf/commonresourceconfigs.xml|42005b8a9ec8a527d22800e3aaa9215e6d58c8a9
-vendor/etc/perf/perfboostsconfig.xml|0fd6a9951f22cfe9f0942629f9d20da433604f14
-vendor/etc/perf/targetconfig.xml|376ae331df9d6c30b6208f25d04ae4ea11c0e2ea
-vendor/etc/perf/targetresourceconfigs.xml|ed14a691b5aeba9782f4261d974bd245cadbfa01
-vendor/lib/libperfconfig.so|3fabe6d587329cbb619514cc36896cd97c94a113
-vendor/lib/libperfgluelayer.so|500a68089bbbda8bae53459c7adeed4048dce3fd
-vendor/lib/libqti-perfd-client.so|2c488bc54a6ba25c6dab51dcb538efe6b0ae2b86
-vendor/lib/libqti-perfd.so|20100a428c5aec1b82767af652f5045802a783ee
-vendor/lib/libqti-util.so|b9610a3448b53d007965e1572a0d6c65414052ff
-vendor/lib64/libperfconfig.so|391033893fe1889a608b4351f58e0c4b09c3a14b
-vendor/lib64/libperfgluelayer.so|4c95e08abc1cef5b39db06579d8f9faceb8f23d4
-vendor/lib64/libqti-perfd-client.so|0c2b82b5e5df6e0efb03ace4a259eb63487dd2b6
-vendor/lib64/libqti-perfd.so|7a6c75d2ec8ba7ed6bf17ef048c3c79a1a2daf53
-vendor/lib64/libqti-util.so|45a80be449435d277f09cc59e4a315fa86072c41
+# Perf - from sdm660_64:9:PKQ1
+vendor/bin/energy-awareness
+vendor/bin/msm_irqbalance
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
+vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
+vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/libperfconfig.so
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
 
 # Peripheral manager - from LA.UM.8.2.r1-06300-sdm660.0
 vendor/bin/pm-proxy|3182c937d93cc02c6721c053f57fc6794ad7edb3
@@ -1406,11 +1408,15 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|d4d025e0a12af87f65104
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|1ac676dca4c81094b254b62f1b608e471b385847
 
-# Thermal - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/thermal-engine|fc23647cf4ccf8f056477ecbb29169c35627b95a
--vendor/lib/libthermalclient.so|34b6ee056ae8a6df578fc243f8acd3567a49d97b
--vendor/lib64/libthermalclient.so|20f1fd238fc81bf1c6828ec416121c0ef66e0df1
-vendor/lib64/libthermalioctl.so|e1844c66a556946b45bcb6c2e747460aa5201770
+# Thermal - from sdm660_64:9:PKQ1
+vendor/bin/thermal-engine
+-vendor/lib/libthermalclient.so
+-vendor/lib64/libthermalclient.so
+vendor/lib64/libthermalioctl.so
+
+# Thermal (legacy)- from sdm660_64:9:PKQ1
+vendor/lib/hw/thermal.sdm660.so
+vendor/lib64/hw/thermal.sdm660.so
 
 # Time services - from LA.UM.8.2.r1-06200-sdm660.0
 -vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um|c935b678fdaed033513f044f6492361c3370f9f0
