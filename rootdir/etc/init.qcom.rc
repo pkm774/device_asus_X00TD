@@ -268,6 +268,12 @@ on boot
     # tpd gesture
     chown system system /proc/tpd_gesture
     chmod 0666 /proc/tpd_gesture
+    
+    # Smart Charging
+    chown system system /sys/class/power_supply/battery/charging_enabled 
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled 
+    chown system system /sys/class/power_supply/battery/input_suspend 
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
 
 # msm specific files that need to be created on /data
 on post-fs-data
