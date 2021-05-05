@@ -23,3 +23,6 @@ allow system_server sysfs:file { getattr open read };
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
+
+# Smart charging
+allow system_server sysfs_battery_supply:file rw_file_perms;
