@@ -608,8 +608,8 @@ PRODUCT_PACKAGES += \
     
 # Prebuilts
 PRODUCT_PACKAGES += \
+    AmplifierPrebuilt \
     GoogleCameraGo \
-    RMPlayer \
     Sounds
     
 PRODUCT_COPY_FILES += \
