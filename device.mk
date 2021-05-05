@@ -603,7 +603,7 @@ PRODUCT_PACKAGES += \
     
 # Prebuilts
 PRODUCT_PACKAGES += \
-    GDialer \
+    AmplifierPrebuilt \
     GoogleCameraGo \
     Sounds
     
