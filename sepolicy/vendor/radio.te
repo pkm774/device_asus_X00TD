@@ -1,6 +1,5 @@
 set_prop(radio, baseband_prop)
 allow radio cnd:binder { call };
-allow radio qcom_ims_prop:file { read };
 allow radio hal_cacert_hwservice:hwservice_manager { add find };
 allow radio hidl_base_hwservice:hwservice_manager { add find };
 allow radio vendor_file:file { open read getattr map execute };
