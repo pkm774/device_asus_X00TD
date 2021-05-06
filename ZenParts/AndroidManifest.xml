@@ -35,12 +35,8 @@
         android:supportsRtl="true"
         android:theme="@style/CustomOptionsTheme">
         <receiver
-            android:name=".BootReceiver"
-            android:defaultToDeviceProtectedStorage="true"
-            android:directBootAware="true"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
+            android:name=".BootReceiver">
+            <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
