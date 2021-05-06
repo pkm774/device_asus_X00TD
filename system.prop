@@ -57,9 +57,6 @@ vendor.vidc.enc.disable.pq=true
 # disable PQ feature by default
 vendor.vidc.enc.disable.pq=true
 
-# Additional buffers shared between Camera and Video
-vidc.enc.dcvs.extra-buff-count=2
-
 #Netflix custom property
 ro.netflix.bsp_rev=Q660-13149-1
 
@@ -155,9 +152,6 @@ vendor.camera.aux.packagelist=com.google.android.apps.cameralite,org.codeaurora.
 persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.google.android.apps.cameralite
 persist.camera.privapp.list=com.google.android.apps.cameralite,com.google.android.apps.cameralite
 
-#disable UBWC for camera
-persist.vendor.camera.preview.ubwc=0
-
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
 
@@ -178,12 +172,6 @@ persist.sys.iscdfinger_998eas=1
 #Huaqin add for auto finger by zhangjingzhi at 20180808 start
 persist.sys.fingerauto=1
 #Huaqin add for auto finger by zhangjingzhi at 20180808 end
-persist.vendor.camera.rtb.enable=1
-#EIS Enable
-persist.vendor.camera.eis.enable=1
-persist.vendor.camera.is_type=5
-vendor.debug.camera.prop_dis=1
-persist.vendor.camera.aec.sync=1
 
 # ro.location properties below are used in conjunction
 # with NLP_MODE setting in /vendor/etc/izat.conf
