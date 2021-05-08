@@ -304,23 +304,23 @@
     <ctl name="EAR SPKR PA Gain" value="G_DEFAULT" />
 
     <!-- Volume controls -->
-    <ctl name="HPHL Volume" value="11" />
-    <ctl name="HPHR Volume" value="11" />
+    <ctl name="HPHL Volume" value="9" />
+    <ctl name="HPHR Volume" value="9" />
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
     <ctl name="EAR PA Boost" value="ENABLE" />
 
-    <ctl name="RX1 Digital Volume" value="92" />
-    <ctl name="RX2 Digital Volume" value="92" />
-    <ctl name="RX3 Digital Volume" value="92" />
-    <ctl name="RX4 Digital Volume" value="92" />
-    <ctl name="RX5 Digital Volume" value="92" />
+    <ctl name="RX1 Digital Volume" value="94" />
+    <ctl name="RX2 Digital Volume" value="94" />
+    <ctl name="RX3 Digital Volume" value="94" />
+    <ctl name="RX4 Digital Volume" value="94" />
+    <ctl name="RX5 Digital Volume" value="94" />
     <ctl name="ADC1 Volume" value="4" />
     <ctl name="ADC2 Volume" value="4" />
     <ctl name="ADC3 Volume" value="4" />
-    <ctl name="DEC1 Volume" value="92" />
-    <ctl name="DEC2 Volume" value="92" />
-    <ctl name="DEC3 Volume" value="92" />
-    <ctl name="DEC4 Volume" value="92" />
+    <ctl name="DEC1 Volume" value="84" />
+    <ctl name="DEC2 Volume" value="84" />
+    <ctl name="DEC3 Volume" value="84" />
+    <ctl name="DEC4 Volume" value="84" />
 
     <!-- Compander controls -->
     <ctl name="COMP1 Switch" value="1" />
