@@ -21,5 +21,5 @@ git clone https://github.com/Octavi-OS/platform_packages_apps_Bluetooth packages
 rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 git clone https://github.com/Octavi-OS/platform_vendor_qcom_opensource_commonsys_packages_apps_Bluetooth.git vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 
-rm -rf frameworks/base/data/sounds/google
-git clone https://github.com/pkm774/aosp_sounds frameworks/base/data/sounds/google
+rm -rf vendor/sounds
+git clone https://github.com/pkm774/sounds vendor/sounds
