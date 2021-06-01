@@ -13,6 +13,9 @@ git clone https://github.com/pkm774/android_hardware_qcom_media -b lineage-18.1-
 rm -rf hardware/qcom-caf/msm8998/display
 git clone https://github.com/LineageOS/android_hardware_qcom_display -b lineage-18.1-caf-msm8998 hardware/qcom-caf/msm8998/display
 
+rm -rf hardware/qcom-caf/thermal
+git clone https://github.com/LineageOS/android_hardware_qcom_thermal -b lineage-18.1 hardware/qcom-caf/thermal
+
 rm -rf hardware/libhardware
 git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
 
