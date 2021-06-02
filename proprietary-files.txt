@@ -793,7 +793,7 @@ vendor/firmware/novatek_ts_fw_txd.bin
 # Display firmware (Synaptics)
 vendor/firmware/startup_fw_update.img
 
-# DPM - from ASUS_I01WD
+# DPM - from phoenix_sprout
 system_ext/bin/dpmd
 system_ext/etc/dpm/dpm.conf
 system_ext/etc/init/dpmd.rc
@@ -818,7 +818,7 @@ vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
-# DPM - from LA.UM.8.2.r1-05700-sdm660.0
+# DPM - phoenix_sprout
 -system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 
 # DRM
@@ -917,14 +917,12 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|0be2d9cc1ab452a1b4473087de874b3fc0722bff
 
 
-# GPS - from ASUS_I01WD
+# GPS - from phoenix_sprout
 -vendor/app/CACertService/CACertService.apk
 vendor/bin/android.hardware.gnss@2.1-service-qti
-vendor/bin/garden_app
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
-vendor/bin/slim_daemon
 vendor/etc/gnss_antenna_info.conf
 vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
@@ -934,6 +932,7 @@ vendor/lib/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib/libaoa.so
 vendor/lib/libbatching.so
 vendor/lib/libcacertclient.so
+vendor/lib/libcdfw_remote_api.so
 vendor/lib/libdataitems.so
 vendor/lib/libgarden.so
 vendor/lib/libgdtap.so
@@ -951,8 +950,6 @@ vendor/lib/liblocationservice.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblowi_client.so
 vendor/lib/liblowi_wifihal.so
-vendor/lib/libqdma_file_agent.so
-vendor/lib/libslimclient.so
 vendor/lib/libxtadapter.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.gnss@1.1.so
@@ -971,7 +968,6 @@ vendor/lib64/libcacertclient.so
 vendor/lib64/libcdfw_remote_api.so
 vendor/lib64/libdataitems.so
 vendor/lib64/libgarden.so
-vendor/lib64/libgarden_haltests_e2e.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofencing.so
 vendor/lib64/libgnss.so
@@ -986,8 +982,7 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libqdma_file_agent.so
-vendor/lib64/libslimclient.so
+vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
