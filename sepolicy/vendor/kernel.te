@@ -13,5 +13,5 @@ allow kernel mnt_vendor_file:lnk_file { read open getattr };
 allow kernel kernel:capability { dac_read_search };
 allow kernel mnt_vendor_file:dir { search open };
 allow kernel unlabeled:file { read open getattr };
-allow kernel fuse:dir { ioctl getattr lock open search };
+allow kernel fuse:dir { write ioctl getattr lock open search };
 
