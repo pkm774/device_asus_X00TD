@@ -918,18 +918,41 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|0be2d9cc1ab452a1b447
 
 
 # GPS - from phoenix_sprout
+lib64/libavservices_minijail.so
+system_ext/etc/permissions/izat.xt.srv.xml
+system_ext/framework/izat.xt.srv.jar
+system_ext/lib/libmmosal.so
+system_ext/lib/vendor.qti.gnss@1.0.so
+system_ext/lib/vendor.qti.gnss@1.1.so
+system_ext/lib/vendor.qti.gnss@1.2.so
+system_ext/lib/vendor.qti.gnss@2.0.so
+system_ext/lib/vendor.qti.gnss@2.1.so
+system_ext/lib/vendor.qti.gnss@3.0.so
+system_ext/lib/vendor.qti.gnss@4.0.so
+system_ext/lib64/libmmosal.so
+system_ext/lib64/vendor.qti.gnss@1.0.so
+system_ext/lib64/vendor.qti.gnss@1.1.so
+system_ext/lib64/vendor.qti.gnss@1.2.so
+system_ext/lib64/vendor.qti.gnss@2.0.so
+system_ext/lib64/vendor.qti.gnss@2.1.so
+system_ext/lib64/vendor.qti.gnss@3.0.so
+system_ext/lib64/vendor.qti.gnss@4.0.so
 -vendor/app/CACertService/CACertService.apk
 vendor/bin/android.hardware.gnss@2.1-service-qti
 vendor/bin/hw/android.hardware.gnss@2.1-service-qti
+vendor/bin/garden_app
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
+vendor/bin/xtra-daemon
 vendor/etc/gnss_antenna_info.conf
+vendor/etc/xtra_root_cert.pem
 vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
 vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
 vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
 vendor/lib/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib/libaoa.so
+vendor/lib/libavservices_minijail.so
 vendor/lib/libbatching.so
 vendor/lib/libcacertclient.so
 vendor/lib/libcdfw_remote_api.so
@@ -950,6 +973,7 @@ vendor/lib/liblocationservice.so
 vendor/lib/liblocationservice_glue.so
 vendor/lib/liblowi_client.so
 vendor/lib/liblowi_wifihal.so
+vendor/lib/libmmosal.so
 vendor/lib/libxtadapter.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.gnss@1.1.so
@@ -963,6 +987,7 @@ vendor/lib/vendor.qti.hardware.cacert@1.0.so
 vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
 vendor/lib64/libaoa.so
+vendor/lib64/libavservices_minijail.so
 vendor/lib64/libbatching.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libcdfw_remote_api.so
@@ -982,6 +1007,8 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
+vendor/lib64/libmmosal.so
+vendor/lib64/libqcc_file_agent.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/vendor.qti.gnss@1.0.so
 vendor/lib64/vendor.qti.gnss@1.1.so
@@ -992,6 +1019,7 @@ vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # GPU firmware
 vendor/firmware/a512_zap.b00
