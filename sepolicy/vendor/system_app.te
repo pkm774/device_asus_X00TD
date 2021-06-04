@@ -39,3 +39,6 @@ get_prop(system_app, tcp_prop);
 
 allow system_app sysfs_battery_supply:dir search;
 allow system_app sysfs_battery_supply:file rw_file_perms;
+
+# Smart Charging - Zenparts
+allow system_app sysfs_scharge:file { getattr open write };
