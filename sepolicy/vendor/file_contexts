@@ -78,3 +78,6 @@
 # Dolby
 /(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@1\.0-service                     u:object_r:hal_dms_default_exec:s0
 
+# Smart Charging
+/sys/class/power_supply/battery/charging_enabled                    u:object_r:sysfs_scharge:s0
+

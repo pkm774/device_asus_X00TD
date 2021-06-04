@@ -110,6 +110,12 @@ on boot
     chown system system /mnt/vendor/persist/speccfg/submask
     chown system system /mnt/vendor/persist/speccfg/partition
 
+    # Smartcharging permissions
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+
     # Backlight dimmer
     chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
     chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer

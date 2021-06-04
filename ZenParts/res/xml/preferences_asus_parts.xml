@@ -100,6 +100,34 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="charging"
+        android:title="@string/smart_charging_main_title">
+
+        <SwitchPreference
+            android:key="smart_charging"
+            android:icon="@drawable/ic_charging_main"
+            android:title="@string/smart_charging_title"
+            android:summary="@string/smart_charging_summary" />
+
+        <com.asus.zenparts.preferences.SeekBarPreference
+            android:key="seek_bar"
+            android:title="@string/smart_charging_limit"
+            android:layout="@layout/preference_slider"
+            android:defaultValue="95"
+            android:max="100"
+            android:min="60"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"/>
+
+        <SwitchPreference
+            android:key="reset_stats"
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:title="@string/reset_stats_title"
+            android:summary="@string/reset_stats_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="misc"
         android:title="@string/misc_title">
         

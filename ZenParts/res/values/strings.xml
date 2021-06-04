@@ -34,6 +34,14 @@
     <string name="headphone_gain">Headphone gain</string>
     <string name="microphone_gain">Microphone gain</string>
     
+    <!-- Charging -->
+    <string name="smart_charging_main_title">Battery</string>
+    <string name="smart_charging_title">Smart charging</string>
+    <string name="smart_charging_summary">Protect device battery from over charging</string>
+    <string name="smart_charging_limit">Select charging limit</string>
+    <string name="reset_stats_title">Reset battery stats</string>
+    <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
+
     <!-- Spectrum Profiles -->
     <string name="spectrum_profile_title">Spectrum</string>
     <string name="spectrum_title">Spectrum Profiles</string>

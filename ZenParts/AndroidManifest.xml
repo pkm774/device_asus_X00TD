@@ -160,6 +160,9 @@
                 <action 
                 android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
-        </service>		
+        </service>
+        <service android:name="com.asus.zenparts.SmartChargingService"
+                android:exported="false">
+        </service>
     </application>
 </manifest>
