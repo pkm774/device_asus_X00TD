@@ -4,4 +4,7 @@ allow hal_power_default sysfs_touchpanel:dir r_dir_perms;
 allow hal_power_default sysfs_dclicknode:file rw_file_perms;
 allow hal_power_default sysfs_gesture_node:file rw_file_perms;
 allow hal_power_default debugfs:file getattr;
-allow hal_power_default sysfs:file { write open };
+allow hal_power_default sysfs:file { read write open create getattr setattr append };
+allow hal_power_default proc_tpd_gesture:dir { search };
+allow hal_power_default proc_tpd_gesture:file { read write getattr open };
+allow hal_power_default proc_tpd_gesture:file { write };

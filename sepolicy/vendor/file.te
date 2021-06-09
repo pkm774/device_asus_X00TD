@@ -26,3 +26,6 @@ type sysfs_tbrightness, sysfs_type, fs_type;
 type sysfs_msmthermal, sysfs_type, fs_type;
 type sysfs_corecontrol, sysfs_type, fs_type;
 type sysfs_vddrestrict, sysfs_type, fs_type;
+
+# tpd geture
+type proc_tpd_gesture, fs_type, proc_type;
