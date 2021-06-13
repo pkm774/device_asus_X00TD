@@ -328,6 +328,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.hostapd@1.0.vendor \
     vendor.qti.hardware.wifi.hostapd@1.1.vendor
 
+# Hotword
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
