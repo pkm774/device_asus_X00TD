@@ -12,13 +12,11 @@ allow system_server sysfs_kgsl:lnk_file read;
 get_prop(system_server, baseband_prop)
 
 allow system_server exported_camera_prop:file { read open getattr };
-allow system_server default_android_service:service_manager { add };
 allow system_server userspace_reboot_exported_prop:file { read };
 allow system_server app_zygote:process { getpgid };
 allow system_server userspace_reboot_exported_prop:file { getattr open read };
 allow system_server hal_light_default:process { signal };
-allow system_server default_android_service:service_manager { find };
-allow system_server sysfs:file { getattr open read };
+allow system_server sysfs:file { getattr };
 
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop)
