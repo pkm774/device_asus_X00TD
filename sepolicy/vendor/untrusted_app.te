@@ -7,15 +7,15 @@ allow untrusted_app self:udp_socket { ioctl } ;
 allow untrusted_app exported_camera_prop:file { open read };
 allow untrusted_app proc_asound:dir { ioctl read getattr lock search open };
 allow untrusted_app vendor_persist_camera_prop:file { read getattr open };
-allow untrusted_app untrusted_app:netlink_route_socket { bind };
 allow untrusted_app theme_prop:file { read getattr open };
 allow untrusted_app sysfs_devfreq:dir { search };
 allow untrusted_app sysfs_kgsl:file { open read getattr };
 allow untrusted_app sysfs_devfreq:file { open read getattr };
 allow untrusted_app proc_zoneinfo:file { read };
-allow untrusted_app proc:file { read };
-allow untrusted_app serialno_prop:file { read };
 allow untrusted_app proc_zoneinfo:file { open };
+allow untrusted_app app_data_file:file { execute };
+allow untrusted_app proc_zoneinfo:file { getattr };
+allow untrusted_app virtual_ab_prop:file { read };
 
 # allow apps to read battery status
 r_dir_file(untrusted_app, sysfs_battery_supply)

@@ -1,2 +1,3 @@
 allow cnd default_android_hwservice:hwservice_manager { find };
 allow cnd wifi_prop:file { read getattr open };
+allow cnd radio:binder { call };

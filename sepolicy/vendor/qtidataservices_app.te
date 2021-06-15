@@ -1,1 +1,2 @@
 allow qtidataservices_app location:binder { transfer };
+allow qtidataservices_app qtidataservices_app:socket { read getattr };
