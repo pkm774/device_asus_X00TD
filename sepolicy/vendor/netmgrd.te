@@ -1,0 +1,2 @@
+allow netmgrd diag_device:chr_file { read };
+allow netmgrd netmgrd:capability { sys_admin };
