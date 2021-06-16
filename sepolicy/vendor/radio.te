@@ -4,3 +4,4 @@ allow radio hal_cacert_hwservice:hwservice_manager { find };
 allow radio hidl_base_hwservice:hwservice_manager { add };
 allow radio hal_datafactory_hwservice:hwservice_manager { find };
 allow radio hal_iwlan_hwservice:hwservice_manager { find };
+allow radio vendor_qcom_ims_prop:file { read getattr open };
