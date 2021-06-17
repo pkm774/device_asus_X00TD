@@ -20,3 +20,6 @@ allow untrusted_app_29 sysfs_net:file { getattr };
 allow untrusted_app_29 mnt_media_rw_file:dir { getattr };
 allow untrusted_app_29 baseband_prop:file { open read getattr };
 allow untrusted_app_29 vendor_persist_camera_prop:file { open read getattr };
+allow untrusted_app_29 apex_mnt_dir:dir { read };
+allow untrusted_app_29 app_data_file:file { execute };
+allow untrusted_app_29 configfs:dir { read };

@@ -1,3 +1,4 @@
 # to read /sys/devices
 allow thermal-engine sysfs:dir r_dir_perms;
 allow thermal-engine sysfs_msmthermal:file { open read write };
+allow thermal-engine thermal-engine:capability { sys_admin };

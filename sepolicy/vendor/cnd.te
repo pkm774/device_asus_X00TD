@@ -1,2 +1,3 @@
 allow cnd wifi_prop:file { read getattr open };
 allow cnd radio:binder { call };
+allow cnd diag_device:chr_file { read };

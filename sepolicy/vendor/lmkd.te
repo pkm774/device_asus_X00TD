@@ -1,0 +1,1 @@
+allow lmkd lmkd:capability { sys_admin };

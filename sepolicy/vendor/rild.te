@@ -1,1 +1,3 @@
 allow rild qtidataservices_app:binder { call };
+allow rild diag_device:chr_file { read };
+allow rild vendor_pd_locater_dbg_prop:file { read };

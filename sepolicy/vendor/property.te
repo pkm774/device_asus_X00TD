@@ -2,6 +2,14 @@ type cdfinger_prop, property_type;
 type hal_audio_prop, property_type;
 type vendor_camera_prop, property_type;
 type baseband_prop, property_type;
+
+# BLuetooth
+type btmac_prop, property_type;
+
+# NFC
+type nfc_sensors_prop, property_type;
+
+# Spectrum
 type spectrum_prop, property_type;
 
 # Dirac

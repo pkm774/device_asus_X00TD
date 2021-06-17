@@ -8,7 +8,6 @@ allow init vendor_file:file execute;
 allow init hwservicemanager:binder { call transfer };
 
 allow init sysfs_battery_supply:file { setattr };
-
 dontaudit init domain:process noatsecure;
 
 allow init sysfs:file { getattr setattr };

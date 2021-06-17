@@ -1,1 +1,6 @@
 allow hal_sensors_default sysfs_sensors:file rw_file_perms;
+
+# Allow hal_sensors_default to set nfc_sensors_prop
+set_prop(hal_sensors_default, nfc_sensors_prop)
+
+allow hal_sensors_default diag_device:chr_file { read };

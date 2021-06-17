@@ -1,0 +1,1 @@
+allow vendor_pd_mapper vendor_pd_mapper:capability { sys_admin };

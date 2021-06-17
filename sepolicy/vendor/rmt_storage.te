@@ -1,2 +1,3 @@
 r_dir_file(rmt_storage, sysfs_data)
 r_dir_file(rmt_storage, sysfs_ssr)
+allow rmt_storage rmt_storage:capability { sys_admin };
