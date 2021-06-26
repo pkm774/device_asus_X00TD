@@ -1523,17 +1523,25 @@ vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
 
 # MotoDolbyV3
 -app/MotoDolbyV3/MotoDolbyV3.apk
--product/priv-app/daxService/daxService.apk
+etc/permissions/com.motorola.dolby.dolbyui.xml
 etc/permissions/com.motorola.dolby.dolbyui.features.xml
+etc/sysconfig/config-com.motorola.dolby.dolbyui.xml
 etc/sysconfig/hiddenapi-whitelist-com.motorola.dolby.dolbyui.xml
-product/etc/permissions/com.dolby.daxservice.xml
+etc/permissions/moto-checkin.xml
+framework/moto-checkin.jar
+-system_ext/priv-app/daxService/daxService.apk
+system_ext/etc/permissions/com.dolby.daxservice.xml
+system_ext/etc/permissions/privapp-com.dolby.daxservice.xml
+system_ext/etc/sysconfig/config-com.dolby.daxservice.xml
 vendor/bin/hw/vendor.dolby.hardware.dms@1.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@1.0-service.rc
 vendor/etc/dolby/dax-default.xml
 vendor/lib/libdapparamstorage.so
 vendor/lib/libstagefrightdolby.so
+vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/vendor.dolby.hardware.dms@1.0.so
 vendor/lib/soundfx/libswdap.so
+vendor/lib64/libstagefrightdolby.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdlbdsservice.so
 vendor/lib64/soundfx/libswdap.so
