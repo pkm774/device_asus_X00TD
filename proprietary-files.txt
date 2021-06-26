@@ -1437,11 +1437,12 @@ vendor/lib64/libthermalioctl.so
 vendor/lib/hw/thermal.sdm660.so
 vendor/lib64/hw/thermal.sdm660.so
 
-# Time services - from LA.UM.8.2.r1-06200-sdm660.0
--vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um|c935b678fdaed033513f044f6492361c3370f9f0
-vendor/bin/time_daemon|a3efd58d57f23d0f8e7cfe8da0d7887b2f3e48e8
-vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
-vendor/lib64/libtime_genoff.so|216cbb72e22a0ca76d766dc0b84055c5b31e0a4c
+# Time services - from jasmine QKQ1.190910.002
+-vendor/app/TimeService/TimeService.apk
+vendor/bin/time_daemon
+vendor/etc/init/init.time_daemon.rc
+vendor/lib/libtime_genoff.so
+vendor/lib64/libtime_genoff.so
 
 # Universal Bandwidth Compression (UBWC)
 vendor/lib/libstreamparser.so
