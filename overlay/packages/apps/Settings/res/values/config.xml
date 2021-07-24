@@ -19,7 +19,4 @@
     <!-- Enable Manual Sub Provisioning -->
     <bool name="config_enableManualSubProvisioning">true</bool>
 
-    <!-- Smart Charging -->
-    <bool name="config_supportSmartCharging">true</bool>
-
 </resources>
