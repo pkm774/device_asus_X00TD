@@ -1,4 +1,4 @@
-# ADSP
+# ADSP - from 10-QKQ1-72-release-keys
 lib/libsdsprpc_system.so
 lib64/libsdsprpc_system.so
 vendor/bin/adsprpcd
@@ -17,7 +17,7 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ADSP modules
+# ADSP modules - from 10-QKQ1-72-release-keys
 vendor/etc/scve/facereco/gModel.dat
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
@@ -36,90 +36,130 @@ vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
-# Alarm - from LA.UM.8.2.r1-06200-sdm660.0
--product/app/PowerOffAlarm/PowerOffAlarm.apk|c214e1f7de878aeebe642857d6283bbeca0c7a3e
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|09991c52c26538bd8fa46492e7e55a6938ac05ac
-vendor/bin/power_off_alarm|21d09b2c83d227072e11e0f0a594baf2ecca9eed
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|fbf078c47a2a67be329e8390c988255dd578949c
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|f48d221f6678ff39bdb3e667c6e1a0f399c29232
+# Alarm - from 10-QKQ1-72-release-keys
+-product/app/PowerOffAlarm/PowerOffAlarm.apk
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/bin/power_off_alarm
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# ANT+ - from LA.UM.8.2.r1-06200-sdm660.0
--lib/libantradio.so|18d0a0dd4b522a3bcc59513323dd7ebaad02f47d
-product/lib64/com.qualcomm.qti.ant@1.0.so|1a7bee1627309c8eee55dab22b9f25c2302219ae
--lib64/libantradio.so|876729add2528a96b538eb5163e9668d1fad0acd
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|5ef111c6ecb35b94233ae694d80161e9f61b7cd6
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|203528c568c1c5ce33b35dcb9ee9eb7ecb1de206
+# ANT+ - from 10-QKQ1-72-release-keys
+-lib/libantradio.so
+product/lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
+vendor/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio
+# Audio - from 10-QKQ1-72-release-keys
+system/etc/permissions/audiosphere.xml
+system/framework/audiosphere.jar
 vendor/bin/audioflacapp
 vendor/firmware/tfa98xx.cnt
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
+vendor/lib/hw/audio.primary.sdm660.so		  	 
+vendor/lib/libacdb-fts.so	    
+vendor/lib/libacdbloader.so  	 
+vendor/lib/libacdbrtac.so	  		 
+vendor/lib/libadiertac.so	  	 
+vendor/lib/libadm.so	  	 
+vendor/lib/libaudcal.so	  
 vendor/lib/libaudioalsa.so
+vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
-vendor/lib/libdapparamstorage.so
-vendor/lib/soundfx/libatmos.so
-vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libasphere.so		  	     
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
+vendor/lib64/hw/audio.primary.sdm660.so          	  
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
+vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libdapparamstorage.so
-vendor/lib64/libdlbdsservice.so
-vendor/lib64/soundfx/libatmos.so
 vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Audio ACDB
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+# Audio ACDB - from 10-QKQ1-72-release-keys
+vendor/etc/acdbdata/adsp_avs_config.acdb
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb	  
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb	     
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb	  
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Bluetooth_cal.acdb	
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Codec_cal.acdb	
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_General_cal.acdb	
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Global_cal.acdb	
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/sdm660-tavil-snd-card/MTP_WCD9340_workspaceFile.qwsp			  
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb	     
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
-vendor/etc/acdbdata/adsp_avs_config.acdb
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Bluetooth_cal.acdb  
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_General_cal.acdb    
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Global_cal.acdb     
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Handset_cal.acdb    
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/NonCE/QRD_NonCE_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Bluetooth_cal.acdb  
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_General_cal.acdb    
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Global_cal.acdb     
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Handset_cal.acdb    
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_General_cal.acdb  
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Global_cal.acdb  
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Handset_cal.acdb 
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/sdm660-tasha-skus-snd-card/QRD_SKUS_workspaceFile.qwsp
 
-# Bluetooth - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|5acf94f38e47c2ec43c95e132dfe7b5d71ec41c4
-vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|ce83c30ae3fac708e40392b37142fb2283ae5b93
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so|ebdfcc7064fc144acf6cba300486c6394af3d73b
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|5e06b7b33d084975d6326875268cb237ad6d8559
-vendor/lib64/libbtnv.so|a6793a7b93fa607fcec39da7479566f84ed39aa4
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|9b7ae20ce9d6d2a67fdac94268cec441278cca3d
-vendor/lib64/vendor.qti.hardware.btconfigstore@1.0.so|e08969ef1897ec5958894323f7d6e730a1d7ce25
+# Bluetooth - from 10-QKQ1-72-release-keys
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib/libbtnv.so
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
+vendor/lib64/libbtnv.so
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 
-# Bluetooth aptX(HD) - from walleye QP1A.190711.020
-product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
-product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+# Bluetooth (aptX) - from 10-QKQ1-72-release-keys
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 
-# Camera - WW_Phone-17.2017.1911.407-20191223
+# Camera - from 10-QKQ1-72-release-keys
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
@@ -857,7 +897,7 @@ vendor/lib64/libsecureui.so
 vendor/lib64/libSecureUILib.so
 vendor/lib64/libStDrvInt.so
 
-# DRM (Widevine)
+# DRM (Widevine) - from 10-QKQ1-72-release-keys
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
@@ -870,20 +910,20 @@ vendor/lib64/libwvhidl.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libwvhidl.so
 
-# ESE-Powermanager - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|a5b8d74b2374ea757c90bbbe450e34533fb6c137
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|c03d9380b60a794ababac1c6ec25d4410783bcc9
-vendor/lib/vendor.qti.esepowermanager@1.0.so|84515bbbdf97c2b2d66d84ec2ceafdcb19436446
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|34206c519a4ccd08545921d68db74b22ab3a0a93
-vendor/lib64/vendor.qti.esepowermanager@1.0.so|b5b39c4f3aedc09bced70f0348980e3eccd71fca
+# ESE-Powermanager - from 10-QKQ1-72-release-keys
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
 
-# Fingerprint sensor
+# Fingerprint sensor - from 10-QKQ1-72-release-keys
 framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/bin/qfp-daemon
-vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc|255cbdefc253ae3d8ef7d77aa429f20ff127b4fb
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/hw/cdfinger.default.so
@@ -911,10 +951,10 @@ vendor/lib64/ftm_fm_lib.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Gatekeeper - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|14751f15eba2a00f20a39d1ec4fccbacb819ab34
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|0be2d9cc1ab452a1b4473087de874b3fc0722bff
+# Gatekeeper - from 10-QKQ1-72-release-keys
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 
 # GPS - from phoenix_sprout
@@ -1093,37 +1133,29 @@ vendor/lib64/libsdmextension.so|913503f002aa2afbeca90d429bac4bff4a2266e0
 vendor/lib/hw/vulkan.sdm660.so|333d1cc56934de6fe6f5114d924a3c48f3347ca0
 vendor/lib64/hw/vulkan.sdm660.so|7a9b0ae60ab0eb6d0b896d35b8c47c4531c140b9
 
-# Keymaster - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|de22b6873a674d48959ac5885b49cbff417b287a
-vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc|573b7392c8997008204081165cfe81a11080745d
-vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so|b7b542e952530ed20049fb5a8315f164bae836dc
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|e94a919671f7c476e4948cae5270b04bfc4f03af
-vendor/lib/libkeymasterdeviceutils.so|08c9b6bcb8289b682760ff8d58e0cca909e3a8ca
-vendor/lib/libkeymasterprovision.so|d732967c9fd7cdef48a865b05384a4d0857bc88b
-vendor/lib/libkeymasterutils.so|f4f45f3b85d00e5aed9759c6262ebce96f8f7b51
-vendor/lib64/libkeymasterdeviceutils.so|b5d4819abb7dbd7908dfe7c6cfa5035e02b10383
-vendor/lib64/libkeymasterprovision.so|8301c24afdf3455ed1730c179b485bb3beaf8199
-vendor/lib64/libkeymasterutils.so|b4fd9216b4ee9c2ef91cca3d08ca030ff51fdad1
+# Keymaster - from 10-QKQ1-72-release-keys
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
+vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterprovision.so
+vendor/lib/libkeymasterutils.so
+vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
+vendor/lib64/libkeymasterutils.so
 
-# Keystore - WW_Phone-17.2017.1911.407-20191223
+# Keystore - from 10-QKQ1-72-release-keys
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Listen - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/lib/hw/sound_trigger.primary.sdm660.so|f24897519d353d5536ca97b0ea899882b170696d
-vendor/lib/libadpcmdec.so|8c72aa1812bfa749f266020366894c8a3873d99c
-vendor/lib/libgcs-calwrapper.so|cbf3dbe43161b68adfaf48a9da4e7fedd7b02f5a
-vendor/lib/libgcs-ipc.so|215c2dded9ccd0fc015db2d7008824e332886d2b
-vendor/lib/libgcs-osal.so|5f0c6798dbeb9c806706b0cf217440662452364c
-vendor/lib/libgcs.so|ccb6ac9c27021cf4f2ec09994742c38b700c2583
-vendor/lib/libsmwrapper.so|7f7bd7045ced84928ec46b457ec5f21d5228ea3a
-
-# Listen - WW_Phone-17.2017.1911.407-20191223
-vendor/lib64/hw/sound_trigger.primary.sdm660.so
-vendor/lib64/libgcs-calwrapper.so
-vendor/lib64/libgcs-ipc.so
-vendor/lib64/libgcs-osal.so
-vendor/lib64/libgcs.so
+# Listen - from 10-QKQ1-72-release-keys
+vendor/lib/libadpcmdec.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
+vendor/lib/libgcs.so
+vendor/lib/libsmwrapper.so
 
 # Media - from LA.UM.8.2.r1-06200-sdm660.0
 lib/libFileMux.so|1c713da8d18f03deb33c3211761fc07dd57d6946
@@ -1155,20 +1187,18 @@ vendor/lib/libOmxWmaDec.so|e1f2c2ed81495296f7c0146be5bf0e2530e44317
 vendor/lib/libvqzip.so|a0382fe0e0300f050381e5acf6f90184c7ad3b6e
 vendor/lib64/libgpustats.so|dd2ecc6c5ef439a8d427a52ab9d153f8e747deff
 
-# NFC
+# NFC - from 10-QKQ1-72-release-keys
 vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
-# NVRAM
+# NVRAM - from 10-QKQ1-72-release-keys
 bin/nvram_btwifi
-system_ext/lib64/libmmi.so:lib64/libmmi.so|f2beb127814367f841758c4f0eeca3fbe8deecb5
+system_ext/lib64/libmmi.so:lib64/libmmi.so
 
-# Perf - from sdm660_64:9:PKQ1
+# Perf - from 10-QKQ1-72-release-keys
 vendor/bin/energy-awareness
 vendor/bin/msm_irqbalance
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
 vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
 vendor/etc/perf/perfboostsconfig.xml
 vendor/etc/perf/targetconfig.xml
@@ -1184,20 +1214,20 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 
-# Peripheral manager - from LA.UM.8.2.r1-06300-sdm660.0
-vendor/bin/pm-proxy|3182c937d93cc02c6721c053f57fc6794ad7edb3
-vendor/bin/pm-service|835238076f47bf46cee01b27a76a96282eadb309
-vendor/lib64/libperipheral_client.so|18796ea27c31bd39946f23f2b4173bafd26d9216
+# Peripheral manager - from 10-QKQ1-72-release-keys
+vendor/bin/pm-proxy
+vendor/bin/pm-service
+vendor/lib64/libperipheral_client.so
 
-# Postprocessing - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/vendor.display.color@1.0-service|e8c561e3a169c3007b117515f2946f23a195a5e5
-vendor/bin/mm-pp-dpps|27ed9e9a5f6c4f547c15e396053f283211f65abb
-vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
-vendor/lib64/libdisp-aba.so|edf0d57d523b5d578263a19358e1f57f8c7bbfd1
-vendor/lib64/vendor.display.color@1.0.so|c7eb0d87e45934ad7ff34d0c977116ed46091865
-vendor/lib64/vendor.display.color@1.1.so|d2dfc3fff6aaf7989110ebe05af154186e535010
-vendor/lib64/vendor.display.color@1.2.so|7b967425caa1205e331484e1e1484ac3bd355067
-vendor/lib64/vendor.display.postproc@1.0.so|c9c96ff50b6ff8989fac9fdf35d282a996ea477a
+# Postprocessing - from 10-QKQ1-72-release-keys
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/mm-pp-dpps
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib64/libdisp-aba.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.postproc@1.0.so
 
 # QMI - from LA.UM.8.2.r1-06200-sdm660.0
 etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
@@ -1233,7 +1263,7 @@ vendor/lib64/libqmi_csi.so|7cff37f2c3eb31ed97f313b57f3710b2e881bed9
 vendor/lib64/libqmi_encdec.so|eedf39676bf4447cb2e3f629d1d18dcad846ab85
 vendor/lib64/libqmiservices.so|31f853a8d658db8c255acdedd28c2b59f28e9425
 
-# QTEE
+# QTEE - from 10-QKQ1-72-release-keys
 lib/libGPTEE_system.so
 lib/libQTEEConnector_system.so
 lib/vendor.qti.hardware.qteeconnector@1.0.so
@@ -1381,7 +1411,7 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so|45fd8c212f51977663082b496755911c986
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so|1673fd7b807dcc317cc73c82c2773d5bbb0302df
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so|780288d1d8d79fa16fbbe9bce6edaa4e1424cdb1
 
-# Sensors
+# Sensors - from 10-QKQ1-72-release-keys
 vendor/bin/sensors.qti
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.sdm660.so
@@ -1397,7 +1427,7 @@ vendor/lib64/libsensor1.so
 vendor/lib64/sensors.native.so
 vendor/lib64/sensors.ssc.so
 
-# Sensors calibration - WW_Phone-17.2017.1911.407-20191223
+# Sensors calibration - from 10-QKQ1-72-release-keys
 -product/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
@@ -1407,7 +1437,7 @@ vendor/lib/sensor_calibrate.so
 vendor/lib64/libcalmodule_common.so
 vendor/lib64/sensor_calibrate.so
 
-# Signed graphics firmware
+# Graphics firmware - from 10-QKQ1-72-release-keys
 vendor/firmware/cppf.b00
 vendor/firmware/cppf.b01
 vendor/firmware/cppf.b02
@@ -1418,7 +1448,7 @@ vendor/firmware/cppf.b06
 vendor/firmware/cppf.b07
 vendor/firmware/cppf.mdt
 
-# Soter - WW_Phone-17.2017.1911.407-20191223
+# Soter - from 10-QKQ1-72-release-keys
 product/framework/vendor.qti.hardware.soter-V1.0-java.jar
 product/lib64/vendor.qti.hardware.soter@1.0.so
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
@@ -1426,20 +1456,16 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
-# TUI - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|d4d025e0a12af87f65104fe07801517938733603
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|1ac676dca4c81094b254b62f1b608e471b385847
+# TUI - from 10-QKQ1-72-release-keys
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Thermal - from sdm660_64:9:PKQ1
+# Thermal - from 10-QKQ1-72-release-keys
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
-
-# Thermal (legacy)- from sdm660_64:9:PKQ1
-vendor/lib/hw/thermal.sdm660.so
-vendor/lib64/hw/thermal.sdm660.so
 
 # Time services - from jasmine QKQ1.190910.002
 -vendor/app/TimeService/TimeService.apk
@@ -1465,8 +1491,8 @@ vendor/firmware/widevine.b06
 vendor/firmware/widevine.b07
 vendor/firmware/widevine.mdt
 
-# Wi-Fi - from LA.UM.8.2.r1-06200-sdm660.0
-vendor/bin/cnss-daemon|3da25e53740bc6bf7464d463001eceb97bc67d9b
+# Wi-Fi - from 10-QKQ1-72-release-keys
+vendor/bin/cnss-daemon
 
 # WiFi Display - from phoenix_sprout 11 RKQ1.201123.002
 bin/wfdservice|cb053924304edda5bf4f9e3ddbbb7983e30513e9
