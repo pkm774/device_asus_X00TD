@@ -27,3 +27,6 @@ git clone https://github.com/Octavi-OS/platform_vendor_qcom_opensource_commonsys
 
 rm -rf vendor/sounds
 git clone https://github.com/pkm774/sounds vendor/sounds
+
+# Remove pixel-charger resources from vendor
+rm -rf vendor/descendant/charger
