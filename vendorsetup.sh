@@ -22,3 +22,6 @@ git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-1
 
 rm -rf frameworks/base/data/sounds/google
 git clone https://github.com/pkm774/aosp_sounds frameworks/base/data/sounds/google
+
+# Remove pixel-charger resources from vendor
+rm -rf vendor/corvus/charger
