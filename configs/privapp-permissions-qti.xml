@@ -111,7 +111,7 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.MANAGE_USERS"/>
     </privapp-permissions>
-    
+
     <privapp-permissions package="com.google.android.apps.cameralite">
         <permission name="android.permission.WAKE_LOCK"/>
         <permission name="android.permission.CAMERA"/>
@@ -125,12 +125,12 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.ACCESS_NETWORK_STATE"/>
         <permission name="android.permission.CAMERA_OPEN_CLOSE_LISTENER"/>
     </privapp-permissions>
-    
-    <privapp-permissions package="dk.icepower.icesound">
-        <permission name="android.permission.INTERNET"/>
-        <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
-        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-        <permission name="android.permission.BLUETOOTH"/>
+
+    <privapp-permissions package="com.asus.zenparts">
+      <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+      <permission name="android.permission.INTERACT_ACROSS_USERS" />
+      <permission name="android.permission.READ_FRAME_BUFFER"/>
+      <permission name="android.permission.BIND_QUICK_SETTINGS_TILE"/>
     </privapp-permissions>
 
 </permissions>
