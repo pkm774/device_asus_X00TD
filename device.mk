@@ -100,7 +100,7 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix.vendor
+    tinymix
 
 PRODUCT_PACKAGES += \
     libsndmonitor \
