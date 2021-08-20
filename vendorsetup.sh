@@ -6,6 +6,8 @@ git clone https://github.com/LineageOS/android_hardware_qcom_wlan -b lineage-18.
 rm -rf vendor/qcom/opensource/power
 git clone https://github.com/pkm774/vendor_qcom_opensource_power -b power.legacyopensource.lnx.1.0.r15-rel vendor/qcom/opensource/power
 
+rm -rf external/tinycompress
+git clone https://github.com/pkm774/external_tinycompress -b ks-aosp.lnx.3.0.r15-rel external/tinycompress
 
 rm -rf hardware/qcom-caf/msm8998/audio
 git clone https://github.com/pkm774/hardware_qcom-caf_msm8998_audio -b audio-hal.lnx.8.0.r14-rel hardware/qcom-caf/msm8998/audio
