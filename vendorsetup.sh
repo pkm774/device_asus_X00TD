@@ -6,6 +6,8 @@ git clone https://github.com/LineageOS/android_hardware_qcom_wlan -b lineage-18.
 rm -rf vendor/qcom/opensource/power
 git clone https://github.com/pkm774/vendor_qcom_opensource_power -b power.legacyopensource.lnx.1.0.r15-rel vendor/qcom/opensource/power
 
+rm -rf external/tinyalsa
+git clone https://source.codeaurora.org/quic/la/platform/external/tinyalsa -b ks-aosp.lnx.3.0.r15-rel external/tinyalsa
 rm -rf external/tinycompress
 git clone https://github.com/pkm774/external_tinycompress -b ks-aosp.lnx.3.0.r15-rel external/tinycompress
 
