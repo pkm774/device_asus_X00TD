@@ -334,6 +334,7 @@ PRODUCT_PACKAGES += \
 
 # Hotword
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-google-photos.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-google-photos.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-hotword.xml
 
 # Iorap
