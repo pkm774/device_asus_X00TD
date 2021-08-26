@@ -165,7 +165,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
-    vendor.display.enable_default_color_mode=0
+    vendor.display.enable_default_color_mode=0 \
+    debug.hwui.use_buffer_age=false
 
 # Graphics Drivers
 PRODUCT_PROPERTY_OVERRIDES += \
