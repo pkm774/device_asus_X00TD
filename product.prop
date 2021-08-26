@@ -2,3 +2,6 @@
 ro.iorapd.enable=true
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
+
+# Zygote
+persist.device_config.runtime_native.usap_pool_enabled=true
