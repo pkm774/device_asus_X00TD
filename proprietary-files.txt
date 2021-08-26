@@ -1594,3 +1594,15 @@ vendor/lib64/libdlbdsservice.so
 vendor/lib64/soundfx/libswdap.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@1.0.so
+
+# AdaptLaunch and RefFeature
+# From - phoenix_sprout 11 RKQ1.201123.002 user release-keys
+vendor/etc/lm/AdaptLaunchFeature.xml
+vendor/etc/lm/ReferenceFeature.xml
+vendor/lib64/libadaptlaunch.so
+vendor/lib64/libappclassifier.so
+vendor/lib64/libgameoptfeature.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libmeters.so
+vendor/lib64/libreffeature.so
