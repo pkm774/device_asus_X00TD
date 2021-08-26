@@ -1,0 +1,4 @@
+#for dolby dms call
+hal_client_domain(audioserver, hal_dms)
+#for dolby audio fx
+allow audioserver vendor_mot_audio_fx_prop:file { read getattr map open };
