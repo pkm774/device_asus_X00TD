@@ -225,12 +225,6 @@ persist.vendor.qti.telephony.vt_cam_interface=1
 persist.data.iwlan.enable=true
 persist.vendor.data.iwlan.enable=true
 
-# Bluetooth
-persist.bt.hfp.playbackforvr=false
-persist.bt.hfp.playbackforvoip=false
-
-# Force disable Bluetooth AAC by default
-persist.bt.a2dp.aac_disable=true
 
 # Create zram disk
 ro.vendor.qti.config.zram=true

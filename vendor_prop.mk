@@ -91,9 +91,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.enable.multicast=0 \
     persist.bt.max.a2dp.connections=1 \
     persist.bt.max.hs.connections=2 \
-    persist.vendor.bluetooth.modem_nv_support=true \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-    vendor.qcom.bluetooth.soc=cherokee
+    persist.vendor.bluetooth.modem_nv_support=true
+
+# Bluetooth QTI
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qcom.bluetooth.soc=cherokee \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
