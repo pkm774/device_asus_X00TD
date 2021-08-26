@@ -7,4 +7,15 @@ allow radio hal_datafactory_hwservice:hwservice_manager { find };
 allow radio hal_iwlan_hwservice:hwservice_manager { find };
 allow radio cnd:binder { transfer };
 
+allow radio vendor_mpctl_prop:file { read getattr map open };
+allow radio vendor_default_prop:file { read getattr map open };
+allow radio vendor_persist_camera_prop:file { read getattr map open };
+allow radio cgroup:file { write };
+allow radio cgroup:file { open };
+allow radio hal_perf_default:binder { call transfer };
+allow radio hal_perf_default:fd { use };
+allow radio vendor_camera_prop:file { read getattr map open };
+allow radio exported_wifi_prop:file { read getattr map open };
+allow radio hal_telephony_hwservice:hwservice_manager{ find };
+
 get_prop(radio, vendor_qcom_ims_prop)

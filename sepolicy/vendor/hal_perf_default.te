@@ -1,2 +1,4 @@
 dontaudit hal_perf_default self:capability { dac_override dac_read_search };
 allow hal_perf_default hal_perf_default:capability { sys_admin };
+allow hal_perf_default hal_perf_default:binder { call };
+allow hal_perf_default radio:binder { transfer };

@@ -3,3 +3,6 @@ allow qti_init_shell system_data_file:dir { getattr };
 allow qti_init_shell system_data_file:file { read getattr };
 allow qti_init_shell ctl_stop_prop:property_service { set };
 allow qti_init_shell sysfs_corecontrol:file { write };
+allow qti_init_shell vendor_radio_data_file:dir { search };
+allow qti_init_shell vendor_radio_data_file:file { write };
+allow qti_init_shell vendor_radio_data_file:file { write lock append map open };
