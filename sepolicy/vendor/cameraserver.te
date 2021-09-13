@@ -1,3 +1,4 @@
 binder_call(cameraserver, mediacodec)
 allow cameraserver default_android_hwservice:hwservice_manager { find };
 allow cameraserver property_socket:sock_file { write };
+allow cameraserver hal_camera_default:binder { call transfer };

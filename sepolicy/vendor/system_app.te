@@ -15,6 +15,12 @@ allow system_app fm_prop:property_service set;
 allow system_app wificond:binder call;
 allow system_app sysfs_fps:file rw_file_perms;
 allow system_app sysfs_kgsl:dir { read getattr search open };
+allow system_app diag_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow system_app dalvikcache_data_file:dir { read };
+allow system_app proc_vmallocinfo:file { read };
+allow system_app property_socket:sock_file { write };
+allow system_app vendor_radio_prop:file { read getattr map open };
+
 
 allow system_app vendor_camera_data_file:dir { write lock add_name remove_name search open };
 allow system_app vendor_camera_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open };
