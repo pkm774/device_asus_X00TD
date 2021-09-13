@@ -1258,8 +1258,8 @@ vendor/lib64/libGPTEE_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
-# Radio - from LA.UM.8.2.r1-05100-sdm660.0
-product/framework/qti-telephony-common.jar|96154b2576114dd566bbc99a2d9af612de8849df
+# Radio - from LA.QSSI.11.0.r1-11600-qssi.0
+system_ext/framework/qti-telephony-common.jar
 
 # Radio - from LA.UM.8.2.r1-06200-sdm660.0
 -product/app/datastatusnotification/datastatusnotification.apk|9d0bae96aa9f156534074b515c66126d13db5413
