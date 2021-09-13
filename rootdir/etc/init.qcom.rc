@@ -83,7 +83,13 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_cdsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
-    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
+    write /sys/devices/virtual/npu/msm_npu/boot 1
+    write /sys/devices/virtual/cvp/cvp/boot 1
+    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.early_boot.sh
+    exec u:r:qti_init_shell:s0 -- /vendor/bin/init.qti.can.sh
+
+    chown system system /mnt/vendor/persist/data/pfm/licenses
+    chmod 0775 /mnt/vendor/persist/data/pfm/licenses
 
     # for backward compatibility
     chown system system /persist/sensors
@@ -124,7 +130,6 @@ on boot
     chown system system /sys/kernel/debug/msm_core/enable
     chown system system /sys/kernel/debug/msm_core/ptable
     chown system system /sys/kernel/boot_slpi/ssr
-    chown system system /sys/kernel/boot_adsp/ssr
     chown system system /sys/module/radio_iris_transport/parameters/fmsmd_set
     chmod 0660 /sys/module/bluetooth_power/parameters/power
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
@@ -151,6 +156,12 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
+    # This location is used by QCRIL to host UNIX domain
+    # socket files used for internal IPC within QCRIL
+    # modules
+    mkdir /dev/socket/qmux_radio 0770 radio radio
+    chmod 2770 /dev/socket/qmux_radio
+
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
@@ -162,11 +173,13 @@ on boot
     chmod 2770 /dev/socket/qmux_gps
 
     mkdir /persist/drm 0770 system system
-    mkdir /mnt/vendor/persist/bluetooth 0770 bluetooth bluetooth
+    mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/misc 0770 system system
     mkdir /persist/alarm 0770 system system
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
+    mkdir /mnt/vendor/persist/iar_db 0770 system system
+    mkdir /mnt/vendor/spunvm 0770 system system
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -184,7 +197,6 @@ on boot
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -440,6 +452,11 @@ on post-fs-data
     copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
     chown radio radio /data/vendor/radio/qcril_prebuilt.db
     chmod 0660 /data/vendor/radio/qcril_prebuilt.db
+    copy /vendor/radio/qcril_database/qcrilNr.db /data/vendor/radio/qcrilNr_prebuilt.db
+    copy /vendor/etc/qcril_database/qcrilNr.db /data/vendor/radio/qcrilNr_prebuilt.db
+    chown radio radio /data/vendor/radio/qcrilNr_prebuilt.db
+    chmod 0660 /data/vendor/radio/qcrilNr_prebuilt.db
+
     # File flags for prebuilt ril db file
     write /data/vendor/radio/prebuilt_db_support 1
     chown radio radio /data/vendor/radio/prebuilt_db_support
@@ -1243,8 +1260,8 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     class hal
     user audioserver
     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
-    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock system
-    capabilities BLOCK_SUSPEND SYS_NICE
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
+    capabilities BLOCK_SUSPEND
     ioprio rt 4
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     onrestart restart audioserver
@@ -1256,6 +1273,3 @@ service vendor.sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-servi
     group system wakelock input
     capabilities BLOCK_SUSPEND
     rlimit rtprio 10 10
-
-on property:apexd.status=ready
-    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
