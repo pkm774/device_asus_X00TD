@@ -7,12 +7,12 @@ rm -rf vendor/qcom/opensource/power
 git clone https://github.com/pkm774/vendor_qcom_opensource_power -b power.legacyopensource.lnx.1.0.r15-rel vendor/qcom/opensource/power
 
 rm -rf external/tinyalsa
-git clone https://source.codeaurora.org/quic/la/platform/external/tinyalsa -b ks-aosp.lnx.3.0.r15-rel external/tinyalsa
+git clone https://source.codeaurora.org/quic/la/platform/external/tinyalsa -b ks-aosp.lnx.2.0.r6-rel external/tinyalsa
 rm -rf external/tinycompress
-git clone https://github.com/pkm774/external_tinycompress -b ks-aosp.lnx.3.0.r15-rel external/tinycompress
+git clone https://source.codeaurora.org/quic/la/platform/external/tinycompress -b ks-aosp.lnx.2.0.r6-rel external/tinycompress
 
 rm -rf hardware/qcom-caf/msm8998/audio
-git clone https://github.com/pkm774/hardware_qcom-caf_msm8998_audio -b audio-hal.lnx.8.0.r14-rel hardware/qcom-caf/msm8998/audio
+git clone https://github.com/pkm774/hardware_qcom-caf_msm8998_audio -b audio-hal.lnx.6.0.r9-rel hardware/qcom-caf/msm8998/audio
 rm -rf hardware/qcom-caf/msm8998/media
 git clone https://github.com/pkm774/hardware_qcom-caf_media_msm8998 -b 11 hardware/qcom-caf/msm8998/media
 rm -rf hardware/qcom-caf/msm8998/display
@@ -23,11 +23,6 @@ git clone https://github.com/pkm774/android_hardware_qcom_thermal -b aosp-new/an
 
 rm -rf hardware/libhardware
 git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
-
-rm -rf packages/apps/Bluetooth
-git clone https://github.com/Octavi-OS/platform_packages_apps_Bluetooth packages/apps/Bluetooth
-rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
-git clone https://github.com/Octavi-OS/platform_vendor_qcom_opensource_commonsys_packages_apps_Bluetooth.git vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 
 rm -rf vendor/sounds
 git clone https://github.com/pkm774/sounds vendor/sounds
