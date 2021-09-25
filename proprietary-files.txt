@@ -56,7 +56,6 @@ system/etc/permissions/audiosphere.xml
 system/framework/audiosphere.jar
 vendor/bin/audioflacapp
 vendor/firmware/tfa98xx.cnt
-vendor/lib/hw/audio.primary.sdm660.so		  	 
 vendor/lib/libacdb-fts.so	    
 vendor/lib/libacdbloader.so  	 
 vendor/lib/libacdbrtac.so	  		 
@@ -68,8 +67,7 @@ vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
-vendor/lib/libsurround_3mic_proc.so
-vendor/lib64/hw/audio.primary.sdm660.so          	  
+vendor/lib/libsurround_3mic_proc.so      	  
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -89,7 +87,6 @@ vendor/lib64/soundfx/libasphere.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
-
 
 # Audio ACDB - from 10-QKQ1-72-release-keys
 vendor/etc/acdbdata/adsp_avs_config.acdb
