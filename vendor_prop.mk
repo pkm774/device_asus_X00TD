@@ -42,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.multi_voice_session.enable=true \
-    vendor.audio.feature.a2dp_offload.enable=false \
+    vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
     vendor.audio.feature.battery_listener.enable=false \
