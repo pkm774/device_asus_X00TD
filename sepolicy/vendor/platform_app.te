@@ -8,11 +8,3 @@ allow platform_app hal_audio_default:binder { transfer call };
 allow platform_app hal_audio_default:fd { use };
 allow platform_app hal_camera_default:binder { call transfer };
 allow platform_app hal_camera_default:fd { use };
-
-# Dolby
-allow platform_app hal_dms_hwservice:hwservice_manager find;
-allow platform_app hal_dms_default:binder { call transfer };
-allow platform_app vendor_mot_audio_fx_prop:file { read getattr map open };
-
-#for dolby dms call
-hal_client_domain(platform_app, hal_dms)
