@@ -55,10 +55,7 @@ vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 system/etc/permissions/audiosphere.xml
 system/framework/audiosphere.jar
 vendor/bin/audioflacapp
-vendor/firmware/tfa98xx.cnt
-vendor/lib/libacdb-fts.so	    
-vendor/lib/libacdbloader.so  	 
-vendor/lib/libacdbrtac.so	  		 
+vendor/firmware/tfa98xx.cnt  		 
 vendor/lib/libadiertac.so	  	 
 vendor/lib/libadm.so	  	 
 vendor/lib/libaudcal.so	  
@@ -68,15 +65,20 @@ vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so      	  
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
+
+# acdbloader from - Xperia 10 Plus
+vendor/lib/libacdb-fts.so	    
+vendor/lib/libacdbloader.so  	 
+vendor/lib/libacdbrtac.so
+vendor/lib64/libacdb-fts.so
+vendor/lib64/libacdbloader.so
+vendor/lib64/libacdbrtac.so
 
 # SoundFX from - phoenix_sprout 11 RKQ1.201123.002 user release-keys
 vendor/lib/soundfx/libasphere.so
