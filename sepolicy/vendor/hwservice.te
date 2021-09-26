@@ -1,5 +1,2 @@
-# Dolby
-type hal_dms_hwservice, hwservice_manager_type;
-
 # Nfc
 type nxpese_hwservice, hwservice_manager_type;

@@ -28,6 +28,3 @@ allow system_server vendor_radio_prop:file { read getattr map open };
 get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
-
-#for dolby dms call
-hal_client_domain(system_server, hal_dms)

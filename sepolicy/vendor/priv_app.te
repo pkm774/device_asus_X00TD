@@ -4,7 +4,3 @@ get_prop(priv_app, baseband_prop)
 allow priv_app hal_memtrack_hwservice:hwservice_manager { find };
 allow priv_app hal_memtrack_default:binder { call };
 allow priv_app hal_gnss_hwservice:hwservice_manager { find };
-
-# Dolby
-allow priv_app hal_dms_hwservice:hwservice_manager { find };
-allow priv_app vendor_mot_audio_fx_prop:file { read getattr map open };
