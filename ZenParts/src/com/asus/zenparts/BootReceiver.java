@@ -40,12 +40,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     public void onReceive(Context context, Intent intent) {
     
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        
-        // Dirac
-        boolean denabled = sharedPrefs.getBoolean(DeviceSettings.PREF_ENABLE_DIRAC, true);
-        if (denabled) {
-            context.startService(new Intent(context, DiracService.class));
-        }
 
         // Ambient
         context.startService(new Intent(context, SensorsDozeService.class));

@@ -4,6 +4,3 @@ allow toolbox toolbox:capability { sys_admin };
 # Blocker
 allow toolbox init:fifo_file write;
 allow toolbox proc_version:file { open read };
-
-# Dirac
-allow toolbox dirac_prop:property_service { set };
