@@ -1,2 +1,0 @@
-#for dolby dms call
-hal_client_domain(mediacodec, hal_dms)
