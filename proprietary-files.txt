@@ -1522,11 +1522,6 @@ vendor/lib/libwfdmodulehdcpsession.so|bed1f85a71330dd04a9ce5aba4ed40b15fc0f3f2
 vendor/lib64/libmmosal.so|b4de8a81ac6e600bfa2e15f9bee20c6ac30e2d89
 vendor/lib64/libwfdhdcpcp.so|a9f56d29d9243272ca73d564977022d3aef3b8e4
 
-# Dirac - from Xiaomi
-vendor/lib/soundfx/libdirac.so|f63826a905b520fa524e4c1b147be7cf65240953 
-vendor/lib/libDiracAPI_SHARED.so|42b49679d38eca93fead05ea06ddbdc8108fd4b1
-vendor/etc/diracmobile.config|d781cd6798a7481a8f7128d144abfb2b8794212d
-
 # AdaptLaunch and RefFeature
 # From - phoenix_sprout 11 RKQ1.201123.002 user release-keys
 vendor/etc/lm/AdaptLaunchFeature.xml

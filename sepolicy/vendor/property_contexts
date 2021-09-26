@@ -33,6 +33,3 @@ persist.cpucore.profile            u:object_r:cpucore_prop:s0
 
 #TCP
 persist.tcp.profile		   u:object_r:tcp_prop:s0
-
-# Dirac
-persist.audio.dirac                              u:object_r:dirac_prop:s0

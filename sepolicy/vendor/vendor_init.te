@@ -16,10 +16,3 @@ allow vendor_init vendor_radio_prop:file { read getattr map open };
 
 # this is for ramdump
 allow vendor_init block_device:lnk_file setattr;
-
-# Dirac
-allow vendor_init dirac_prop:property_service set;
-
-# Dolby
-allow vendor_init vendor_mot_audio_fx_prop:property_service { set };
-allow vendor_init vendor_mot_audio_fx_prop:file { read getattr map open };
