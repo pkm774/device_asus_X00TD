@@ -1,2 +1,3 @@
+allow crash_dump cnd_vendor_prop:file { read open getattr };
 allow crash_dump hwservicemanager_prop:file { read open getattr };
 allow crash_dump crash_dump:capability { sys_admin };
