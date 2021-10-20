@@ -96,7 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.qcom.bluetooth.soc=cherokee \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
     ro.bluetooth.a2dp_offload.supported=true \
     persist.bluetooth.a2dp_offload.disabled=false \
     persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
@@ -116,15 +116,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2 \
     persist.vendor.camera.rtb.enable=1
 
-# Dalvik overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapgrowthlimit=256m \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=8m
-
 # Dalvik
 PRODUCT_PRODUCT_PROPERTIES += \
     dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7 \
@@ -139,14 +130,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    ro.surface_flinger.use_color_management=true \
     ro.surface_flinger.set_idle_timer_ms=80 \
     ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
-    ro.surface_flinger.support_kernel_idle_timer=true \
     ro.surface_flinger.supports_background_blur=1 \
-    ro.surface_flinger.use_frame_rate_api=true \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.protected_contents=true
 
 # Display (Native blur)
