@@ -784,18 +784,38 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|dfedda144d19622e3e579186033da2b
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so|c0cc6212b3c0dbe51544c012dc21971caea13466
 vendor/lib64/vendor.qti.latency@2.0.so|fe4691e922ec926bd723ac79e6a11ba1d75db75a
 
-# Display
+# Display - phoenix_sprout:11/RKQ1.201123.002
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 -framework/com.qti.snapdragon.sdk.display.jar
-lib64/libsdm-disp-apis.so
-lib64/vendor.display.color@1.0.so
-lib64/vendor.display.color@1.1.so
-lib64/vendor.display.color@1.2.so
-lib64/vendor.display.postproc@1.0.so
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib/libsdm-disp-apis.so
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+
+# Display Postprocessing - phoenix_sprout:11/RKQ1.201123.002
+system_ext/lib/vendor.display.color@1.0.so
+system_ext/lib/vendor.display.color@1.1.so
+system_ext/lib/vendor.display.color@1.2.so
+system_ext/lib/vendor.display.postproc@1.0.so
+system_ext/lib64/vendor.display.color@1.0.so
+system_ext/lib64/vendor.display.color@1.1.so
+system_ext/lib64/vendor.display.color@1.2.so
+system_ext/lib64/vendor.display.postproc@1.0.so
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/mm-pp-dpps
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/libdisp-aba.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.postproc@1.0.so
+vendor/lib64/libdisp-aba.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.postproc@1.0.so
 
 # Display calibration
 vendor/etc/qdcm_calib_data_nt36672_1080p_video_mode_dsi_panel.xml
@@ -1090,20 +1110,27 @@ vendor/lib64/libRSDriver_adreno.so
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
 
-# Graphics (SDM) - from LA.UM.8.2.r1-06300-sdm660.0
-vendor/lib/libqseed3.so|344d2ce1fe3670f4b0a832a85bd725c4bdb14329
-vendor/lib/libsdm-diag.so|fa211dd848a93242e84d1b7fdc5fcf6cb9c25c2f
-vendor/lib/libtinyxml2_1.so|89e1b1af10209dbb8d341cd314750cc64fc33852
-vendor/lib64/libqseed3.so|6779aaf96283e244122f4cc76cd3cb750ff14ed5
-vendor/lib64/libsdm-diag.so|db4c495e3e64ea0cbc0d079a2aa16862a9b02192
-vendor/lib64/libsdm-disp-vndapis.so|92fe3602eaaae1847965e8886d2cbef3d0a801f8
-vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
+# Graphics (SDM) - phoenix_sprout:11/RKQ1.201123.002
+vendor/lib/libqseed3.so
+vendor/lib/libsdm-diag.so
+vendor/lib/libsdm-disp-vndapis.so
+vendor/lib/libtinyxml2_1.so
+vendor/lib/libsdmextension.so
+vendor/lib/libsdm-color.so
+vendor/lib64/libqseed3.so
+vendor/lib64/libsdm-diag.so
+vendor/lib64/libsdm-disp-vndapis.so
+vendor/lib64/libtinyxml2_1.so
+vendor/lib64/libsdmextension.so
+vendor/lib64/libsdm-color.so
 
-# Graphics (SDM) - from LA.UM.8.2.r1-07500-sdm660.0
-vendor/lib/libsdm-color.so|05e6eedb8f9656d9097a1c3cee09ceeef1025181
-vendor/lib/libsdmextension.so|ebc3f1aed53d208ccc665a173198adb9e0ed6a79
-vendor/lib64/libsdm-color.so|9c80ac4e059bff1c53814e9f5f71a5fbe38bce40
-vendor/lib64/libsdmextension.so|913503f002aa2afbeca90d429bac4bff4a2266e0
+# Graphics (EXTRA) - ganges
+vendor/lib/libdisplaydebug.so
+vendor/lib/libdpps.so
+vendor/lib/libsdm-colormgr-algo.so
+vendor/lib64/libdisplaydebug.so
+vendor/lib64/libdpps.so
+vendor/lib64/libsdm-colormgr-algo.so
 
 # Graphics (Vulkan) - from LA.UM.8.2.r1-06300-sdm660.0
 vendor/lib/hw/vulkan.sdm660.so|333d1cc56934de6fe6f5114d924a3c48f3347ca0
@@ -1194,16 +1221,6 @@ vendor/lib64/libqti-util.so
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
-
-# Postprocessing - from 10-QKQ1-72-release-keys
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/mm-pp-dpps
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.postproc@1.0.so
 
 # QMI - from LA.UM.8.2.r1-06200-sdm660.0
 etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
