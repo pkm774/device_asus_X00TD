@@ -1066,14 +1066,13 @@ vendor/firmware/a512_zap.mdt
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
-# Graphics - from sdm660_64-user-10-QKQ1-72-release-keys
+# Graphics - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/egl/libQTapGLES.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
@@ -1084,15 +1083,12 @@ vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib/libRSDriver_adreno.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
@@ -1103,12 +1099,14 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libOpenCL.so
 vendor/lib64/librs_adreno.so
-vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/libRSDriver_adreno.so
 
-# Graphics (HDR) - from sdm660_64-user-10-QKQ1-72-release-keys
+# Graphics (HDR) - from LA.UM.9.6.2.r1-03600-89xx.0
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
+
+# Graphics (Vulkan) - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/lib/hw/vulkan.adreno.so
+vendor/lib64/hw/vulkan.adreno.so
 
 # Graphics (SDM) - phoenix_sprout:11/RKQ1.201123.002
 vendor/lib/libqseed3.so
@@ -1131,10 +1129,6 @@ vendor/lib/libsdm-colormgr-algo.so
 vendor/lib64/libdisplaydebug.so
 vendor/lib64/libdpps.so
 vendor/lib64/libsdm-colormgr-algo.so
-
-# Graphics (Vulkan) - from LA.UM.8.2.r1-06300-sdm660.0
-vendor/lib/hw/vulkan.sdm660.so|333d1cc56934de6fe6f5114d924a3c48f3347ca0
-vendor/lib64/hw/vulkan.sdm660.so|7a9b0ae60ab0eb6d0b896d35b8c47c4531c140b9
 
 # Keymaster - from 10-QKQ1-72-release-keys
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
