@@ -1,8 +1,3 @@
-rm -rf vendor/qcom/opensource/data-ipa-cfg-mgr
-git clone https://github.com/LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr -b lineage-18.1 vendor/qcom/opensource/data-ipa-cfg-mgr
-rm -rf hardware/qcom-caf/wlan
-git clone https://github.com/LineageOS/android_hardware_qcom_wlan -b lineage-18.1-caf hardware/qcom-caf/wlan
-
 rm -rf vendor/qcom/opensource/power
 git clone https://github.com/pkm774/vendor_qcom_opensource_power -b power.legacyopensource.lnx.1.0.r15-rel vendor/qcom/opensource/power
 
@@ -20,9 +15,6 @@ git clone https://github.com/pkm774/hardware_qcom-caf_display_msm8998 -b 11 hard
 
 rm -rf hardware/qcom-caf/thermal
 git clone https://github.com/pkm774/android_hardware_qcom_thermal -b aosp-new/android11-qpr3-s1-release hardware/qcom-caf/thermal
-
-rm -rf hardware/libhardware
-git clone https://github.com/LineageOS/android_hardware_libhardware -b lineage-18.0 hardware/libhardware
 
 rm -rf frameworks/base/data/sounds/google
 git clone https://github.com/pkm774/aosp_sounds frameworks/base/data/sounds/google
