@@ -6,7 +6,7 @@
     "remote": "github"
   },
   {
-    "repository" : "CorvusRom-Devices/vendor_asus_X00TD",
+    "repository" : "pkm774/vendor_asus_X00TD",
     "target_path": "vendor/asus",
     "branch": "11",
     "remote": "github"
