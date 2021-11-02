@@ -1,5 +1,4 @@
 allow location hal_cacert_hwservice:hwservice_manager { find };
-allow location vendor_qccsyshal_hwservice:hwservice_manager { find };
 allow location qtidataservices_app:binder { call transfer };
 allow location qtidataservices_app:fd { use };
 allow location hal_gnss_qti:unix_dgram_socket { sendto };
