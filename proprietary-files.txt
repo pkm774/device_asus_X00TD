@@ -1480,6 +1480,17 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
+# SSR - from phoenix_sprout 11 RKQ1.201123.002 user release-keys
+vendor/bin/ssr_diag
+vendor/bin/ssr_setup
+vendor/bin/subsystem_ramdump
+vendor/lib/libmdmdetect.so
+vendor/lib/libssrec.so
+vendor/lib/libsubsystem_control.so
+vendor/lib64/libmdmdetect.so
+vendor/lib64/libssrec.so
+vendor/lib64/libsubsystem_control.so
+
 # TUI - from 10-QKQ1-72-release-keys
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc

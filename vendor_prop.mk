@@ -285,6 +285,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.video.disable.ubwc=1
 
+# SSR prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.ssr.restart_level=ALL_ENABLE
+
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
