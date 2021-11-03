@@ -58,24 +58,24 @@ product/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# Audio - from 10-QKQ1-72-release-keys
-system/etc/permissions/audiosphere.xml
-system/framework/audiosphere.jar
+# Audio TFA98XX Firmware - from 10-QKQ1-72-release-keys
+vendor/firmware/tfa98xx.cnt
+
+# Audio - from LA.UM.9.6.2.r1-03600-89xx.0
+system_ext/etc/permissions/audiosphere.xml
+-system_ext/framework/audiosphere.jar
 vendor/bin/audioflacapp
-vendor/firmware/tfa98xx.cnt  		 
 vendor/lib/libadiertac.so	  	 
 vendor/lib/libadm.so	  	 
-vendor/lib/libaudcal.so	  
+vendor/lib/libaudcal.so
 vendor/lib/libaudioalsa.so
-vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
-vendor/lib/libsurround_3mic_proc.so      	  
+vendor/lib/libsurround_3mic_proc.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
-vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
 
