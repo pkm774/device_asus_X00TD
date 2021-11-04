@@ -123,6 +123,15 @@ PRODUCT_PRODUCT_PROPERTIES += \
     dalvik.vm.dex2oat-threads=4 \
     dalvik.vm.image-dex2oat-cpu-set=4,5,6,7
 
+# Dalvik heap from phone-xhdpi-6144-dalvik-heap.mk
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.5 \
+    dalvik.vm.heapminfree=8m \
+    dalvik.vm.heapmaxfree=32m
+
 # Display (SF)
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
