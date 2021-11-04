@@ -159,6 +159,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false
 
+# Dirac
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.audio.soundfx.dirac=true \
+    persist.audio.dirac.speaker=true \
+    persist.dirac.acs.controller=qem \
+    persist.dirac.acs.storeSettings=1 \
+    persist.dirac.acs.ignore_error=1
+
 # Enable AAC frame ctl for A2DP sinks
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.aac_frm_ctl.enabled=true

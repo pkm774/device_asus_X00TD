@@ -33,3 +33,11 @@ persist.cpucore.profile            u:object_r:cpucore_prop:s0
 
 #TCP
 persist.tcp.profile		   u:object_r:tcp_prop:s0
+
+# Dirac
+persist.audio.dirac.                u:object_r:dirac_prop:s0
+persist.dirac.acs.controller        u:object_r:vendor_audio_prop:s0
+persist.dirac.acs.storeSettings     u:object_r:vendor_audio_prop:s0
+persist.dirac.acs.ignore_error      u:object_r:vendor_audio_prop:s0
+ro.audio.soundfx.dirac              u:object_r:vendor_audio_prop:s0
+persist.audio.dirac.speaker         u:object_r:vendor_audio_prop:s0
