@@ -14,7 +14,22 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
+
+    <PreferenceCategory
+        android:key="audio"
+        android:title="@string/audio_category">
+
+        <Preference
+            android:key="dirac_headset_pref"
+            android:summary="@string/dirac_summary"
+            android:title="@string/dirac_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.asus.zenparts"
+                android:targetClass="com.asus.zenparts.dirac.DiracActivity" />
+        </Preference>
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="spectrum_profile"
         android:title="@string/spectrum_profile_title">
