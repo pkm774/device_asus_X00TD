@@ -185,6 +185,7 @@
     <!-- Values for Dirac preset pref -->
     <string-array name="dirac_preset_pref_entries" translatable="false">
         <item>@string/dirac_preset_default</item>
+        <item>@string/dirac_preset_bass_booster</item>
         <item>@string/dirac_preset_rock</item>
         <item>@string/dirac_preset_jazz</item>
         <item>@string/dirac_preset_pop</item>
@@ -199,6 +200,7 @@
 
     <string-array name="dirac_preset_pref_values" translatable="false">
         <item>"0,0,0,0,0,0,0"</item>
+        <item>"10,8,-3,0,-3,5,5"</item>
         <item>"4,2,-2,0,-2,-2,4"</item>
         <item>"0,0,0,-2,-3,0,0"</item>
         <item>"0,-3,-5,0,0,-3,0"</item>
