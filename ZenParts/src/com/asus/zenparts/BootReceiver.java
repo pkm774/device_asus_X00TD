@@ -26,6 +26,7 @@ import com.asus.zenparts.preferences.VibratorStrengthPreference;
 
 import com.asus.zenparts.kcal.Utils;
 import com.asus.zenparts.ambient.SensorsDozeService;
+import com.asus.zenparts.dirac.DiracUtils;
 
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
@@ -49,6 +50,9 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
+        
+        // Dirac
+        new DiracUtils(context).onBootCompleted();
         
 	//MSM Thermal control
 	FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, 
