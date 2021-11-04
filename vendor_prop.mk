@@ -161,6 +161,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Dirac
 PRODUCT_PROPERTY_OVERRIDES += \
+    audio.dirac.logging=0
     ro.audio.soundfx.dirac=true \
     persist.audio.dirac.speaker=true \
     persist.dirac.acs.controller=qem \
