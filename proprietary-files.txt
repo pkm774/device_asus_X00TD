@@ -1615,3 +1615,9 @@ vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters-ns.so
 vendor/lib64/libmeters.so
 vendor/lib64/libreffeature.so
+
+# Dirac - from Xiaomi
+vendor/lib/soundfx/libdirac.so
+vendor/lib/libDiracAPI_SHARED.so
+vendor/etc/diracmobile.config
+vendor/etc/diracvdd.bin
