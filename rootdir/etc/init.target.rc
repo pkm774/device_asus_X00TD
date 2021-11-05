@@ -71,6 +71,11 @@ on post-fs
     # Disable sched autogroup
     write /proc/sys/kernel/sched_autogroup_enabled 0
 
+on post-fs
+    start vendor.qseecomd
+    exec - system system -- /vendor/bin/init.qti.qseecomd.sh
+    write /dev/ipa 1
+
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 

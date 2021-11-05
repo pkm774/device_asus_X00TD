@@ -1243,6 +1243,7 @@ vendor/lib64/libOmxWmaDec.so
 
 # NFC - from 10-QKQ1-72-release-keys
 vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
+vendor/bin/nqnfcinfo
 
 # NVRAM - from 10-QKQ1-72-release-keys
 bin/nvram_btwifi
@@ -1307,23 +1308,28 @@ vendor/lib64/libqmi_csi.so|7cff37f2c3eb31ed97f313b57f3710b2e881bed9
 vendor/lib64/libqmi_encdec.so|eedf39676bf4447cb2e3f629d1d18dcad846ab85
 vendor/lib64/libqmiservices.so|31f853a8d658db8c255acdedd28c2b59f28e9425
 
-# QTEE - from 10-QKQ1-72-release-keys
-lib/libGPTEE_system.so
-lib/libQTEEConnector_system.so
+# QTEE - from phoenix_sprout 11 RKQ1.201123.002 user release-keys
 lib/vendor.qti.hardware.qteeconnector@1.0.so
-lib64/libGPTEE_system.so
-lib64/libQTEEConnector_system.so
 lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
 vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib/libGPTEE_vendor.so
+vendor/lib/libGPQTEEC_vendor.so
 vendor/lib/libQTEEConnector_vendor.so
 vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/libGPTEE_vendor.so
+vendor/lib64/libGPQTEEC_vendor.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+
+# QTRT - from phoenix_sprout 11 RKQ1.201123.002 user release-keys
+vendor/bin/qrtr-cfg
+vendor/bin/qrtr-lookup
+vendor/bin/qrtr-ns
+vendor/lib/libqrtr.so
+vendor/lib64/libqrtr.so
 
 # Radio - from LA.QSSI.11.0.r1-11600-qssi.0
 system_ext/framework/qti-telephony-common.jar
@@ -1492,11 +1498,14 @@ vendor/firmware/cppf.b06
 vendor/firmware/cppf.b07
 vendor/firmware/cppf.mdt
 
-# Soter - from 10-QKQ1-72-release-keys
-product/framework/vendor.qti.hardware.soter-V1.0-java.jar
-product/lib64/vendor.qti.hardware.soter@1.0.so
+# Soter - from phoenix_sprout 11 RKQ1.201123.002 user release-keys
+system_ext/framework/vendor.qti.hardware.soter-V1.0-java.jar
+system_ext/lib/vendor.qti.hardware.soter@1.0.so
+system_ext/lib64/vendor.qti.hardware.soter@1.0.so
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
+vendor/lib/vendor.qti.hardware.soter@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
@@ -1511,9 +1520,12 @@ vendor/lib64/libmdmdetect.so
 vendor/lib64/libssrec.so
 vendor/lib64/libsubsystem_control.so
 
-# TUI - from 10-QKQ1-72-release-keys
+# TUI - from phoenix_sprout 11 RKQ1.201123.002 user release-keys
+system_ext/lib/vendor.qti.hardware.tui_comm@1.0.so
+system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # Thermal - from 10-QKQ1-72-release-keys

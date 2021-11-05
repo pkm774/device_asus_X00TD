@@ -387,6 +387,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
 
 PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0 \
     android.hardware.nfc@1.2-service \
     com.android.nfc_extras \
     NfcNci \
