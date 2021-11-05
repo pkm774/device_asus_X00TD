@@ -22,7 +22,8 @@
         <Preference
             android:key="dirac_headset_pref"
             android:summary="@string/dirac_summary"
-            android:title="@string/dirac_title">
+            android:title="@string/dirac_title"
+            android:icon="@drawable/ic_dirac_enhancer">
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.asus.zenparts"
