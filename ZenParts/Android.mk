@@ -9,6 +9,7 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_PACKAGE_NAME := ZenParts
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_SYSTEM_EXT_MODULE := true
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 LOCAL_USE_AAPT2 := true
@@ -22,7 +23,7 @@ package_resource_overlays := $(strip \
 LOCAL_RESOURCE_DIR := $(package_resource_overlays) $(LOCAL_RESOURCE_DIR)
 
 LOCAL_PROGUARD_ENABLED := disabled
-LOCAL_DEX_PREOPT := false
+LOCAL_DEX_PREOPT := true
 
 include frameworks/base/packages/SettingsLib/common.mk
 
